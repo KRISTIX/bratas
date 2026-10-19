@@ -1,0 +1,48 @@
+name: Store photographs
+
+on:
+  push:
+    paths:
+      - .github/workflows/store-photos.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  store:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Save photograph copies
+        run: |
+          node --input-type=module << 'EOF'
+          import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+          import { dirname } from "node:path";
+
+          const remote = JSON.parse(readFileSync("media/remote-photos.json", "utf8"));
+          for (const [rel, url] of Object.entries(remote)) {
+            const dest = `media/${rel}.b64`;
+            if (existsSync(dest) && statSync(dest).size > 1000) {
+              console.log("skip", dest);
+              continue;
+            }
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`${rel} ${response.status}`);
+            const bytes = Buffer.from(await response.arrayBuffer());
+            mkdirSync(dirname(dest), { recursive: true });
+            writeFileSync(dest, bytes.toString("base64"));
+            console.log("wrote", dest, bytes.length);
+          }
+          EOF
+      - name: Commit copies
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add media
+          if git diff --staged --quiet; then
+            echo "Photographs were already stored."
+          else
+            git commit -m "Store photograph copies in the repository"
+            git push
+          fi
