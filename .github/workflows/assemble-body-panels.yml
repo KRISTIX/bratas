@@ -1,0 +1,34 @@
+name: assemble-body-panels
+on:
+  push:
+    paths:
+      - media/_chunks/ASSEMBLE_BODY_PANELS
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: concat body-panels
+        run: |
+          python3 - << 'PY'
+          import hashlib
+          from pathlib import Path
+          base = Path("media/_chunks/media__public__photos__body-panels.jpg.b64")
+          order = [f"b{i:04d}" for i in range(0, 537)]
+          data = b"".join((base / name).read_bytes() for name in order)
+          if len(data) != 214508:
+              raise SystemExit(f"size {len(data)}")
+          blob = hashlib.sha1(b"blob 214508\0" + data).hexdigest()
+          if blob != "39335c1b2e18444b5538c94538031232eb5dac9a":
+              raise SystemExit(f"sha {blob}")
+          dest = Path("media/public/photos/body-panels.jpg.b64")
+          dest.parent.mkdir(parents=True, exist_ok=True)
+          dest.write_bytes(data)
+          PY
+          git config user.name "assemble"
+          git config user.email "assemble@users.noreply.github.com"
+          git add media/public/photos/body-panels.jpg.b64
+          git commit -m "Assemble exact body-panels payload"
+          git push
