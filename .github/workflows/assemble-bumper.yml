@@ -1,0 +1,33 @@
+name: assemble-bumper
+on:
+  push:
+    paths:
+      - media/_chunks/ASSEMBLE_BUMPER
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: concat bumper-detail
+        run: |
+          python3 - << 'PY'
+          from pathlib import Path
+          order = [
+            "000","001","01","02","03","04","05","06","06b",
+            "07a","07b","08a","08b","09a","09b","10a","10b",
+          ]
+          base = Path("media/_chunks/media__public__photos__bumper-detail.jpg.b64")
+          data = b"".join((base/name).read_bytes() for name in order)
+          if len(data) != 170400:
+              raise SystemExit(f"size {len(data)}")
+          dest = Path("media/public/photos/bumper-detail.jpg.b64")
+          dest.parent.mkdir(parents=True, exist_ok=True)
+          dest.write_bytes(data)
+          PY
+          git config user.name "assemble"
+          git config user.email "assemble@users.noreply.github.com"
+          git add media/public/photos/bumper-detail.jpg.b64
+          git commit -m "Assemble exact bumper-detail payload"
+          git push
