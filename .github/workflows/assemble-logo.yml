@@ -1,0 +1,40 @@
+name: assemble-logo
+on:
+  push:
+    paths:
+      - media/_chunks/ASSEMBLE_LOGO
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: concat logo
+        run: |
+          python3 - << 'PY'
+          import hashlib
+          from pathlib import Path
+          base = Path("media/_chunks/media__public__brand__logo.png.b64")
+          order = ["p000"]
+          order += [f"p{i:04d}" for i in range(1, 60)]
+          order += ["k012", "k013"]
+          order += [f"q{i:03d}" for i in range(7, 30)]
+          order += [f"r{i:03d}" for i in range(0, 19)]
+          order += ["r019p0", "r019p1", "r019p2", "r019p3"]
+          order += [f"r{i:03d}" for i in range(20, 171)]
+          data = b"".join((base / name).read_bytes() for name in order)
+          if len(data) != 188272:
+              raise SystemExit(f"size {len(data)}")
+          blob = hashlib.sha1(b"blob 188272\0" + data).hexdigest()
+          if blob != "641b231e5aa0af9a025f183637c39d5ba271d04b":
+              raise SystemExit(f"sha {blob}")
+          dest = Path("media/public/brand/logo.png.b64")
+          dest.parent.mkdir(parents=True, exist_ok=True)
+          dest.write_bytes(data)
+          PY
+          git config user.name "assemble"
+          git config user.email "assemble@users.noreply.github.com"
+          git add media/public/brand/logo.png.b64
+          git commit -m "Assemble exact logo payload"
+          git push
