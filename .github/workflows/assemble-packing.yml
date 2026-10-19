@@ -1,0 +1,36 @@
+name: assemble-packing
+on:
+  push:
+    paths:
+      - media/_chunks/ASSEMBLE_PACKING
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: concat packing
+        run: |
+          python3 - << 'PY'
+          import hashlib
+          from pathlib import Path
+          base = Path("media/_chunks/media__public__photos__packing.jpg.b64")
+          order = [f"p{i:04d}" for i in range(0, 6)]
+          order += [f"a{i:02d}" for i in range(0, 20)]
+          order += [f"b{i:04d}" for i in range(0, 268)]
+          data = b"".join((base / name).read_bytes() for name in order)
+          if len(data) != 210984:
+              raise SystemExit(f"size {len(data)}")
+          blob = hashlib.sha1(b"blob 210984\0" + data).hexdigest()
+          if blob != "56f36e54d947d3074ef1484f037ef2117e61f48b":
+              raise SystemExit(f"sha {blob}")
+          dest = Path("media/public/photos/packing.jpg.b64")
+          dest.parent.mkdir(parents=True, exist_ok=True)
+          dest.write_bytes(data)
+          PY
+          git config user.name "assemble"
+          git config user.email "assemble@users.noreply.github.com"
+          git add media/public/photos/packing.jpg.b64
+          git commit -m "Assemble exact packing payload"
+          git push
