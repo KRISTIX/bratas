@@ -57,3 +57,23 @@ for (const [rel, parts] of groups) {
 if (wrote > 0) {
   console.log(`Restored ${wrote} image${wrote === 1 ? "" : "s"} from media/`);
 }
+
+const remoteFile = join(media, "remote-photos.json");
+if (existsSync(remoteFile)) {
+  const remote = JSON.parse(readFileSync(remoteFile, "utf8"));
+  let fetched = 0;
+  for (const [rel, url] of Object.entries(remote)) {
+    const dest = join(root, rel);
+    if (existsSync(dest)) continue;
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Could not fetch ${rel}: ${response.status}`);
+    }
+    mkdirSync(dirname(dest), { recursive: true });
+    writeFileSync(dest, Buffer.from(await response.arrayBuffer()));
+    fetched += 1;
+  }
+  if (fetched > 0) {
+    console.log(`Fetched ${fetched} image${fetched === 1 ? "" : "s"}`);
+  }
+}
