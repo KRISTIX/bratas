@@ -17,24 +17,24 @@ import {
 const services = [
   {
     n: "01",
-    title: "Automobilių dalių prekyba",
-    text: "Parduodame įvairių markių ir modelių atsargines dalis. Didžiausia pasiūla — BMW, Mercedes-Benz, Audi, Ford ir Volvo. Dažniausiai ieškomi priekiniai ir galiniai žibintai, elektra valdomi veidrodėliai, rankenėlių komplektai ir saugiklių blokai.",
+    title: "Atvežame iš JK",
+    text: "Atsargines dalis perkame ir atsivežame iš Jungtinės Karalystės. Į Lietuvą keliauja detalės, ne automobiliai.",
+    src: "/photos/hero-warehouse.jpg",
+    alt: "Automobilių dalių sandėlio lentynos su žibintais ir bamperiais",
+  },
+  {
+    n: "02",
+    title: "Laikome sandėlyje",
+    text: "Didžiausia pasiūla — BMW, Mercedes-Benz, Audi, Ford ir Volvo. Dažniausiai ieškomi priekiniai ir galiniai žibintai, elektra valdomi veidrodėliai, rankenėlių komplektai ir saugiklių blokai.",
     src: "/photos/headlights.jpg",
     alt: "Lentynos su naudotais priekiniais ir galiniais automobilio žibintais",
   },
   {
-    n: "02",
-    title: "Automobilių ardymas",
-    text: "Ardome transporto priemones ir parduodame tinkamas naudoti dalis. Originali detalė lieka apyvartoje, o pirkėjas moka mažiau nei už naują.",
-    src: "/photos/dismantling-bay.jpg",
-    alt: "Automobilis ant keltuvo ardymo ceche, nuimtos durelės šalia",
-  },
-  {
     n: "03",
-    title: "Automobilių importas",
-    text: "Importuojame transporto priemones iš užsienio rinkų — tolesniam naudojimui arba ardymui, kai reikia konkrečios dalies.",
-    src: "/photos/import-lot.jpg",
-    alt: "Importuotų naudotų automobilių aikštelė prie sandėlio",
+    title: "Parduodame ir siunčiame",
+    text: "Visą asortimentą rasite RRR.lt. Dalį išsirenkate kataloge, o mes ją supakuojame ir išsiunčiame.",
+    src: "/photos/packing.jpg",
+    alt: "Žibintas, pakavimo juosta ir dėžė ant darbastalio",
   },
 ];
 
@@ -51,13 +51,12 @@ export default function Home() {
                 AUTOPARTS
               </p>
               <h1 className="mt-4 font-display text-[2.55rem] leading-[1.02] font-bold tracking-tight text-balance sm:text-5xl lg:text-[3.45rem]">
-                Naudotos automobilių dalys iš pirmų rankų.
+                Naudotos automobilių dalys iš Jungtinės Karalystės.
               </h1>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-pretty text-muted">
-                UAB „Bratas“ prekiauja atsarginėmis dalimis, ardo transporto
-                priemones ir importuoja automobilius iš užsienio rinkų. RRR.lt
-                kataloge — daugiau kaip 16&nbsp;000 pozicijų, asortimentas
-                nuolat pildomas.
+                UAB „Bratas“ parduoda atsargines dalis, atvežtas iš JK. Pasiūla —
+                dalys, ne pilni automobiliai. RRR.lt kataloge — daugiau kaip
+                16&nbsp;000 pozicijų, asortimentas nuolat pildomas.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button asChild size="lg">
@@ -102,12 +101,17 @@ export default function Home() {
             </div>
           </dl>
         </section>
-        <section id="veikla" className="scroll-mt-24 border-t border-line">
+        <section id="is-jk" className="scroll-mt-24 border-t border-line">
           <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold tracking-[0.2em] text-brand">VEIKLA</p>
-              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-balance sm:text-4xl">Trys veiklos sritys</h2>
-              <p className="mt-4 text-lg text-pretty text-muted">Įmonė specializuojasi dalių prekyboje, automobilių ardyme ir transporto priemonių importe.</p>
+              <p className="text-xs font-semibold tracking-[0.2em] text-brand">IŠ JK</p>
+              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-balance sm:text-4xl">
+                Dalys iš Jungtinės Karalystės
+              </h2>
+              <p className="mt-4 text-lg text-pretty text-muted">
+                Viena veikla: naudotų autodalių pardavimas. Dalys atkeliauja iš
+                JK, laikomos sandėlyje ir parduodamos per RRR.lt.
+              </p>
             </div>
             <div className="mt-10 grid gap-8 lg:grid-cols-3">
               {services.map((service) => (
@@ -122,18 +126,6 @@ export default function Home() {
                   </div>
                 </article>
               ))}
-            </div>
-          </div>
-        </section>
-        <section className="relative">
-          <div className="relative h-[420px] md:h-[540px]">
-            <Image src="/photos/dismantling-yard.jpg" alt="Ardymo aikštelė: automobiliai atidarytais variklio gaubtais prie dirbtuvių" fill sizes="100vw" className="object-cover" />
-          </div>
-          <div className="mx-auto max-w-6xl px-5">
-            <div className="relative -mt-20 max-w-md border border-line bg-white p-6 md:-mt-28 md:p-8">
-              <p className="text-xs font-semibold tracking-[0.18em] text-brand">AIKŠTELĖ</p>
-              <h2 className="mt-3 font-display text-2xl font-semibold text-balance">Automobiliai išrenkami dalimis.</h2>
-              <p className="mt-3 text-pretty text-muted">Tinkamos detalės keliauja į sandėlį ir į RRR.lt katalogą. Siunčiame po Lietuvą — Vilnių, Kauną, Klaipėdą ir kitus miestus — bei į užsienį.</p>
             </div>
           </div>
         </section>
@@ -187,8 +179,8 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
             <div className="max-w-2xl">
               <p className="text-xs font-semibold tracking-[0.2em] text-brand">GALERIJA</p>
-              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-balance sm:text-4xl">Sandėlis ir aikštelė</h2>
-              <p className="mt-4 text-lg text-pretty text-muted">Dalys, kurias išrenkame, sutvarkome ir paruošiame siuntimui. Paspauskite nuotrauką, kad padidintumėte.</p>
+              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-balance sm:text-4xl">Sandėlis</h2>
+              <p className="mt-4 text-lg text-pretty text-muted">Dalys, kurias paruošiame ir išsiunčiame. Paspauskite nuotrauką, kad padidintumėte.</p>
             </div>
             <Gallery />
           </div>
