@@ -1,6 +1,6 @@
 # UAB Bratas
 
-Light, one-page site for **UAB „Bratas“** — used auto parts, vehicle dismantling, and vehicle import in Šlamų k., Pasvalio r.
+Light, one-page site for **UAB „Bratas“** — used auto parts from the UK, sold from Šlamų k., Pasvalio r.
 
 The catalogue lives on [RRR.lt](https://rrr.lt/pardavejas/bratas) (16,000+ parts). Company facts on the page: code `306008010`, VAT `LT100014759115`, phone `+370 687 49115`, weekday hours 07:00–16:00.
 
