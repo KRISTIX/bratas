@@ -9,7 +9,6 @@ export const osmUrl =
   "https://www.openstreetmap.org/?mlat=56.03357&mlon=24.37966#map=14/56.03357/24.37966";
 
 export const nav = [
-  { href: "#is-jk", label: "Iš JK" },
   { href: "#dalys", label: "Dalys" },
   { href: "#ivertinimas", label: "Įvertinimas" },
   { href: "#galerija", label: "Galerija" },
