@@ -18,15 +18,15 @@ const sourceSans = Source_Sans_3({
 });
 
 const description =
-  "UAB „Bratas“ prekiauja naudotomis automobilių dalimis, ardo transporto priemones ir jas importuoja. Daugiau kaip 16 000 dalių RRR.lt kataloge. Šlamų k., Pasvalio r.";
+  "UAB „Bratas“ parduoda naudotas automobilių dalis iš Jungtinės Karalystės. Pasiūla — dalys, ne pilni automobiliai. Daugiau kaip 16 000 dalių RRR.lt kataloge. Šlamų k., Pasvalio r.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
-  title: "UAB Bratas — automobilių dalys, ardymas ir importas",
+  title: "UAB Bratas — naudotos automobilių dalys iš JK",
   description,
   alternates: { canonical: "/" },
   openGraph: {
-    title: "UAB Bratas — automobilių dalys, ardymas ir importas",
+    title: "UAB Bratas — naudotos automobilių dalys iš JK",
     description,
     locale: "lt_LT",
     type: "website",
