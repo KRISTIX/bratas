@@ -1,10 +1,10 @@
-export function AwardSeal() {
+export function AwardSeal({ label }: { label: string }) {
   return (
     <svg
       viewBox="0 0 220 220"
       className="h-40 w-40 sm:h-48 sm:w-48"
       role="img"
-      aria-label="TOP Įmonė 2026"
+      aria-label={label}
     >
       <defs>
         <linearGradient id="seal-gold" x1="0" y1="0" x2="1" y2="1">

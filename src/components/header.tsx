@@ -1,12 +1,106 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type MouseEvent, type PointerEvent, type FocusEvent } from "react";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
-import { catalogUrl, nav, phoneDisplay, phoneHref } from "@/lib/site";
+import { localeNames, locales, type Locale } from "@/lib/i18n";
+import { catalogUrl, phoneDisplay, phoneHref } from "@/lib/site";
 
-export function Header() {
+function localeHref(locale: Locale) {
+  const hash = window.location.hash;
+  return `/${locale}${hash}`;
+}
+
+function LanguageSwitcher({
+  current,
+  label,
+  onNavigate,
+}: {
+  current: Locale;
+  label: string;
+  onNavigate?: () => void;
+}) {
+  function syncHref(
+    event: PointerEvent<HTMLAnchorElement> | FocusEvent<HTMLAnchorElement>,
+  ) {
+    event.currentTarget.href = localeHref(event.currentTarget.lang as Locale);
+  }
+
+  function follow(event: MouseEvent<HTMLAnchorElement>) {
+    const href = localeHref(event.currentTarget.lang as Locale);
+    event.currentTarget.href = href;
+    onNavigate?.();
+    if (
+      event.defaultPrevented ||
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    ) {
+      return;
+    }
+    event.preventDefault();
+    window.location.assign(href);
+  }
+
+  return (
+    <nav aria-label={label}>
+      <ul className="flex items-center gap-2 text-sm font-semibold">
+        {locales.map((locale, index) => {
+          const active = locale === current;
+          return (
+            <li key={locale} className="flex items-center gap-2">
+              {index > 0 ? (
+                <span aria-hidden="true" className="text-ink/25">
+                  /
+                </span>
+              ) : null}
+              <a
+                href={`/${locale}`}
+                hrefLang={locale}
+                lang={locale}
+                aria-label={localeNames[locale]}
+                aria-current={active ? "page" : undefined}
+                className={
+                  active
+                    ? "text-ink"
+                    : "text-ink/45 transition-colors hover:text-ink"
+                }
+                onPointerDown={syncHref}
+                onFocus={syncHref}
+                onClick={follow}
+              >
+                {locale.toUpperCase()}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  );
+}
+
+export function Header({
+  lang,
+  nav,
+  menu,
+  close,
+  primaryNav,
+  mobileNav,
+  catalog,
+  language,
+}: {
+  lang: Locale;
+  nav: { href: string; label: string }[];
+  menu: string;
+  close: string;
+  primaryNav: string;
+  mobileNav: string;
+  catalog: string;
+  language: string;
+}) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -21,7 +115,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-white">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5">
-        <a href="#pradzia" className="shrink-0" onClick={() => setOpen(false)}>
+        <a href="#content" className="shrink-0" onClick={() => setOpen(false)}>
           <Image
             src="/brand/logo.png"
             alt="Bratas Autoparts"
@@ -32,7 +126,7 @@ export function Header() {
           />
         </a>
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Pagrindinis">
+        <nav className="hidden items-center gap-7 lg:flex" aria-label={primaryNav}>
           {nav.map((item) => (
             <a
               key={item.href}
@@ -45,12 +139,13 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-4 md:flex">
+          <LanguageSwitcher current={lang} label={language} />
           <a href={phoneHref} className="text-sm font-semibold">
             {phoneDisplay}
           </a>
           <Button asChild size="sm">
             <a href={catalogUrl} target="_blank" rel="noopener noreferrer">
-              Katalogas
+              {catalog}
             </a>
           </Button>
         </div>
@@ -62,7 +157,7 @@ export function Header() {
           aria-controls="mobile-nav"
           onClick={() => setOpen((value) => !value)}
         >
-          {open ? "Uždaryti" : "Meniu"}
+          {open ? close : menu}
         </button>
       </div>
 
@@ -70,9 +165,16 @@ export function Header() {
         <nav
           id="mobile-nav"
           className="border-t border-line bg-white px-5 py-4 lg:hidden"
-          aria-label="Mobilus"
+          aria-label={mobileNav}
         >
-          <ul className="flex flex-col">
+          <div className="md:hidden">
+            <LanguageSwitcher
+              current={lang}
+              label={language}
+              onNavigate={() => setOpen(false)}
+            />
+          </div>
+          <ul className="mt-2 flex flex-col">
             {nav.map((item) => (
               <li key={item.href}>
                 <a

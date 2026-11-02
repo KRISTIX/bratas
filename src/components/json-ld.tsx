@@ -1,13 +1,22 @@
+import type { Locale } from "@/lib/i18n";
 import { catalogUrl, getSiteUrl, phoneHref } from "@/lib/site";
 
-export function JsonLd() {
-  const url = getSiteUrl();
+export function JsonLd({
+  lang,
+  description,
+}: {
+  lang: Locale;
+  description: string;
+}) {
+  const url = `${getSiteUrl()}/${lang}`;
   const data = {
     "@context": "https://schema.org",
     "@type": "AutoPartsStore",
     name: "UAB Bratas",
     url,
-    image: `${url}/photos/hero-warehouse.jpg`,
+    description,
+    inLanguage: lang,
+    image: `${getSiteUrl()}/photos/hero-warehouse.jpg`,
     telephone: phoneHref.replace("tel:", ""),
     currenciesAccepted: "EUR",
     address: {
