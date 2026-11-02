@@ -10,44 +10,61 @@ import {
   DialogDescription,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { gallery, type Photo } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-export function Gallery() {
+type GalleryItem = {
+  src: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
+};
+
+export function Gallery({
+  items,
+  closeLabel,
+  previousLabel,
+  nextLabel,
+}: {
+  items: GalleryItem[];
+  closeLabel: string;
+  previousLabel: string;
+  nextLabel: string;
+}) {
   const [index, setIndex] = useState<number | null>(null);
-  const active: Photo | null = index === null ? null : gallery[index];
+  const active: GalleryItem | null = index === null ? null : items[index];
 
   useEffect(() => {
     if (index === null) return;
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "ArrowRight") {
         setIndex((current) =>
-          current === null ? current : (current + 1) % gallery.length,
+          current === null ? current : (current + 1) % items.length,
         );
       }
       if (event.key === "ArrowLeft") {
         setIndex((current) =>
           current === null
             ? current
-            : (current - 1 + gallery.length) % gallery.length,
+            : (current - 1 + items.length) % items.length,
         );
       }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [index]);
+  }, [index, items.length]);
 
   function step(direction: -1 | 1) {
     setIndex((current) => {
       if (current === null) return current;
-      return (current + direction + gallery.length) % gallery.length;
+      return (current + direction + items.length) % items.length;
     });
   }
 
   return (
     <>
       <ul className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-4">
-        {gallery.map((photo, photoIndex) => (
+        {items.map((photo, photoIndex) => (
           <li key={photo.src} className={cn(photoIndex === 0 && "col-span-2")}>
             <button
               type="button"
@@ -98,14 +115,14 @@ export function Gallery() {
                   className="max-h-[72vh] w-full object-contain"
                 />
                 <DialogClose className="absolute top-3 right-3 bg-white px-3 py-1.5 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand">
-                  Uždaryti
+                  {closeLabel}
                 </DialogClose>
               </div>
               <div className="flex flex-wrap items-center justify-between gap-4 px-4 py-3">
                 <div>
                   <DialogTitle>{active.caption}</DialogTitle>
                   <DialogDescription className="mt-0.5">
-                    {index + 1} / {gallery.length}
+                    {index + 1} / {items.length}
                   </DialogDescription>
                 </div>
                 <div className="flex gap-2">
@@ -114,14 +131,14 @@ export function Gallery() {
                     className="h-10 border border-line px-3 text-sm font-semibold hover:bg-paper"
                     onClick={() => step(-1)}
                   >
-                    Ankstesnė
+                    {previousLabel}
                   </button>
                   <button
                     type="button"
                     className="h-10 border border-line px-3 text-sm font-semibold hover:bg-paper"
                     onClick={() => step(1)}
                   >
-                    Kita
+                    {nextLabel}
                   </button>
                 </div>
               </div>
