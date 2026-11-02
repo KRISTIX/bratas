@@ -103,7 +103,7 @@ const en: Dictionary = {
   meta: {
     title: "UAB Bratas — used car parts from the UK",
     description:
-      "UAB Bratas sells used car parts from the United Kingdom. The offer is parts, not complete cars. Tens of thousands of parts in the RRR.lt catalogue. Šlamai, Pasvalys district.",
+      "UAB Bratas sells used car parts sourced in the United Kingdom. The offer is parts, not complete cars. Tens of thousands of parts in the catalogue, packed and shipped to order.",
     imageAlt:
       "UAB Bratas parts warehouse: headlights and bumpers on the shelves",
   },
@@ -123,7 +123,7 @@ const en: Dictionary = {
   hero: {
     eyebrow: "AUTOPARTS",
     title: "Used car parts from the United Kingdom.",
-    lead: "UAB Bratas sells used parts brought in from the UK — parts, not complete cars. Tens of thousands of them are in the RRR.lt catalogue, and the range keeps being filled. On that marketplace we are a top seller: stock held and shipped like a serious parts house.",
+    lead: "UAB Bratas supplies used parts sourced in the UK — parts, not complete cars. Tens of thousands of them are in the RRR.lt catalogue, and the range keeps being filled. We are a top seller on that list: stock held and orders shipped like a serious parts house.",
     catalog: "Open the catalogue",
     call: "Call",
     imageAlt:
@@ -133,23 +133,23 @@ const en: Dictionary = {
   stats: {
     catalogLabel: "CATALOGUE",
     catalogValue: "Tens of thousands",
-    catalogNote: "of parts on RRR.lt",
+    catalogNote: "of parts ready to ship",
     hoursLabel: "HOURS",
     hoursValue: "Mon–Fri",
     hoursNote: "07:00–16:00, closed at the weekend",
     sellerLabel: "RRR.LT",
     sellerValue: "Top seller",
-    sellerNote: "on the platform",
+    sellerNote: "where buyers order",
   },
   origin: {
     eyebrow: "FROM THE UK",
     title: "Parts from the United Kingdom",
-    lead: "One line of work, carried at that scale: parts in from the UK, held in our warehouse, sold through RRR.lt.",
+    lead: "One line of work, carried at that scale: parts in from the UK, held in our warehouse, and shipped to order through RRR.lt.",
   },
   services: [
     {
       title: "We bring them in from the UK",
-      text: "We buy spare parts in the United Kingdom and bring them over. What travels to Lithuania is parts, not cars.",
+      text: "We buy spare parts in the United Kingdom and bring them into our warehouse. What we stock and ship is parts, not cars.",
       alt: "Warehouse shelves of car parts, with headlights and bumpers",
     },
     {
@@ -188,8 +188,8 @@ const en: Dictionary = {
     title: "TOP Įmonė 2026",
     kicker: "That is the outside measure of how this house is run.",
     quote:
-      "On Rekvizitai.lt data and economic criteria, UAB Bratas is included in the TOP Įmonė 2026 list. It is one of only 6% of the most reliable and financially stable companies in Lithuania.",
-    body: "2026 is the tenth anniversary of this distinction. Over that decade, TOP Įmonė has become one of the best-known marks of business trust in Lithuania. The seal reads “10 years of trust.”",
+      "On Rekvizitai.lt data and economic criteria, UAB Bratas is included in the TOP Įmonė 2026 list. It is one of only 6% of the most reliable and financially stable companies in Lithuania, where the business is based.",
+    body: "2026 is the tenth anniversary of this distinction. Over that decade it has become a recognised mark of how a company is run. The seal reads “10 years of trust.”",
     seal: "TOP Įmonė 2026",
   },
   gallery: {
@@ -263,7 +263,7 @@ const fr: Dictionary = {
   meta: {
     title: "UAB Bratas — pièces auto d'occasion du Royaume-Uni",
     description:
-      "UAB Bratas vend des pièces auto d'occasion venues du Royaume-Uni. L'offre porte sur des pièces, pas sur des véhicules complets. Des dizaines de milliers de pièces au catalogue RRR.lt. Šlamai, district de Pasvalys.",
+      "UAB Bratas vend des pièces auto d'occasion sourcées au Royaume-Uni. L'offre porte sur des pièces, pas sur des véhicules complets. Des dizaines de milliers de pièces au catalogue, emballées et expédiées à la commande.",
     imageAlt:
       "Entrepôt de pièces UAB Bratas : phares et pare-chocs sur les rayonnages",
   },
@@ -283,7 +283,7 @@ const fr: Dictionary = {
   hero: {
     eyebrow: "AUTOPARTS",
     title: "Pièces auto d'occasion du Royaume-Uni.",
-    lead: "UAB Bratas vend des pièces d'occasion amenées du Royaume-Uni — des pièces, pas des véhicules complets. Des dizaines de milliers d'entre elles figurent au catalogue RRR.lt, et l'assortiment continue de se remplir. Sur cette place de marché, nous sommes un top vendeur : le stock est tenu et expédié comme dans une maison de pièces sérieuse.",
+    lead: "UAB Bratas fournit des pièces d'occasion sourcées au Royaume-Uni — des pièces, pas des véhicules complets. Des dizaines de milliers d'entre elles figurent au catalogue RRR.lt, et l'assortiment continue de se remplir. Nous y sommes un top vendeur : le stock est tenu, et les commandes expédiées, comme dans une maison de pièces sérieuse.",
     catalog: "Ouvrir le catalogue",
     call: "Appeler",
     imageAlt:
@@ -293,23 +293,23 @@ const fr: Dictionary = {
   stats: {
     catalogLabel: "CATALOGUE",
     catalogValue: "Des dizaines de milliers",
-    catalogNote: "de pièces sur RRR.lt",
+    catalogNote: "de pièces prêtes à expédier",
     hoursLabel: "HORAIRES",
     hoursValue: "Lun–Ven",
     hoursNote: "07:00–16:00, fermé le week-end",
     sellerLabel: "RRR.LT",
     sellerValue: "Top vendeur",
-    sellerNote: "sur la plateforme",
+    sellerNote: "là où les acheteurs commandent",
   },
   origin: {
     eyebrow: "DU ROYAUME-UNI",
     title: "Pièces du Royaume-Uni",
-    lead: "Une seule activité, menée à cette échelle : des pièces venues du Royaume-Uni, tenues dans notre entrepôt, vendues via RRR.lt.",
+    lead: "Une seule activité, menée à cette échelle : des pièces venues du Royaume-Uni, tenues dans notre entrepôt et expédiées à la commande via RRR.lt.",
   },
   services: [
     {
       title: "Nous les amenons du Royaume-Uni",
-      text: "Nous achetons les pièces de rechange au Royaume-Uni et les acheminons. Ce qui arrive en Lituanie, ce sont des pièces, pas des voitures.",
+      text: "Nous achetons les pièces de rechange au Royaume-Uni et les amenons dans notre entrepôt. Ce que nous stockons et expédions, ce sont des pièces, pas des voitures.",
       alt: "Rayonnages d'un entrepôt de pièces auto, avec phares et pare-chocs",
     },
     {
@@ -348,8 +348,8 @@ const fr: Dictionary = {
     title: "TOP Įmonė 2026",
     kicker: "C'est la mesure extérieure de la façon dont cette maison est tenue.",
     quote:
-      "D'après les données de Rekvizitai.lt et des critères économiques, UAB Bratas figure sur la liste TOP Įmonė 2026. C'est l'une des 6 % d'entreprises les plus fiables et les plus stables financièrement en Lituanie.",
-    body: "2026 est le dixième anniversaire de cette distinction. En dix ans, TOP Įmonė est devenu l'un des signes de confiance les mieux reconnus des affaires en Lituanie. Le sceau porte « 10 metų pasitikėjimo » : dix ans de confiance.",
+      "D'après les données de Rekvizitai.lt et des critères économiques, UAB Bratas figure sur la liste TOP Įmonė 2026. C'est l'une des 6 % d'entreprises les plus fiables et les plus stables financièrement en Lituanie, où la société est établie.",
+    body: "2026 est le dixième anniversaire de cette distinction. En dix ans, elle est devenue un signe reconnu de la façon dont une société est tenue. Le sceau porte « 10 metų pasitikėjimo » : dix ans de confiance.",
     seal: "TOP Įmonė 2026",
   },
   gallery: {
@@ -423,7 +423,7 @@ const lt: Dictionary = {
   meta: {
     title: "UAB Bratas — naudotos automobilių dalys iš JK",
     description:
-      "UAB „Bratas“ parduoda naudotas automobilių dalis iš Jungtinės Karalystės. Pasiūla — dalys, ne pilni automobiliai. Dešimtys tūkstančių dalių RRR.lt kataloge. Šlamų k., Pasvalio r.",
+      "UAB „Bratas“ parduoda naudotas automobilių dalis iš Jungtinės Karalystės. Pasiūla — dalys, ne pilni automobiliai. Dešimtys tūkstančių dalių kataloge, supakuojamų ir išsiunčiamų pagal užsakymą.",
     imageAlt:
       "UAB Bratas automobilių dalių sandėlis: žibintai ir bamperiai lentynose",
   },
@@ -443,7 +443,7 @@ const lt: Dictionary = {
   hero: {
     eyebrow: "AUTOPARTS",
     title: "Naudotos automobilių dalys iš Jungtinės Karalystės.",
-    lead: "UAB „Bratas“ parduoda atsargines dalis, atvežtas iš JK. Pasiūla — dalys, ne pilni automobiliai. RRR.lt kataloge — dešimtys tūkstančių pozicijų, asortimentas nuolat pildomas. Šioje platformoje esame top pardavėjas: sandėlis ir siuntimas tvarkomi kaip rimtoje dalių įmonėje.",
+    lead: "UAB „Bratas“ tiekia atsargines dalis iš Jungtinės Karalystės. Pasiūla — dalys, ne pilni automobiliai. RRR.lt kataloge — dešimtys tūkstančių pozicijų, asortimentas nuolat pildomas. Ten esame top pardavėjas: sandėlis ir siuntos tvarkomi kaip rimtoje dalių įmonėje.",
     catalog: "Atidaryti katalogą",
     call: "Skambinti",
     imageAlt:
@@ -453,23 +453,23 @@ const lt: Dictionary = {
   stats: {
     catalogLabel: "KATALOGAS",
     catalogValue: "Dešimtys tūkstančių",
-    catalogNote: "dalių RRR.lt",
+    catalogNote: "dalių, paruoštų siųsti",
     hoursLabel: "DARBO LAIKAS",
     hoursValue: "I–V",
     hoursNote: "07:00–16:00, savaitgalį nedirbame",
     sellerLabel: "RRR.LT",
     sellerValue: "Top pardavėjas",
-    sellerNote: "platformoje",
+    sellerNote: "ten, kur perkama",
   },
   origin: {
     eyebrow: "IŠ JK",
     title: "Dalys iš Jungtinės Karalystės",
-    lead: "Viena veikla, vykdoma tokiu mastu: dalys atkeliauja iš JK, laikomos mūsų sandėlyje ir parduodamos per RRR.lt.",
+    lead: "Viena veikla, vykdoma tokiu mastu: dalys atkeliauja iš JK, laikomos mūsų sandėlyje ir išsiunčiamos pagal užsakymą per RRR.lt.",
   },
   services: [
     {
       title: "Atvežame iš JK",
-      text: "Atsargines dalis perkame ir atsivežame iš Jungtinės Karalystės. Į Lietuvą keliauja detalės, ne automobiliai.",
+      text: "Atsargines dalis perkame Jungtinėje Karalystėje ir atvežame į savo sandėlį. Laikome ir siunčiame detales, ne automobilius.",
       alt: "Automobilių dalių sandėlio lentynos su žibintais ir bamperiais",
     },
     {
@@ -508,8 +508,8 @@ const lt: Dictionary = {
     title: "TOP Įmonė 2026",
     kicker: "Tai išorinis matas, kaip ši įmonė tvarkoma.",
     quote:
-      "Remiantis Rekvizitai.lt duomenimis ir ekonominiais kriterijais, UAB „Bratas“ įtraukta į „TOP Įmonė 2026“ sąrašą. Tai viena iš vos 6 % patikimiausių ir finansiškai stabiliausių įmonių Lietuvoje.",
-    body: "2026-ieji šiam įvertinimui — dešimties metų jubiliejus. Per dešimtmetį „TOP Įmonė“ tapo vienu geriausiai atpažįstamų verslo pasitikėjimo ženklų Lietuvoje. Ženkle — „10 metų pasitikėjimo“.",
+      "Remiantis Rekvizitai.lt duomenimis ir ekonominiais kriterijais, UAB „Bratas“ įtraukta į „TOP Įmonė 2026“ sąrašą. Tai viena iš vos 6 % patikimiausių ir finansiškai stabiliausių įmonių Lietuvoje, kur bendrovė įsikūrusi.",
+    body: "2026-ieji šiam įvertinimui — dešimties metų jubiliejus. Per dešimtmetį tai tapo atpažįstamu ženklu, kaip vedama įmonė. Ženkle — „10 metų pasitikėjimo“.",
     seal: "TOP Įmonė 2026",
   },
   gallery: {

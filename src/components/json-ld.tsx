@@ -36,7 +36,7 @@ export function JsonLd({
         closes: "16:00",
       },
     ],
-    areaServed: "LT",
+    areaServed: "Europe",
     sameAs: [catalogUrl],
   };
 
