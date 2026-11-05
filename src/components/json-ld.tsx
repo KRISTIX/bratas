@@ -16,7 +16,7 @@ export function JsonLd({
     url,
     description,
     inLanguage: lang,
-    image: `${getSiteUrl()}/photos/hero-warehouse.jpg`,
+    image: `${getSiteUrl()}/photos/bumper-aisle.jpg`,
     telephone: phoneHref.replace("tel:", ""),
     currenciesAccepted: "EUR",
     address: {

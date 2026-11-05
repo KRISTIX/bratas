@@ -9,9 +9,9 @@ export const osmUrl =
   "https://www.openstreetmap.org/?mlat=56.03357&mlon=24.37966#map=14/56.03357/24.37966";
 
 export const serviceImages = [
-  "/photos/hero-warehouse.jpg",
-  "/photos/headlights.jpg",
-  "/photos/packing.jpg",
+  "/photos/forklift-arrival.jpg",
+  "/photos/lights-aisle.jpg",
+  "/photos/packing-bench.jpg",
 ] as const;
 
 export function getSiteUrl() {
@@ -23,28 +23,15 @@ export function getSiteUrl() {
 }
 
 export const galleryPhotos = [
-  { id: "packing", src: "/photos/packing.jpg", width: 1152, height: 864 },
-  { id: "bumper", src: "/photos/bumper-detail.jpg", width: 864, height: 1152 },
-  { id: "wheels", src: "/photos/wheels.jpg", width: 1024, height: 1024 },
-  {
-    id: "interior",
-    src: "/photos/interior-parts.jpg",
-    width: 1152,
-    height: 864,
-  },
-  {
-    id: "suspension",
-    src: "/photos/suspension.jpg",
-    width: 1152,
-    height: 864,
-  },
-  { id: "mirrors", src: "/photos/mirrors.jpg", width: 1152, height: 864 },
-  {
-    id: "electronics",
-    src: "/photos/electronics.jpg",
-    width: 1152,
-    height: 864,
-  },
+  { id: "lights", src: "/photos/rear-lights.jpg" },
+  { id: "wheels", src: "/photos/wheels-tyres.jpg" },
+  { id: "mechanical", src: "/photos/mechanical-parts.jpg" },
+  { id: "crates", src: "/photos/parts-crates.jpg" },
+  { id: "boxes", src: "/photos/bumper-boxes.jpg" },
+  { id: "forklift", src: "/photos/forklift-engine.jpg" },
+  { id: "engineContainer", src: "/photos/engine-container.jpg" },
+  { id: "yard", src: "/photos/yard.jpg" },
+  { id: "yardContainer", src: "/photos/yard-container.jpg" },
 ] as const;
 
 export type GalleryId = (typeof galleryPhotos)[number]["id"];

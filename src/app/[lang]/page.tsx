@@ -80,7 +80,7 @@ export default async function Home({
             <figure>
               <div className="relative aspect-[16/10] overflow-hidden bg-paper">
                 <Image
-                  src="/photos/hero-warehouse.jpg"
+                  src="/photos/bumper-aisle.jpg"
                   alt={dict.hero.imageAlt}
                   fill
                   preload
@@ -198,7 +198,7 @@ export default async function Home({
               <figure>
                 <div className="relative aspect-[4/3] overflow-hidden bg-paper">
                   <Image
-                    src="/photos/body-panels.jpg"
+                    src="/photos/bumper-racks.jpg"
                     alt={dict.parts.bodyAlt}
                     fill
                     sizes="(min-width: 1024px) 320px, 100vw"
@@ -212,7 +212,7 @@ export default async function Home({
               <figure>
                 <div className="relative aspect-[4/3] overflow-hidden bg-paper">
                   <Image
-                    src="/photos/engines.jpg"
+                    src="/photos/engine-room.jpg"
                     alt={dict.parts.engineAlt}
                     fill
                     sizes="(min-width: 1024px) 320px, 100vw"
@@ -257,12 +257,7 @@ export default async function Home({
               </h2>
               <p className="mt-4 text-lg text-pretty text-muted">{dict.gallery.lead}</p>
             </div>
-            <Gallery
-              items={photos}
-              closeLabel={dict.gallery.close}
-              previousLabel={dict.gallery.previous}
-              nextLabel={dict.gallery.next}
-            />
+            <Gallery items={photos} />
           </div>
         </section>
         <section id="contact" className="scroll-mt-24 border-t border-line">
