@@ -11,7 +11,7 @@ npm install
 npm run dev -- --port 3847
 ```
 
-Photographs are also stored as text in `media/` so a fresh checkout can rebuild `public/photos` before the dev server or production build starts.
+Warehouse photographs live in `public/photos`. The logo is restored from `media/remote-photos.json` before the dev server or production build starts.
 
 Open [http://127.0.0.1:3847](http://127.0.0.1:3847).
 

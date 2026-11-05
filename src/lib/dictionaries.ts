@@ -71,9 +71,6 @@ export type Dictionary = {
     eyebrow: string;
     title: string;
     lead: string;
-    close: string;
-    previous: string;
-    next: string;
     photos: Record<GalleryId, { alt: string; caption: string }>;
   };
   contact: {
@@ -105,7 +102,7 @@ const en: Dictionary = {
     description:
       "UAB Bratas sells used car parts sourced in the United Kingdom. The offer is parts, not complete cars. Tens of thousands of parts in the catalogue, packed and shipped to order.",
     imageAlt:
-      "UAB Bratas parts warehouse: headlights and bumpers on the shelves",
+      "UAB Bratas parts warehouse: an aisle of bumpers on wooden shelves",
   },
   skip: "Skip to content",
   language: "Language",
@@ -127,8 +124,8 @@ const en: Dictionary = {
     catalog: "Open the catalogue",
     call: "Call",
     imageAlt:
-      "Warehouse aisle of car parts: headlights and bumpers on metal shelves",
-    caption: "Parts warehouse",
+      "Aisle of tagged bumpers on wooden shelves in the Bratas warehouse",
+    caption: "Bumpers in the warehouse",
   },
   stats: {
     catalogLabel: "CATALOGUE",
@@ -150,17 +147,17 @@ const en: Dictionary = {
     {
       title: "We bring them in from the UK",
       text: "We buy spare parts in the United Kingdom and bring them into our warehouse. What we stock and ship is parts, not cars.",
-      alt: "Warehouse shelves of car parts, with headlights and bumpers",
+      alt: "A forklift carrying an engine into the warehouse",
     },
     {
       title: "We keep them in the warehouse",
       text: "The largest share of the stock is BMW, Mercedes-Benz, Audi, Ford and Volvo. Most often sought: front and rear lights, power mirrors, handle sets and fuse boxes.",
-      alt: "Shelves of used front and rear car lights",
+      alt: "Aisle of headlights, mirrors and rear lights on wooden shelves",
     },
     {
       title: "We sell and ship",
       text: "The full range is on RRR.lt. You choose the part in the catalogue, and we pack it and ship it.",
-      alt: "A headlight, packing tape and a box on the workbench",
+      alt: "Packing bench with a computer, a scale and shipping boxes",
     },
   ],
   parts: {
@@ -169,10 +166,10 @@ const en: Dictionary = {
     lead: "The whole warehouse behind one link. The range keeps being filled, so the current list on RRR.lt is the one to check before you order.",
     brands: "Most parts: BMW, Mercedes-Benz, Audi, Ford, Volvo.",
     catalog: "RRR.lt shop",
-    bodyAlt: "Used doors, bonnets and bumpers on warehouse racks",
+    bodyAlt: "Rows of black and silver bumpers on wooden warehouse racks",
     bodyCaption: "Body parts",
-    engineAlt: "Used engines and gearboxes on wooden pallets",
-    engineCaption: "Engines and gearboxes",
+    engineAlt: "Used engines on pallets and orange warehouse racks",
+    engineCaption: "Engines",
     categories: [
       { name: "Lights", note: "front and rear" },
       { name: "Body", note: "doors, bumpers, bonnets" },
@@ -194,39 +191,44 @@ const en: Dictionary = {
   },
   gallery: {
     eyebrow: "GALLERY",
-    title: "Warehouse",
-    lead: "Parts we prepare and ship. Click a photo to enlarge it.",
-    close: "Close",
-    previous: "Previous",
-    next: "Next",
+    title: "The warehouse",
+    lead: "The warehouse and the yard, as they are.",
     photos: {
-      packing: {
-        alt: "A headlight, packing tape and a cardboard box on a warehouse bench",
-        caption: "Packing for shipment",
-      },
-      bumper: {
-        alt: "A used dark bumper on a stand in the parts warehouse",
-        caption: "Bumper",
+      lights: {
+        alt: "Wooden shelves filled with red rear lights",
+        caption: "Rear lights",
       },
       wheels: {
-        alt: "A pile of used alloy wheels and a brake disc on concrete",
-        caption: "Wheels and discs",
+        alt: "Alloy wheels, tyres and rear lights stored under a canopy",
+        caption: "Wheels and tyres",
       },
-      interior: {
-        alt: "Two used car seats and a steering wheel on a bench",
-        caption: "Interior",
+      mechanical: {
+        alt: "Shelves of engines, turbos and other mechanical parts",
+        caption: "Mechanical parts",
       },
-      suspension: {
-        alt: "Used control arms, a spring and dampers on a metal table",
-        caption: "Suspension",
+      crates: {
+        alt: "Black crates of small parts on wooden racks",
+        caption: "Parts in crates",
       },
-      mirrors: {
-        alt: "Used wing mirrors in rows on warehouse shelves",
-        caption: "Mirrors",
+      boxes: {
+        alt: "Two stacked cardboard bumper boxes in the Bratas warehouse",
+        caption: "Bumper boxes",
       },
-      electronics: {
-        alt: "Fuse boxes and control modules in cardboard boxes",
-        caption: "Electronics",
+      forklift: {
+        alt: "Forklift carrying an engine across the yard",
+        caption: "Moving an engine",
+      },
+      engineContainer: {
+        alt: "Engines stacked inside an open shipping container",
+        caption: "Engines in the container",
+      },
+      yard: {
+        alt: "Forklift in the yard between the warehouse buildings",
+        caption: "The yard",
+      },
+      yardContainer: {
+        alt: "Open container of engines beside the warehouse",
+        caption: "The yard and the container",
       },
     },
   },
@@ -265,7 +267,7 @@ const fr: Dictionary = {
     description:
       "UAB Bratas vend des pièces auto d'occasion sourcées au Royaume-Uni. L'offre porte sur des pièces, pas sur des véhicules complets. Des dizaines de milliers de pièces au catalogue, emballées et expédiées à la commande.",
     imageAlt:
-      "Entrepôt de pièces UAB Bratas : phares et pare-chocs sur les rayonnages",
+      "Entrepôt de pièces UAB Bratas : une allée de pare-chocs sur des étagères en bois",
   },
   skip: "Aller au contenu",
   language: "Langue",
@@ -287,8 +289,8 @@ const fr: Dictionary = {
     catalog: "Ouvrir le catalogue",
     call: "Appeler",
     imageAlt:
-      "Allée d'un entrepôt de pièces auto : phares et pare-chocs sur des rayonnages métalliques",
-    caption: "Entrepôt de pièces",
+      "Allée de pare-chocs étiquetés sur des étagères en bois dans l'entrepôt Bratas",
+    caption: "Pare-chocs dans l'entrepôt",
   },
   stats: {
     catalogLabel: "CATALOGUE",
@@ -310,17 +312,17 @@ const fr: Dictionary = {
     {
       title: "Nous les amenons du Royaume-Uni",
       text: "Nous achetons les pièces de rechange au Royaume-Uni et les amenons dans notre entrepôt. Ce que nous stockons et expédions, ce sont des pièces, pas des voitures.",
-      alt: "Rayonnages d'un entrepôt de pièces auto, avec phares et pare-chocs",
+      alt: "Un chariot élévateur amenant un moteur dans l'entrepôt",
     },
     {
       title: "Nous les tenons en entrepôt",
       text: "La plus grande part du stock : BMW, Mercedes-Benz, Audi, Ford et Volvo. Les demandes les plus fréquentes : phares avant et arrière, rétroviseurs électriques, jeux de poignées et boîtiers de fusibles.",
-      alt: "Rayonnages de phares avant et arrière d'occasion",
+      alt: "Allée de phares, rétroviseurs et feux arrière sur des étagères en bois",
     },
     {
       title: "Nous vendons et expédions",
       text: "Tout l'assortiment est sur RRR.lt. Vous choisissez la pièce dans le catalogue, nous l'emballons et l'expédions.",
-      alt: "Phare, ruban d'emballage et carton sur l'établi",
+      alt: "Établi d'emballage avec un ordinateur, une balance et des cartons d'expédition",
     },
   ],
   parts: {
@@ -329,10 +331,10 @@ const fr: Dictionary = {
     lead: "Tout l'entrepôt derrière un seul lien. L'assortiment se remplit, donc la liste à jour sur RRR.lt est celle à consulter avant de commander.",
     brands: "Le plus de pièces : BMW, Mercedes-Benz, Audi, Ford, Volvo.",
     catalog: "Boutique RRR.lt",
-    bodyAlt: "Portes, capots et pare-chocs d'occasion sur les racks de l'entrepôt",
+    bodyAlt: "Rangées de pare-chocs noirs et argentés sur des racks en bois",
     bodyCaption: "Pièces de carrosserie",
-    engineAlt: "Moteurs et boîtes de vitesses d'occasion sur palettes en bois",
-    engineCaption: "Moteurs et boîtes",
+    engineAlt: "Moteurs d'occasion sur palettes et racks orange de l'entrepôt",
+    engineCaption: "Moteurs",
     categories: [
       { name: "Phares", note: "avant et arrière" },
       { name: "Carrosserie", note: "portes, pare-chocs, capots" },
@@ -354,39 +356,44 @@ const fr: Dictionary = {
   },
   gallery: {
     eyebrow: "GALERIE",
-    title: "Entrepôt",
-    lead: "Les pièces que nous préparons et expédions. Cliquez sur une photo pour l'agrandir.",
-    close: "Fermer",
-    previous: "Précédente",
-    next: "Suivante",
+    title: "L'entrepôt",
+    lead: "L'entrepôt et la cour, tels qu'ils sont.",
     photos: {
-      packing: {
-        alt: "Phare, ruban d'emballage et carton sur un établi de l'entrepôt",
-        caption: "Emballage pour l'expédition",
-      },
-      bumper: {
-        alt: "Pare-chocs sombre d'occasion sur un support dans l'entrepôt",
-        caption: "Pare-chocs",
+      lights: {
+        alt: "Rayonnages en bois remplis de feux arrière rouges",
+        caption: "Feux arrière",
       },
       wheels: {
-        alt: "Tas de jantes en alliage d'occasion et disque de frein sur le béton",
-        caption: "Roues et jantes",
+        alt: "Jantes, pneus et feux arrière entreposés sous un auvent",
+        caption: "Roues et pneus",
       },
-      interior: {
-        alt: "Deux sièges d'occasion et un volant sur un établi",
-        caption: "Habitacle",
+      mechanical: {
+        alt: "Rayonnages de moteurs, turbos et autres pièces mécaniques",
+        caption: "Pièces mécaniques",
       },
-      suspension: {
-        alt: "Bras, ressort et amortisseurs d'occasion sur une table métallique",
-        caption: "Suspension",
+      crates: {
+        alt: "Caisses noires de petites pièces sur des racks en bois",
+        caption: "Pièces en caisses",
       },
-      mirrors: {
-        alt: "Rétroviseurs d'occasion en rangées sur les rayonnages",
-        caption: "Rétroviseurs",
+      boxes: {
+        alt: "Deux cartons de pare-chocs empilés dans l'entrepôt Bratas",
+        caption: "Cartons de pare-chocs",
       },
-      electronics: {
-        alt: "Boîtiers de fusibles et modules de commande dans des cartons",
-        caption: "Électronique",
+      forklift: {
+        alt: "Chariot élévateur transportant un moteur à travers la cour",
+        caption: "Un moteur en mouvement",
+      },
+      engineContainer: {
+        alt: "Moteurs empilés dans un conteneur maritime ouvert",
+        caption: "Moteurs dans le conteneur",
+      },
+      yard: {
+        alt: "Chariot élévateur dans la cour, entre les bâtiments de l'entrepôt",
+        caption: "La cour",
+      },
+      yardContainer: {
+        alt: "Conteneur ouvert de moteurs à côté de l'entrepôt",
+        caption: "La cour et le conteneur",
       },
     },
   },
@@ -425,7 +432,7 @@ const lt: Dictionary = {
     description:
       "UAB „Bratas“ parduoda naudotas automobilių dalis iš Jungtinės Karalystės. Pasiūla — dalys, ne pilni automobiliai. Dešimtys tūkstančių dalių kataloge, supakuojamų ir išsiunčiamų pagal užsakymą.",
     imageAlt:
-      "UAB Bratas automobilių dalių sandėlis: žibintai ir bamperiai lentynose",
+      "UAB Bratas dalių sandėlis: bamperių praėjimas ant medinių lentynų",
   },
   skip: "Pereiti prie turinio",
   language: "Kalba",
@@ -447,8 +454,8 @@ const lt: Dictionary = {
     catalog: "Atidaryti katalogą",
     call: "Skambinti",
     imageAlt:
-      "Automobilių dalių sandėlio praėjimas: žibintai ir bamperiai metalinėse lentynose",
-    caption: "Dalių sandėlis",
+      "Pažymėtų bamperių praėjimas ant medinių lentynų Brato sandėlyje",
+    caption: "Bamperiai sandėlyje",
   },
   stats: {
     catalogLabel: "KATALOGAS",
@@ -470,17 +477,17 @@ const lt: Dictionary = {
     {
       title: "Atvežame iš JK",
       text: "Atsargines dalis perkame Jungtinėje Karalystėje ir atvežame į savo sandėlį. Laikome ir siunčiame detales, ne automobilius.",
-      alt: "Automobilių dalių sandėlio lentynos su žibintais ir bamperiais",
+      alt: "Krautuvas veža variklį į sandėlį",
     },
     {
       title: "Laikome sandėlyje",
       text: "Didžiausia pasiūla — BMW, Mercedes-Benz, Audi, Ford ir Volvo. Dažniausiai ieškomi priekiniai ir galiniai žibintai, elektra valdomi veidrodėliai, rankenėlių komplektai ir saugiklių blokai.",
-      alt: "Lentynos su naudotais priekiniais ir galiniais automobilio žibintais",
+      alt: "Priekinių žibintų, veidrodėlių ir galinių žibintų praėjimas ant medinių lentynų",
     },
     {
       title: "Parduodame ir siunčiame",
       text: "Visą asortimentą rasite RRR.lt. Dalį išsirenkate kataloge, o mes ją supakuojame ir išsiunčiame.",
-      alt: "Žibintas, pakavimo juosta ir dėžė ant darbastalio",
+      alt: "Pakavimo stalas su kompiuteriu, svarstyklėmis ir siuntų dėžėmis",
     },
   ],
   parts: {
@@ -489,10 +496,10 @@ const lt: Dictionary = {
     lead: "Visas sandėlis vienoje nuorodoje. Asortimentas pildomas, todėl prieš užsakant verta pažiūrėti aktualų sąrašą RRR.lt.",
     brands: "Daugiausia dalių: BMW, Mercedes-Benz, Audi, Ford, Volvo.",
     catalog: "RRR.lt parduotuvė",
-    bodyAlt: "Naudotos durelės, gaubtai ir bamperiai ant sandėlio stelažų",
+    bodyAlt: "Juodų ir sidabrinių bamperių eilės ant medinių sandėlio stelažų",
     bodyCaption: "Kėbulo dalys",
-    engineAlt: "Naudoti varikliai ir pavarų dėžės ant medinių palečių",
-    engineCaption: "Varikliai ir dėžės",
+    engineAlt: "Naudoti varikliai ant palečių ir oranžinių sandėlio stelažų",
+    engineCaption: "Varikliai",
     categories: [
       { name: "Žibintai", note: "priekiniai ir galiniai" },
       { name: "Kėbulas", note: "durys, bamperiai, gaubtai" },
@@ -515,38 +522,43 @@ const lt: Dictionary = {
   gallery: {
     eyebrow: "GALERIJA",
     title: "Sandėlis",
-    lead: "Dalys, kurias paruošiame ir išsiunčiame. Paspauskite nuotrauką, kad padidintumėte.",
-    close: "Uždaryti",
-    previous: "Ankstesnė",
-    next: "Kita",
+    lead: "Sandėlis ir kiemas, tokie, kokie yra.",
     photos: {
-      packing: {
-        alt: "Žibintas, pakavimo juosta ir kartoninė dėžė ant darbastalio sandėlyje",
-        caption: "Pakavimas siuntimui",
-      },
-      bumper: {
-        alt: "Naudotas tamsus bamperis ant stovo dalių sandėlyje",
-        caption: "Bamperis",
+      lights: {
+        alt: "Medinės lentynos, pilnos raudonų galinių žibintų",
+        caption: "Galiniai žibintai",
       },
       wheels: {
-        alt: "Naudotų lietų ratlankių krūva ir stabdžių diskas ant betono",
-        caption: "Ratai ir diskai",
+        alt: "Ratlankiai, padangos ir galiniai žibintai po stogine",
+        caption: "Ratai ir padangos",
       },
-      interior: {
-        alt: "Dvi naudotos automobilio sėdynės ir vairas ant darbastalio",
-        caption: "Salonas",
+      mechanical: {
+        alt: "Lentynos su varikliais, turbinomis ir kitomis mechaninėmis dalimis",
+        caption: "Mechaninės dalys",
       },
-      suspension: {
-        alt: "Naudotos svirtys, spyruoklė ir amortizatoriai ant metalinio stalo",
-        caption: "Pakaba",
+      crates: {
+        alt: "Juodos dėžės su smulkiomis dalimis ant medinių stelažų",
+        caption: "Dalys dėžėse",
       },
-      mirrors: {
-        alt: "Naudoti šoniniai veidrodėliai eilėmis ant sandėlio lentynų",
-        caption: "Veidrodėliai",
+      boxes: {
+        alt: "Dvi sukrautos bamperių dėžės Brato sandėlyje",
+        caption: "Bamperių dėžės",
       },
-      electronics: {
-        alt: "Saugiklių blokai ir valdymo moduliai kartoninėse dėžutėse",
-        caption: "Elektronika",
+      forklift: {
+        alt: "Krautuvas veža variklį per kiemą",
+        caption: "Vežamas variklis",
+      },
+      engineContainer: {
+        alt: "Varikliai sukrauti atvirame jūriniame konteineryje",
+        caption: "Varikliai konteineryje",
+      },
+      yard: {
+        alt: "Krautuvas kieme tarp sandėlio pastatų",
+        caption: "Kiemas",
+      },
+      yardContainer: {
+        alt: "Atviras konteineris su varikliais šalia sandėlio",
+        caption: "Kiemas ir konteineris",
       },
     },
   },
