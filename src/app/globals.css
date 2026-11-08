@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #efece7;
   --foreground: #141414;
   --ink: #141414;
   --muted: #5c5854;
   --line: #e4e0da;
   --paper: #f4f1ec;
+  --canvas: #efece7;
+  --ivory: #fffcf8;
   --brand: #e11318;
   --brand-dark: #c10f14;
 }
@@ -18,14 +20,19 @@
   --color-muted: var(--muted);
   --color-line: var(--line);
   --color-paper: var(--paper);
+  --color-canvas: var(--canvas);
+  --color-ivory: var(--ivory);
   --color-brand: var(--brand);
   --color-brand-dark: var(--brand-dark);
   --font-sans: var(--font-source);
   --font-display: var(--font-outfit);
+  --shadow-card: 0 1px 2px rgb(20 16 12 / 0.04), 0 24px 48px -28px rgb(20 16 12 / 0.35);
+  --shadow-float: 0 12px 40px -18px rgb(20 16 12 / 0.32);
+  --shadow-lift: 0 1px 2px rgb(20 16 12 / 0.05), 0 28px 56px -24px rgb(20 16 12 / 0.42);
 }
 
 html {
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 6.75rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -43,4 +50,65 @@ body {
 ::selection {
   background: #e11318;
   color: #ffffff;
+}
+
+.rail {
+  scrollbar-width: none;
+}
+
+.rail::-webkit-scrollbar {
+  display: none;
+}
+
+.lift {
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.lift:hover {
+  transform: translateY(-2px);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.rise-2 {
+  animation-delay: 0.08s;
+}
+
+.rise-3 {
+  animation-delay: 0.16s;
+}
+
+.rise-4 {
+  animation-delay: 0.24s;
+}
+
+.rise-5 {
+  animation-delay: 0.34s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lift,
+  .lift:hover {
+    transition: none;
+    transform: none;
+  }
+
+  .rise {
+    animation: none;
+  }
 }

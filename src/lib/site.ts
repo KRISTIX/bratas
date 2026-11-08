@@ -8,11 +8,16 @@ export const osmEmbed =
 export const osmUrl =
   "https://www.openstreetmap.org/?mlat=56.03357&mlon=24.37966#map=14/56.03357/24.37966";
 
-export const serviceImages = [
-  "/photos/hero-warehouse.jpg",
-  "/photos/headlights.jpg",
-  "/photos/packing.jpg",
+/** The only photographs rendered on the page. */
+export const frames = [
+  { id: "warehouse", src: "/photos/hero-warehouse.jpg" },
+  { id: "lights", src: "/photos/headlights.jpg" },
+  { id: "engines", src: "/photos/engines.jpg" },
+  { id: "body", src: "/photos/body-panels.jpg" },
+  { id: "packing", src: "/photos/packing.jpg" },
 ] as const;
+
+export type FrameId = (typeof frames)[number]["id"];
 
 export function getSiteUrl() {
   const explicit = process.env.NEXT_PUBLIC_SITE_URL;
@@ -21,30 +26,3 @@ export function getSiteUrl() {
   if (vercel) return `https://${vercel}`;
   return "http://localhost:3847";
 }
-
-export const galleryPhotos = [
-  { id: "packing", src: "/photos/packing.jpg", width: 1152, height: 864 },
-  { id: "bumper", src: "/photos/bumper-detail.jpg", width: 864, height: 1152 },
-  { id: "wheels", src: "/photos/wheels.jpg", width: 1024, height: 1024 },
-  {
-    id: "interior",
-    src: "/photos/interior-parts.jpg",
-    width: 1152,
-    height: 864,
-  },
-  {
-    id: "suspension",
-    src: "/photos/suspension.jpg",
-    width: 1152,
-    height: 864,
-  },
-  { id: "mirrors", src: "/photos/mirrors.jpg", width: 1152, height: 864 },
-  {
-    id: "electronics",
-    src: "/photos/electronics.jpg",
-    width: 1152,
-    height: 864,
-  },
-] as const;
-
-export type GalleryId = (typeof galleryPhotos)[number]["id"];

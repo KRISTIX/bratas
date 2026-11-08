@@ -80,10 +80,10 @@ export default async function RootLayout({
       lang={lang}
       className={`${outfit.variable} ${sourceSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-white font-sans text-ink">
+      <body className="min-h-full bg-canvas font-sans text-ink">
         <a
           href="#content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:bg-white focus:px-3 focus:py-2"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:shadow-float"
         >
           {dict.skip}
         </a>
