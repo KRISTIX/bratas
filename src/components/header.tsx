@@ -113,8 +113,8 @@ export function Header({
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-white">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5">
+    <header className="sticky top-0 z-40 px-3 pt-3 md:px-5">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 rounded-full bg-white/95 px-3 shadow-float ring-1 ring-black/5 backdrop-blur-md md:px-4">
         <a href="#content" className="shrink-0" onClick={() => setOpen(false)}>
           <Image
             src="/brand/logo.png"
@@ -122,16 +122,16 @@ export function Header({
             width={1104}
             height={304}
             preload
-            className="h-9 w-auto md:h-11"
+            className="h-9 w-auto"
           />
         </a>
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label={primaryNav}>
+        <nav className="hidden items-center gap-6 lg:flex" aria-label={primaryNav}>
           {nav.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-semibold text-ink/80 transition-colors hover:text-ink"
+              className="text-sm font-semibold text-ink/75 transition-colors hover:text-ink"
             >
               {item.label}
             </a>
@@ -152,7 +152,7 @@ export function Header({
 
         <button
           type="button"
-          className="inline-flex h-10 items-center rounded-sm border border-line px-3 text-sm font-semibold lg:hidden"
+          className="inline-flex h-10 items-center rounded-full border border-line bg-white px-3.5 text-sm font-semibold lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((value) => !value)}
@@ -164,7 +164,7 @@ export function Header({
       {open ? (
         <nav
           id="mobile-nav"
-          className="border-t border-line bg-white px-5 py-4 lg:hidden"
+          className="mx-auto mt-2 max-w-6xl rounded-[1.5rem] bg-white px-5 py-4 shadow-float ring-1 ring-black/5 lg:hidden"
           aria-label={mobileNav}
         >
           <div className="md:hidden">
@@ -179,7 +179,7 @@ export function Header({
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="block border-b border-line py-3 text-base font-semibold"
+                  className="block rounded-2xl px-2 py-3 text-base font-semibold transition-colors hover:bg-canvas"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
@@ -187,7 +187,7 @@ export function Header({
               </li>
             ))}
           </ul>
-          <a href={phoneHref} className="mt-4 block text-base font-semibold">
+          <a href={phoneHref} className="mt-2 block rounded-2xl px-2 py-3 text-base font-semibold">
             {phoneDisplay}
           </a>
         </nav>

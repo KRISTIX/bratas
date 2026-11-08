@@ -1,5 +1,3 @@
-import type { GalleryId } from "@/lib/site";
-
 import type { Locale } from "@/lib/i18n";
 
 export type Dictionary = {
@@ -12,40 +10,40 @@ export type Dictionary = {
     menu: string;
     close: string;
     catalog: string;
+    operation: string;
     parts: string;
     recognition: string;
-    gallery: string;
     contact: string;
   };
   hero: {
     eyebrow: string;
-    title: string;
+    titleLines: [string, string];
     lead: string;
     catalog: string;
     call: string;
-    imageAlt: string;
-    caption: string;
+    proofs: [
+      { value: string; note: string },
+      { value: string; note: string },
+      { value: string; note: string },
+    ];
   };
-  stats: {
-    catalogLabel: string;
-    catalogValue: string;
-    catalogNote: string;
-    hoursLabel: string;
-    hoursValue: string;
-    hoursNote: string;
-    sellerLabel: string;
-    sellerValue: string;
-    sellerNote: string;
-  };
-  origin: {
+  frames: [
+    { alt: string; caption: string },
+    { alt: string; caption: string },
+    { alt: string; caption: string },
+    { alt: string; caption: string },
+    { alt: string; caption: string },
+  ];
+  operation: {
     eyebrow: string;
     title: string;
     lead: string;
   };
-  services: [
-    { title: string; text: string; alt: string },
-    { title: string; text: string; alt: string },
-    { title: string; text: string; alt: string },
+  steps: [
+    { title: string; text: string },
+    { title: string; text: string },
+    { title: string; text: string },
+    { title: string; text: string },
   ];
   parts: {
     eyebrow: string;
@@ -53,28 +51,23 @@ export type Dictionary = {
     lead: string;
     brands: string;
     catalog: string;
-    bodyAlt: string;
-    bodyCaption: string;
-    engineAlt: string;
-    engineCaption: string;
     categories: { name: string; note: string }[];
   };
   award: {
     eyebrow: string;
     title: string;
+    figure: string;
+    figureLabel: string;
     kicker: string;
     quote: string;
     body: string;
     seal: string;
   };
-  gallery: {
+  band: {
     eyebrow: string;
     title: string;
     lead: string;
-    close: string;
-    previous: string;
-    next: string;
-    photos: Record<GalleryId, { alt: string; caption: string }>;
+    catalog: string;
   };
   contact: {
     eyebrow: string;
@@ -87,7 +80,6 @@ export type Dictionary = {
     vatLabel: string;
     hoursLabel: string;
     hours: string;
-    callEyebrow: string;
     hoursShort: string;
     catalog: string;
     mapTitle: string;
@@ -101,9 +93,9 @@ export type Dictionary = {
 
 const en: Dictionary = {
   meta: {
-    title: "UAB Bratas — used car parts from the UK",
+    title: "UAB Bratas — top seller of used parts from the UK",
     description:
-      "UAB Bratas sells used car parts from the United Kingdom. The offer is parts, not complete cars. Tens of thousands of parts in the RRR.lt catalogue. Šlamai, Pasvalys district.",
+      "UAB Bratas holds tens of thousands of used car parts from the United Kingdom. Top seller on RRR.lt. TOP Įmonė 2026, among the 6% most reliable companies in Lithuania. Šlamai, Pasvalys district.",
     imageAlt:
       "UAB Bratas parts warehouse: headlights and bumpers on the shelves",
   },
@@ -115,64 +107,74 @@ const en: Dictionary = {
     menu: "Menu",
     close: "Close",
     catalog: "Catalogue",
+    operation: "Operation",
     parts: "Parts",
     recognition: "Recognition",
-    gallery: "Gallery",
     contact: "Contact",
   },
   hero: {
-    eyebrow: "AUTOPARTS",
-    title: "Used car parts from the United Kingdom.",
-    lead: "UAB Bratas sells used parts brought in from the UK — parts, not complete cars. Tens of thousands of them are in the RRR.lt catalogue, and the range keeps being filled. On that marketplace we are a top seller: stock held and shipped like a serious parts house.",
+    eyebrow: "LITHUANIA · USED PARTS",
+    titleLines: ["Top seller.", "The serious warehouse."],
+    lead: "UAB Bratas holds tens of thousands of used parts brought in from the United Kingdom — parts, not complete cars. On RRR.lt we are a top seller. TOP Įmonė 2026 places this house among the 6% most reliable and financially stable companies in Lithuania.",
     catalog: "Open the catalogue",
     call: "Call",
-    imageAlt:
-      "Warehouse aisle of car parts: headlights and bumpers on metal shelves",
-    caption: "Parts warehouse",
+    proofs: [
+      { value: "Top", note: "seller on RRR.lt" },
+      { value: "6%", note: "of the most reliable in Lithuania" },
+      { value: "Mon–Fri", note: "07:00–16:00" },
+    ],
   },
-  stats: {
-    catalogLabel: "CATALOGUE",
-    catalogValue: "Tens of thousands",
-    catalogNote: "of parts on RRR.lt",
-    hoursLabel: "HOURS",
-    hoursValue: "Mon–Fri",
-    hoursNote: "07:00–16:00, closed at the weekend",
-    sellerLabel: "RRR.LT",
-    sellerValue: "Top seller",
-    sellerNote: "on the platform",
-  },
-  origin: {
-    eyebrow: "FROM THE UK",
-    title: "Parts from the United Kingdom",
-    lead: "One line of work, carried at that scale: parts in from the UK, held in our warehouse, sold through RRR.lt.",
-  },
-  services: [
+  frames: [
     {
-      title: "We bring them in from the UK",
-      text: "We buy spare parts in the United Kingdom and bring them over. What travels to Lithuania is parts, not cars.",
-      alt: "Warehouse shelves of car parts, with headlights and bumpers",
+      alt: "Warehouse aisle of car parts: headlights on the left, bumpers on the right",
+      caption: "Warehouse",
     },
     {
-      title: "We keep them in the warehouse",
-      text: "The largest share of the stock is BMW, Mercedes-Benz, Audi, Ford and Volvo. Most often sought: front and rear lights, power mirrors, handle sets and fuse boxes.",
-      alt: "Shelves of used front and rear car lights",
+      alt: "Used front and rear lights stored in boxes on warehouse shelves",
+      caption: "Lights",
     },
     {
-      title: "We sell and ship",
-      text: "The full range is on RRR.lt. You choose the part in the catalogue, and we pack it and ship it.",
+      alt: "Used engines and gearboxes on wooden pallets",
+      caption: "Engines",
+    },
+    {
+      alt: "Used doors, bonnets and bumpers on warehouse racks",
+      caption: "Body",
+    },
+    {
       alt: "A headlight, packing tape and a box on the workbench",
+      caption: "Packing",
+    },
+  ],
+  operation: {
+    eyebrow: "FROM THE UK",
+    title: "From the United Kingdom into a warehouse built for scale.",
+    lead: "One line of work, carried seriously: parts bought in the UK, held here, sold through RRR.lt.",
+  },
+  steps: [
+    {
+      title: "Brought in from the UK",
+      text: "We buy spare parts in the United Kingdom and bring them over. What arrives in Lithuania is parts, not cars.",
+    },
+    {
+      title: "Held in the warehouse",
+      text: "The largest share of the stock is BMW, Mercedes-Benz, Audi, Ford and Volvo. Lights, mirrors, body, units and electronics, in one house.",
+    },
+    {
+      title: "Sold on RRR.lt",
+      text: "On that marketplace we are a top seller. The whole warehouse sits behind one catalogue, and the range keeps being filled.",
+    },
+    {
+      title: "Packed and shipped",
+      text: "You choose the part in the catalogue. We prepare it, pack it and ship it.",
     },
   ],
   parts: {
     eyebrow: "PARTS",
-    title: "Tens of thousands of parts",
-    lead: "The whole warehouse behind one link. The range keeps being filled, so the current list on RRR.lt is the one to check before you order.",
-    brands: "Most parts: BMW, Mercedes-Benz, Audi, Ford, Volvo.",
+    title: "Tens of thousands. One link.",
+    lead: "The whole warehouse behind a single catalogue. The range keeps being filled, so the current list on RRR.lt is the one that counts.",
+    brands: "The marques we hold most: BMW, Mercedes-Benz, Audi, Ford, Volvo.",
     catalog: "RRR.lt shop",
-    bodyAlt: "Used doors, bonnets and bumpers on warehouse racks",
-    bodyCaption: "Body parts",
-    engineAlt: "Used engines and gearboxes on wooden pallets",
-    engineCaption: "Engines and gearboxes",
     categories: [
       { name: "Lights", note: "front and rear" },
       { name: "Body", note: "doors, bumpers, bonnets" },
@@ -186,63 +188,31 @@ const en: Dictionary = {
   award: {
     eyebrow: "RECOGNITION",
     title: "TOP Įmonė 2026",
-    kicker: "That is the outside measure of how this house is run.",
+    figure: "6%",
+    figureLabel: "of the most reliable companies in Lithuania",
+    kicker: "Not a promise. A place among the most reliable.",
     quote:
       "On Rekvizitai.lt data and economic criteria, UAB Bratas is included in the TOP Įmonė 2026 list. It is one of only 6% of the most reliable and financially stable companies in Lithuania.",
     body: "2026 is the tenth anniversary of this distinction. Over that decade, TOP Įmonė has become one of the best-known marks of business trust in Lithuania. The seal reads “10 years of trust.”",
     seal: "TOP Įmonė 2026",
   },
-  gallery: {
-    eyebrow: "GALLERY",
-    title: "Warehouse",
-    lead: "Parts we prepare and ship. Click a photo to enlarge it.",
-    close: "Close",
-    previous: "Previous",
-    next: "Next",
-    photos: {
-      packing: {
-        alt: "A headlight, packing tape and a cardboard box on a warehouse bench",
-        caption: "Packing for shipment",
-      },
-      bumper: {
-        alt: "A used dark bumper on a stand in the parts warehouse",
-        caption: "Bumper",
-      },
-      wheels: {
-        alt: "A pile of used alloy wheels and a brake disc on concrete",
-        caption: "Wheels and discs",
-      },
-      interior: {
-        alt: "Two used car seats and a steering wheel on a bench",
-        caption: "Interior",
-      },
-      suspension: {
-        alt: "Used control arms, a spring and dampers on a metal table",
-        caption: "Suspension",
-      },
-      mirrors: {
-        alt: "Used wing mirrors in rows on warehouse shelves",
-        caption: "Mirrors",
-      },
-      electronics: {
-        alt: "Fuse boxes and control modules in cardboard boxes",
-        caption: "Electronics",
-      },
-    },
+  band: {
+    eyebrow: "CATALOGUE",
+    title: "The whole warehouse, one link.",
+    lead: "Tens of thousands of parts. Top seller on RRR.lt.",
+    catalog: "Open RRR.lt",
   },
   contact: {
     eyebrow: "CONTACT",
-    title: "Šlamų k. 1B-1",
-    place: "Pasvalys district, Lithuania",
+    title: "Call the warehouse.",
+    place: "Šlamų k. 1B-1, Pasvalys district",
     companyLabel: "COMPANY",
     company: "UAB Bratas",
     phoneLabel: "PHONE",
     codeLabel: "COMPANY CODE",
     vatLabel: "VAT NUMBER",
     hoursLabel: "HOURS",
-    hours:
-      "Monday to Friday, 07:00–16:00. Closed Saturday and Sunday.",
-    callEyebrow: "CALL",
+    hours: "Monday to Friday, 07:00–16:00. Closed Saturday and Sunday.",
     hoursShort: "Mon–Fri, 07:00–16:00",
     catalog: "RRR.lt catalogue",
     mapTitle: "Map of Šlamai village",
@@ -261,9 +231,9 @@ const en: Dictionary = {
 
 const fr: Dictionary = {
   meta: {
-    title: "UAB Bratas — pièces auto d'occasion du Royaume-Uni",
+    title: "UAB Bratas — premier vendeur de pièces d'occasion du Royaume-Uni",
     description:
-      "UAB Bratas vend des pièces auto d'occasion venues du Royaume-Uni. L'offre porte sur des pièces, pas sur des véhicules complets. Des dizaines de milliers de pièces au catalogue RRR.lt. Šlamai, district de Pasvalys.",
+      "UAB Bratas tient des dizaines de milliers de pièces auto d'occasion venues du Royaume-Uni. Top vendeur sur RRR.lt. TOP Įmonė 2026, parmi les 6 % d'entreprises les plus fiables de Lituanie. Šlamai, district de Pasvalys.",
     imageAlt:
       "Entrepôt de pièces UAB Bratas : phares et pare-chocs sur les rayonnages",
   },
@@ -275,64 +245,74 @@ const fr: Dictionary = {
     menu: "Menu",
     close: "Fermer",
     catalog: "Catalogue",
+    operation: "Activité",
     parts: "Pièces",
     recognition: "Distinction",
-    gallery: "Galerie",
     contact: "Contact",
   },
   hero: {
-    eyebrow: "AUTOPARTS",
-    title: "Pièces auto d'occasion du Royaume-Uni.",
-    lead: "UAB Bratas vend des pièces d'occasion amenées du Royaume-Uni — des pièces, pas des véhicules complets. Des dizaines de milliers d'entre elles figurent au catalogue RRR.lt, et l'assortiment continue de se remplir. Sur cette place de marché, nous sommes un top vendeur : le stock est tenu et expédié comme dans une maison de pièces sérieuse.",
+    eyebrow: "LITUANIE · PIÈCES D'OCCASION",
+    titleLines: ["Premier vendeur.", "L'entrepôt sérieux."],
+    lead: "UAB Bratas tient des dizaines de milliers de pièces d'occasion amenées du Royaume-Uni — des pièces, pas des véhicules complets. Sur RRR.lt, nous sommes un top vendeur. TOP Įmonė 2026 place cette maison parmi les 6 % d'entreprises les plus fiables et les plus stables financièrement de Lituanie.",
     catalog: "Ouvrir le catalogue",
     call: "Appeler",
-    imageAlt:
-      "Allée d'un entrepôt de pièces auto : phares et pare-chocs sur des rayonnages métalliques",
-    caption: "Entrepôt de pièces",
+    proofs: [
+      { value: "Top", note: "vendeur sur RRR.lt" },
+      { value: "6 %", note: "des plus fiables en Lituanie" },
+      { value: "Lun–Ven", note: "07:00–16:00" },
+    ],
   },
-  stats: {
-    catalogLabel: "CATALOGUE",
-    catalogValue: "Des dizaines de milliers",
-    catalogNote: "de pièces sur RRR.lt",
-    hoursLabel: "HORAIRES",
-    hoursValue: "Lun–Ven",
-    hoursNote: "07:00–16:00, fermé le week-end",
-    sellerLabel: "RRR.LT",
-    sellerValue: "Top vendeur",
-    sellerNote: "sur la plateforme",
-  },
-  origin: {
-    eyebrow: "DU ROYAUME-UNI",
-    title: "Pièces du Royaume-Uni",
-    lead: "Une seule activité, menée à cette échelle : des pièces venues du Royaume-Uni, tenues dans notre entrepôt, vendues via RRR.lt.",
-  },
-  services: [
+  frames: [
     {
-      title: "Nous les amenons du Royaume-Uni",
-      text: "Nous achetons les pièces de rechange au Royaume-Uni et les acheminons. Ce qui arrive en Lituanie, ce sont des pièces, pas des voitures.",
-      alt: "Rayonnages d'un entrepôt de pièces auto, avec phares et pare-chocs",
+      alt: "Allée d'un entrepôt de pièces auto : phares à gauche, pare-chocs à droite",
+      caption: "Entrepôt",
     },
     {
-      title: "Nous les tenons en entrepôt",
-      text: "La plus grande part du stock : BMW, Mercedes-Benz, Audi, Ford et Volvo. Les demandes les plus fréquentes : phares avant et arrière, rétroviseurs électriques, jeux de poignées et boîtiers de fusibles.",
-      alt: "Rayonnages de phares avant et arrière d'occasion",
+      alt: "Phares avant et arrière d'occasion, rangés dans des cartons sur les rayonnages",
+      caption: "Phares",
     },
     {
-      title: "Nous vendons et expédions",
-      text: "Tout l'assortiment est sur RRR.lt. Vous choisissez la pièce dans le catalogue, nous l'emballons et l'expédions.",
+      alt: "Moteurs et boîtes de vitesses d'occasion sur palettes en bois",
+      caption: "Moteurs",
+    },
+    {
+      alt: "Portes, capots et pare-chocs d'occasion sur les racks de l'entrepôt",
+      caption: "Carrosserie",
+    },
+    {
       alt: "Phare, ruban d'emballage et carton sur l'établi",
+      caption: "Emballage",
+    },
+  ],
+  operation: {
+    eyebrow: "DU ROYAUME-UNI",
+    title: "Du Royaume-Uni à un entrepôt tenu à cette échelle.",
+    lead: "Une seule activité, menée sérieusement : des pièces achetées au Royaume-Uni, tenues ici, vendues via RRR.lt.",
+  },
+  steps: [
+    {
+      title: "Amenées du Royaume-Uni",
+      text: "Nous achetons les pièces de rechange au Royaume-Uni et les acheminons. Ce qui arrive en Lituanie, ce sont des pièces, pas des voitures.",
+    },
+    {
+      title: "Tenues en entrepôt",
+      text: "La plus grande part du stock : BMW, Mercedes-Benz, Audi, Ford et Volvo. Phares, rétroviseurs, carrosserie, organes et électronique, dans une seule maison.",
+    },
+    {
+      title: "Vendues sur RRR.lt",
+      text: "Sur cette place de marché, nous sommes un top vendeur. Tout l'entrepôt tient derrière un seul catalogue, et l'assortiment se remplit.",
+    },
+    {
+      title: "Emballées et expédiées",
+      text: "Vous choisissez la pièce dans le catalogue. Nous la préparons, l'emballons et l'expédions.",
     },
   ],
   parts: {
     eyebrow: "PIÈCES",
-    title: "Des dizaines de milliers de pièces",
-    lead: "Tout l'entrepôt derrière un seul lien. L'assortiment se remplit, donc la liste à jour sur RRR.lt est celle à consulter avant de commander.",
-    brands: "Le plus de pièces : BMW, Mercedes-Benz, Audi, Ford, Volvo.",
+    title: "Des dizaines de milliers. Un seul lien.",
+    lead: "Tout l'entrepôt derrière un seul catalogue. L'assortiment se remplit : la liste à jour sur RRR.lt est celle qui compte.",
+    brands: "Les marques les plus présentes : BMW, Mercedes-Benz, Audi, Ford, Volvo.",
     catalog: "Boutique RRR.lt",
-    bodyAlt: "Portes, capots et pare-chocs d'occasion sur les racks de l'entrepôt",
-    bodyCaption: "Pièces de carrosserie",
-    engineAlt: "Moteurs et boîtes de vitesses d'occasion sur palettes en bois",
-    engineCaption: "Moteurs et boîtes",
     categories: [
       { name: "Phares", note: "avant et arrière" },
       { name: "Carrosserie", note: "portes, pare-chocs, capots" },
@@ -346,63 +326,31 @@ const fr: Dictionary = {
   award: {
     eyebrow: "DISTINCTION",
     title: "TOP Įmonė 2026",
-    kicker: "C'est la mesure extérieure de la façon dont cette maison est tenue.",
+    figure: "6 %",
+    figureLabel: "des entreprises les plus fiables de Lituanie",
+    kicker: "Pas une promesse. Une place parmi les plus fiables.",
     quote:
       "D'après les données de Rekvizitai.lt et des critères économiques, UAB Bratas figure sur la liste TOP Įmonė 2026. C'est l'une des 6 % d'entreprises les plus fiables et les plus stables financièrement en Lituanie.",
     body: "2026 est le dixième anniversaire de cette distinction. En dix ans, TOP Įmonė est devenu l'un des signes de confiance les mieux reconnus des affaires en Lituanie. Le sceau porte « 10 metų pasitikėjimo » : dix ans de confiance.",
     seal: "TOP Įmonė 2026",
   },
-  gallery: {
-    eyebrow: "GALERIE",
-    title: "Entrepôt",
-    lead: "Les pièces que nous préparons et expédions. Cliquez sur une photo pour l'agrandir.",
-    close: "Fermer",
-    previous: "Précédente",
-    next: "Suivante",
-    photos: {
-      packing: {
-        alt: "Phare, ruban d'emballage et carton sur un établi de l'entrepôt",
-        caption: "Emballage pour l'expédition",
-      },
-      bumper: {
-        alt: "Pare-chocs sombre d'occasion sur un support dans l'entrepôt",
-        caption: "Pare-chocs",
-      },
-      wheels: {
-        alt: "Tas de jantes en alliage d'occasion et disque de frein sur le béton",
-        caption: "Roues et jantes",
-      },
-      interior: {
-        alt: "Deux sièges d'occasion et un volant sur un établi",
-        caption: "Habitacle",
-      },
-      suspension: {
-        alt: "Bras, ressort et amortisseurs d'occasion sur une table métallique",
-        caption: "Suspension",
-      },
-      mirrors: {
-        alt: "Rétroviseurs d'occasion en rangées sur les rayonnages",
-        caption: "Rétroviseurs",
-      },
-      electronics: {
-        alt: "Boîtiers de fusibles et modules de commande dans des cartons",
-        caption: "Électronique",
-      },
-    },
+  band: {
+    eyebrow: "CATALOGUE",
+    title: "Tout l'entrepôt, un seul lien.",
+    lead: "Des dizaines de milliers de pièces. Top vendeur sur RRR.lt.",
+    catalog: "Ouvrir RRR.lt",
   },
   contact: {
     eyebrow: "CONTACT",
-    title: "Šlamų k. 1B-1",
-    place: "District de Pasvalys, Lituanie",
+    title: "Appelez l'entrepôt.",
+    place: "Šlamų k. 1B-1, district de Pasvalys",
     companyLabel: "SOCIÉTÉ",
     company: "UAB Bratas",
     phoneLabel: "TÉLÉPHONE",
     codeLabel: "CODE D'ENTREPRISE",
     vatLabel: "N° DE TVA",
     hoursLabel: "HORAIRES",
-    hours:
-      "Du lundi au vendredi, 07:00–16:00. Fermé le samedi et le dimanche.",
-    callEyebrow: "APPELER",
+    hours: "Du lundi au vendredi, 07:00–16:00. Fermé le samedi et le dimanche.",
     hoursShort: "Lun–Ven, 07:00–16:00",
     catalog: "Catalogue RRR.lt",
     mapTitle: "Carte du village de Šlamai",
@@ -421,9 +369,9 @@ const fr: Dictionary = {
 
 const lt: Dictionary = {
   meta: {
-    title: "UAB Bratas — naudotos automobilių dalys iš JK",
+    title: "UAB Bratas — top pardavėjas, naudotos dalys iš JK",
     description:
-      "UAB „Bratas“ parduoda naudotas automobilių dalis iš Jungtinės Karalystės. Pasiūla — dalys, ne pilni automobiliai. Dešimtys tūkstančių dalių RRR.lt kataloge. Šlamų k., Pasvalio r.",
+      "UAB „Bratas“ — rimtas naudotų dalių sandėlis. Dešimtys tūkstančių dalių iš Jungtinės Karalystės, top pardavėjas RRR.lt, TOP Įmonė 2026. Šlamų k., Pasvalio r.",
     imageAlt:
       "UAB Bratas automobilių dalių sandėlis: žibintai ir bamperiai lentynose",
   },
@@ -435,64 +383,74 @@ const lt: Dictionary = {
     menu: "Meniu",
     close: "Uždaryti",
     catalog: "Katalogas",
+    operation: "Veikla",
     parts: "Dalys",
     recognition: "Įvertinimas",
-    gallery: "Galerija",
     contact: "Kontaktai",
   },
   hero: {
-    eyebrow: "AUTOPARTS",
-    title: "Naudotos automobilių dalys iš Jungtinės Karalystės.",
-    lead: "UAB „Bratas“ parduoda atsargines dalis, atvežtas iš JK. Pasiūla — dalys, ne pilni automobiliai. RRR.lt kataloge — dešimtys tūkstančių pozicijų, asortimentas nuolat pildomas. Šioje platformoje esame top pardavėjas: sandėlis ir siuntimas tvarkomi kaip rimtoje dalių įmonėje.",
+    eyebrow: "LIETUVA · NAUDOTOS DALYS",
+    titleLines: ["Top pardavėjas.", "Rimčiausias sandėlis."],
+    lead: "UAB „Bratas“ laiko dešimtis tūkstančių naudotų dalių iš Jungtinės Karalystės — dalis, ne automobilius. RRR.lt esame top pardavėjas. „TOP Įmonė 2026“ šią įmonę stato tarp 6 % patikimiausių ir finansiškai stabiliausių Lietuvoje.",
     catalog: "Atidaryti katalogą",
     call: "Skambinti",
-    imageAlt:
-      "Automobilių dalių sandėlio praėjimas: žibintai ir bamperiai metalinėse lentynose",
-    caption: "Dalių sandėlis",
+    proofs: [
+      { value: "Top", note: "pardavėjas RRR.lt" },
+      { value: "6%", note: "patikimiausių Lietuvoje" },
+      { value: "I–V", note: "07:00–16:00" },
+    ],
   },
-  stats: {
-    catalogLabel: "KATALOGAS",
-    catalogValue: "Dešimtys tūkstančių",
-    catalogNote: "dalių RRR.lt",
-    hoursLabel: "DARBO LAIKAS",
-    hoursValue: "I–V",
-    hoursNote: "07:00–16:00, savaitgalį nedirbame",
-    sellerLabel: "RRR.LT",
-    sellerValue: "Top pardavėjas",
-    sellerNote: "platformoje",
-  },
-  origin: {
-    eyebrow: "IŠ JK",
-    title: "Dalys iš Jungtinės Karalystės",
-    lead: "Viena veikla, vykdoma tokiu mastu: dalys atkeliauja iš JK, laikomos mūsų sandėlyje ir parduodamos per RRR.lt.",
-  },
-  services: [
+  frames: [
     {
-      title: "Atvežame iš JK",
-      text: "Atsargines dalis perkame ir atsivežame iš Jungtinės Karalystės. Į Lietuvą keliauja detalės, ne automobiliai.",
-      alt: "Automobilių dalių sandėlio lentynos su žibintais ir bamperiais",
+      alt: "Dalių sandėlio praėjimas: kairėje žibintai, dešinėje bamperiai",
+      caption: "Sandėlis",
+    },
+    {
+      alt: "Naudoti priekiniai ir galiniai žibintai dėžėse ant sandėlio lentynų",
+      caption: "Žibintai",
+    },
+    {
+      alt: "Naudoti varikliai ir pavarų dėžės ant medinių palečių",
+      caption: "Varikliai",
+    },
+    {
+      alt: "Naudotos durelės, gaubtai ir bamperiai ant sandėlio stelažų",
+      caption: "Kėbulas",
+    },
+    {
+      alt: "Žibintas, pakavimo juosta ir dėžė ant darbastalio",
+      caption: "Pakavimas",
+    },
+  ],
+  operation: {
+    eyebrow: "IŠ JUNGTINĖS KARALYSTĖS",
+    title: "Iš Karalystės — į sandėlį, kuris laiko mastą.",
+    lead: "Viena veikla, vykdoma rimtai: dalys perkamos Jungtinėje Karalystėje, laikomos čia ir parduodamos per RRR.lt.",
+  },
+  steps: [
+    {
+      title: "Atsivežame iš Karalystės",
+      text: "Atsargines dalis perkame Jungtinėje Karalystėje ir atsivežame patys. Į Lietuvą keliauja detalės, ne automobiliai.",
     },
     {
       title: "Laikome sandėlyje",
-      text: "Didžiausia pasiūla — BMW, Mercedes-Benz, Audi, Ford ir Volvo. Dažniausiai ieškomi priekiniai ir galiniai žibintai, elektra valdomi veidrodėliai, rankenėlių komplektai ir saugiklių blokai.",
-      alt: "Lentynos su naudotais priekiniais ir galiniais automobilio žibintais",
+      text: "Didžiausia dalis sandėlio — BMW, Mercedes-Benz, Audi, Ford ir Volvo. Žibintai, veidrodėliai, kėbulas, agregatai ir elektronika — vienoje įmonėje.",
     },
     {
-      title: "Parduodame ir siunčiame",
-      text: "Visą asortimentą rasite RRR.lt. Dalį išsirenkate kataloge, o mes ją supakuojame ir išsiunčiame.",
-      alt: "Žibintas, pakavimo juosta ir dėžė ant darbastalio",
+      title: "Parduodame per RRR.lt",
+      text: "Šioje platformoje esame top pardavėjas. Visas sandėlis — viename kataloge, kuris nuolat pildomas.",
+    },
+    {
+      title: "Supakuojame ir išsiunčiame",
+      text: "Dalį išsirenkate kataloge. Mes ją paruošiame, supakuojame ir išsiunčiame.",
     },
   ],
   parts: {
     eyebrow: "DALYS",
-    title: "Dešimtys tūkstančių dalių",
-    lead: "Visas sandėlis vienoje nuorodoje. Asortimentas pildomas, todėl prieš užsakant verta pažiūrėti aktualų sąrašą RRR.lt.",
-    brands: "Daugiausia dalių: BMW, Mercedes-Benz, Audi, Ford, Volvo.",
+    title: "Dešimtys tūkstančių. Viena nuoroda.",
+    lead: "Visas sandėlis už vieno katalogo. Asortimentas pildomas, todėl galiojantis sąrašas yra RRR.lt.",
+    brands: "Daugiausia laikome: BMW, Mercedes-Benz, Audi, Ford, Volvo.",
     catalog: "RRR.lt parduotuvė",
-    bodyAlt: "Naudotos durelės, gaubtai ir bamperiai ant sandėlio stelažų",
-    bodyCaption: "Kėbulo dalys",
-    engineAlt: "Naudoti varikliai ir pavarų dėžės ant medinių palečių",
-    engineCaption: "Varikliai ir dėžės",
     categories: [
       { name: "Žibintai", note: "priekiniai ir galiniai" },
       { name: "Kėbulas", note: "durys, bamperiai, gaubtai" },
@@ -506,54 +464,24 @@ const lt: Dictionary = {
   award: {
     eyebrow: "ĮVERTINIMAS",
     title: "TOP Įmonė 2026",
-    kicker: "Tai išorinis matas, kaip ši įmonė tvarkoma.",
+    figure: "6%",
+    figureLabel: "patikimiausių įmonių Lietuvoje",
+    kicker: "Ne pažadas. Vieta tarp patikimiausių.",
     quote:
       "Remiantis Rekvizitai.lt duomenimis ir ekonominiais kriterijais, UAB „Bratas“ įtraukta į „TOP Įmonė 2026“ sąrašą. Tai viena iš vos 6 % patikimiausių ir finansiškai stabiliausių įmonių Lietuvoje.",
     body: "2026-ieji šiam įvertinimui — dešimties metų jubiliejus. Per dešimtmetį „TOP Įmonė“ tapo vienu geriausiai atpažįstamų verslo pasitikėjimo ženklų Lietuvoje. Ženkle — „10 metų pasitikėjimo“.",
     seal: "TOP Įmonė 2026",
   },
-  gallery: {
-    eyebrow: "GALERIJA",
-    title: "Sandėlis",
-    lead: "Dalys, kurias paruošiame ir išsiunčiame. Paspauskite nuotrauką, kad padidintumėte.",
-    close: "Uždaryti",
-    previous: "Ankstesnė",
-    next: "Kita",
-    photos: {
-      packing: {
-        alt: "Žibintas, pakavimo juosta ir kartoninė dėžė ant darbastalio sandėlyje",
-        caption: "Pakavimas siuntimui",
-      },
-      bumper: {
-        alt: "Naudotas tamsus bamperis ant stovo dalių sandėlyje",
-        caption: "Bamperis",
-      },
-      wheels: {
-        alt: "Naudotų lietų ratlankių krūva ir stabdžių diskas ant betono",
-        caption: "Ratai ir diskai",
-      },
-      interior: {
-        alt: "Dvi naudotos automobilio sėdynės ir vairas ant darbastalio",
-        caption: "Salonas",
-      },
-      suspension: {
-        alt: "Naudotos svirtys, spyruoklė ir amortizatoriai ant metalinio stalo",
-        caption: "Pakaba",
-      },
-      mirrors: {
-        alt: "Naudoti šoniniai veidrodėliai eilėmis ant sandėlio lentynų",
-        caption: "Veidrodėliai",
-      },
-      electronics: {
-        alt: "Saugiklių blokai ir valdymo moduliai kartoninėse dėžutėse",
-        caption: "Elektronika",
-      },
-    },
+  band: {
+    eyebrow: "KATALOGAS",
+    title: "Visas sandėlis — viena nuoroda.",
+    lead: "Dešimtys tūkstančių dalių. Top pardavėjas RRR.lt.",
+    catalog: "Atidaryti RRR.lt",
   },
   contact: {
     eyebrow: "KONTAKTAI",
-    title: "Šlamų k. 1B-1",
-    place: "Pasvalio r., Lietuva",
+    title: "Skambinkite į sandėlį.",
+    place: "Šlamų k. 1B-1, Pasvalio r.",
     companyLabel: "ĮMONĖ",
     company: "UAB „Bratas“",
     phoneLabel: "TELEFONAS",
@@ -562,7 +490,6 @@ const lt: Dictionary = {
     hoursLabel: "DARBO LAIKAS",
     hours:
       "Pirmadieniais–penktadieniais 07:00–16:00. Šeštadienį ir sekmadienį nedirbame.",
-    callEyebrow: "SKAMBINTI",
     hoursShort: "I–V, 07:00–16:00",
     catalog: "RRR.lt katalogas",
     mapTitle: "Šlamų kaimo žemėlapis",
