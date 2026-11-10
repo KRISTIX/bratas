@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-import { locales } from "@/lib/i18n";
+import { locales, negotiateLocale } from "@/lib/i18n";
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -12,8 +12,9 @@ export function proxy(request: NextRequest) {
 
   if (pathnameHasLocale) return;
 
+  const locale = negotiateLocale(request.headers.get("accept-language"));
   const suffix = pathname === "/" ? "" : pathname;
-  request.nextUrl.pathname = `/en${suffix}`;
+  request.nextUrl.pathname = `/${locale}${suffix}`;
   return NextResponse.redirect(request.nextUrl);
 }
 

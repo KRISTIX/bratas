@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Outfit, Source_Sans_3 } from "next/font/google";
 import { notFound } from "next/navigation";
 
-import { JsonLd } from "@/components/json-ld";
 import { getDictionary } from "@/lib/dictionaries";
 import { hasLocale, locales, ogLocales, type Locale } from "@/lib/i18n";
 import { getSiteUrl } from "@/lib/site";
@@ -44,9 +43,7 @@ export async function generateMetadata({
     alternates: {
       canonical: `/${lang}`,
       languages: {
-        en: "/en",
-        fr: "/fr",
-        lt: "/lt",
+        ...Object.fromEntries(locales.map((locale) => [locale, `/${locale}`])),
         "x-default": "/en",
       },
     },
@@ -88,7 +85,6 @@ export default async function RootLayout({
           {dict.skip}
         </a>
         {children}
-        <JsonLd lang={lang} description={dict.meta.description} />
       </body>
     </html>
   );

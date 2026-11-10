@@ -1,5 +1,5 @@
 import type { Locale } from "@/lib/i18n";
-import { catalogUrl, getSiteUrl, phoneHref } from "@/lib/site";
+import { catalogUrl, getSiteUrl, heroImage, ovokoUrl, phoneHref } from "@/lib/site";
 
 export function JsonLd({
   lang,
@@ -16,7 +16,7 @@ export function JsonLd({
     url,
     description,
     inLanguage: lang,
-    image: `${getSiteUrl()}/photos/hero-warehouse.jpg`,
+    image: `${getSiteUrl()}${heroImage}`,
     telephone: phoneHref.replace("tel:", ""),
     currenciesAccepted: "EUR",
     address: {
@@ -36,8 +36,11 @@ export function JsonLd({
         closes: "16:00",
       },
     ],
-    areaServed: "LT",
-    sameAs: [catalogUrl],
+    areaServed: {
+      "@type": "AdministrativeArea",
+      name: "European Union",
+    },
+    sameAs: [catalogUrl, ovokoUrl],
   };
 
   return (

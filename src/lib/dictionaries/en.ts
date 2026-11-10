@@ -1,0 +1,167 @@
+import type { Dictionary } from "@/lib/dictionaries/types";
+
+export const en: Dictionary = {
+  meta: {
+    title: "UAB Bratas — used car parts from the United Kingdom",
+    description:
+      "UAB Bratas imports, warehouses and sells used car parts from the United Kingdom. Catalogue on RRR.lt and Ovoko. Top Company 2026. Lithuania.",
+    imageAlt: "UAB Bratas warehouse: car bumpers on wooden shelves",
+  },
+  skip: "Skip to content",
+  language: "Language",
+  nav: {
+    primary: "Primary",
+    mobile: "Mobile",
+    menu: "Menu",
+    close: "Close",
+    catalog: "Catalogue",
+    operation: "Operations",
+    parts: "Parts",
+    recognition: "Recognition",
+    contact: "Contact",
+  },
+  hero: {
+    eyebrow: "LITHUANIA · EUROPE",
+    titleLines: [
+      "Used parts from the United Kingdom.",
+      "Held in Lithuania, sold across Europe.",
+    ],
+    lead: "UAB Bratas imports used spare parts from the United Kingdom, holds them in warehouse stock in Lithuania, and sells through RRR.lt and Ovoko. Top Company 2026 — among the 6% most reliable companies in Lithuania (Rekvizitai.lt).",
+    catalog: "Open catalogue",
+    call: "Call",
+    imageAlt: "Warehouse aisle lined with car bumpers on wooden shelves",
+    imageCaption: "Warehouse",
+    stockNote: "LIVE",
+    stockLabel: "parts in warehouse",
+    proofs: [
+      { value: "RRR / Ovoko", note: "current catalogue" },
+      { value: "6%", note: "Top Company 2026, Lithuania" },
+      { value: "Mon–Fri", note: "07:00–16:00 EET/EEST" },
+    ],
+  },
+  operation: {
+    eyebrow: "OPERATIONS",
+    title: "Import, warehouse, dispatch.",
+    lead: "Parts are bought in the United Kingdom, held in the Lithuania warehouse, and sold through RRR.lt and Ovoko.",
+  },
+  services: [
+    {
+      title: "Import from the UK",
+      text: "Spare parts are purchased in the United Kingdom and delivered to the Lithuania warehouse.",
+      alt: "Warehouse yard with open bay doors",
+    },
+    {
+      title: "Warehouse stock",
+      text: "Parts are sorted, stored and held ready for dispatch.",
+      alt: "Car bumpers stacked on wooden warehouse shelves",
+    },
+    {
+      title: "Sale and dispatch",
+      text: "Stock is listed on RRR.lt and Ovoko, then packed and shipped from the warehouse.",
+      alt: "Forklift lifting a car engine outside the warehouse",
+    },
+  ],
+  parts: {
+    eyebrow: "PARTS",
+    title: "Warehouse categories",
+    lead: "Full stock is listed on RRR.lt and Ovoko.",
+    catalog: "Open catalogue",
+    categories: [
+      { id: "lights", name: "Lights", note: "Front and rear" },
+      { id: "body", name: "Body", note: "Doors, bumpers, bonnets" },
+      {
+        id: "engines",
+        name: "Engines and gearboxes",
+        note: "Units on pallets",
+      },
+      { id: "mirrors", name: "Mirrors", note: "Power-operated" },
+      { id: "electronics", name: "Electronics", note: "Fuse boxes, modules" },
+      {
+        id: "suspension",
+        name: "Suspension and brakes",
+        note: "Arms, dampers, discs",
+      },
+      { id: "interior", name: "Interior", note: "Seats, steering wheels, handles" },
+      { id: "wheels", name: "Wheels and tyres", note: "Alloys and discs" },
+    ],
+  },
+  award: {
+    eyebrow: "RECOGNITION",
+    title: "Top Company 2026",
+    mark: "TOP COMPANY",
+    figure: "6%",
+    figureLabel: "most reliable companies in Lithuania",
+    quote:
+      "UAB Bratas is on the Top Company 2026 list — among the 6% most reliable and financially stable companies in Lithuania (Rekvizitai.lt).",
+    body: "The 2026 seal marks ten years of the Top Company distinction.",
+    seal: "Top Company 2026",
+  },
+  band: {
+    eyebrow: "CATALOGUE",
+    title: "Open the catalogue.",
+    lead: "Orders go through RRR.lt or Ovoko.",
+    openRrr: "Open RRR.lt",
+    openOvoko: "Open Ovoko",
+  },
+  contact: {
+    eyebrow: "CONTACT",
+    title: "Contact",
+    place: "Šlamų k. 1B-1, Pasvalys district",
+    companyLabel: "COMPANY",
+    company: "UAB Bratas",
+    phoneLabel: "PHONE",
+    codeLabel: "COMPANY CODE",
+    vatLabel: "VAT",
+    hoursLabel: "HOURS",
+    hoursShort: "Mon–Fri, 07:00–16:00 (EET/EEST)",
+    mapTitle: "Map of Šlamai village",
+    marketplaceNote: "Parts are sold on RRR.lt and Ovoko.",
+  },
+  footer: {
+    before:
+      "© 2026 UAB Bratas. Company code 306008010 · VAT LT100014759115. Parts sold on ",
+    middle: " and ",
+    after: ".",
+    privacy: "Privacy",
+  },
+  privacy: {
+    title: "Privacy notice",
+    updated: "Last updated: 10 November 2026",
+    intro:
+      "How UAB Bratas processes personal data when you visit this website. For visitors in the European Economic Area.",
+    sections: [
+      {
+        heading: "Controller",
+        body: "UAB Bratas, company code 306008010, VAT LT100014759115, Šlamų k. 1B-1, Pasvalys district, Lithuania. Phone +370 687 49115.",
+      },
+      {
+        heading: "What this site does",
+        body: "This site presents the company, warehouse location, and links to catalogues on RRR.lt and Ovoko. It has no checkout, accounts, or advertising trackers.",
+      },
+      {
+        heading: "Data we process",
+        body: "The hosting provider (Vercel) processes technical logs such as IP address, browser type, and requested URL for delivery and security. No analytics cookies or advertising pixels are used.",
+      },
+      {
+        heading: "Map (OpenStreetMap)",
+        body: "The contact map loads only after you choose “Show map”. Your browser then requests content from openstreetmap.org, which may process your IP address under its own policies.",
+      },
+      {
+        heading: "External marketplaces",
+        body: "RRR.lt and Ovoko process data under their own privacy notices. Purchases follow marketplace terms.",
+      },
+      {
+        heading: "Legal basis and retention",
+        body: "Hosting logs are processed for legitimate interests in operating and securing the website, and retained only as long as the hosting provider keeps them.",
+      },
+      {
+        heading: "Your rights",
+        body: "You may request access, rectification, erasure, restriction, or objection, and lodge a complaint with the Lithuanian State Data Protection Inspectorate (VDAI) or your local authority. Contact us by phone for rights related to this site.",
+      },
+      {
+        heading: "Cookies",
+        body: "This site does not set non-essential cookies. Loading the OpenStreetMap embed may allow that third party to set its own cookies.",
+      },
+    ],
+  },
+};

@@ -1,8 +1,16 @@
-export function AwardSeal({ label }: { label: string }) {
+export function AwardSeal({
+  label,
+  mark,
+}: {
+  label: string;
+  mark: string;
+}) {
+  const compact = mark.length > 11;
+
   return (
     <svg
       viewBox="0 0 220 220"
-      className="h-40 w-40 sm:h-48 sm:w-48"
+      className="h-28 w-28 sm:h-32 sm:w-32"
       role="img"
       aria-label={label}
     >
@@ -41,11 +49,11 @@ export function AwardSeal({ label }: { label: string }) {
         y="96"
         textAnchor="middle"
         fill="#f3e2ad"
-        fontSize="15"
-        letterSpacing="3.2"
+        fontSize={compact ? 12 : 15}
+        letterSpacing={compact ? 1.4 : 3.2}
         fontFamily="var(--font-outfit), Outfit, sans-serif"
       >
-        TOP ĮMONĖ
+        {mark}
       </text>
       <text
         x="110"

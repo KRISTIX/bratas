@@ -5,18 +5,27 @@ import { getSiteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const site = getSiteUrl();
-  const languages = {
-    en: `${site}/en`,
-    fr: `${site}/fr`,
-    lt: `${site}/lt`,
-    "x-default": `${site}/en`,
-  };
+  const languages = Object.fromEntries([
+    ...locales.map((locale) => [locale, `${site}/${locale}`] as const),
+    ["x-default", `${site}/en`] as const,
+  ]);
 
-  return locales.map((locale) => ({
-    url: `${site}/${locale}`,
-    lastModified: new Date("2026-11-02"),
-    changeFrequency: "monthly",
-    priority: locale === "en" ? 1 : 0.8,
-    alternates: { languages },
-  }));
+  const pages = ["", "/privacy"] as const;
+
+  return pages.flatMap((page) =>
+    locales.map((locale) => ({
+      url: `${site}/${locale}${page}`,
+      lastModified: new Date("2026-11-10"),
+      changeFrequency: "monthly" as const,
+      priority: page === "" ? (locale === "en" ? 1 : 0.8) : 0.3,
+      alternates: {
+        languages: Object.fromEntries(
+          Object.entries(languages).map(([key, value]) => [
+            key,
+            `${value}${page}`,
+          ]),
+        ),
+      },
+    })),
+  );
 }
