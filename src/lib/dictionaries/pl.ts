@@ -58,7 +58,7 @@ export const pl: Dictionary = {
     {
       title: "Sprzedaż i wysyłka",
       text: "Zapas jest publikowany na RRR.lt i Ovoko, a następnie pakowany i wysyłany z magazynu.",
-      alt: "Wózek widłowy podnosi silnik samochodu przed magazynem",
+      alt: "Stanowisko pakowania w magazynie z wagą i kartonami",
     },
   ],
   parts: {
@@ -120,6 +120,7 @@ export const pl: Dictionary = {
     hoursShort: "Pn–Pt, 07:00–16:00 (EET/EEST)",
     mapTitle: "Mapa miejscowości Šlamai",
     marketplaceNote: "Części sprzedawane są przez RRR.lt i Ovoko.",
+    photoAlt: "Wózek widłowy podnosi silnik samochodu przed magazynem",
   },
   footer: {
     before:

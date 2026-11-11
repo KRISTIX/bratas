@@ -78,6 +78,7 @@ export type Dictionary = {
     hoursShort: string;
     mapTitle: string;
     marketplaceNote: string;
+    photoAlt: string;
   };
   footer: {
     before: string;

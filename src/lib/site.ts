@@ -14,8 +14,11 @@ export const heroImage = "/photos/hero-warehouse.jpg";
 export const serviceImages = [
   "/photos/import-lot.jpg",
   "/photos/body-panels.jpg",
-  "/photos/engines.jpg",
+  "/photos/packing.jpg",
 ] as const;
+
+/** Facility photograph shown with the contact block (Bratas-1). */
+export const facilityImage = "/photos/engines.jpg";
 
 /** Stable ids for the current-stock category grid. */
 export const partCategoryIds = [

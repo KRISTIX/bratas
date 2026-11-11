@@ -58,7 +58,7 @@ export const lt: Dictionary = {
     {
       title: "Pardavimas ir siuntimas",
       text: "Atsargos skelbiamos RRR.lt ir Ovoko, paskui pakuojamos ir siunčiamos iš sandėlio.",
-      alt: "Krautuvas kelia automobilio variklį prie sandėlio",
+      alt: "Pakavimo darbo vieta sandėlyje su svarstyklėmis ir dėžėmis",
     },
   ],
   parts: {
@@ -120,6 +120,7 @@ export const lt: Dictionary = {
     hoursShort: "I–V, 07:00–16:00 (EET/EEST)",
     mapTitle: "Šlamų kaimo žemėlapis",
     marketplaceNote: "Dalys parduodamos per RRR.lt ir Ovoko.",
+    photoAlt: "Krautuvas kelia automobilio variklį prie sandėlio",
   },
   footer: {
     before:

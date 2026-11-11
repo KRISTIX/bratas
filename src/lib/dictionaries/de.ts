@@ -58,7 +58,7 @@ export const de: Dictionary = {
     {
       title: "Verkauf und Versand",
       text: "Bestand wird auf RRR.lt und Ovoko gelistet, dann vom Lager verpackt und versandt.",
-      alt: "Gabelstapler hebt einen Automotor vor dem Lager",
+      alt: "Packplatz im Lager mit Waage und Kartons",
     },
   ],
   parts: {
@@ -120,6 +120,7 @@ export const de: Dictionary = {
     hoursShort: "Mo–Fr, 07:00–16:00 (EET/EEST)",
     mapTitle: "Karte von Šlamai",
     marketplaceNote: "Teile werden über RRR.lt und Ovoko verkauft.",
+    photoAlt: "Gabelstapler hebt einen Automotor vor dem Lager",
   },
   footer: {
     before:

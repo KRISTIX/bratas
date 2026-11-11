@@ -58,7 +58,7 @@ export const fr: Dictionary = {
     {
       title: "Vente et expédition",
       text: "Le stock est publié sur RRR.lt et Ovoko, puis emballé et expédié depuis l'entrepôt.",
-      alt: "Chariot élévateur soulevant un moteur automobile devant l'entrepôt",
+      alt: "Poste d'emballage dans l'entrepôt avec balance et cartons",
     },
   ],
   parts: {
@@ -120,6 +120,7 @@ export const fr: Dictionary = {
     hoursShort: "Lun–Ven, 07:00–16:00 (EET/EEST)",
     mapTitle: "Carte du village de Šlamai",
     marketplaceNote: "Les pièces sont vendues sur RRR.lt et Ovoko.",
+    photoAlt: "Chariot élévateur soulevant un moteur automobile devant l'entrepôt",
   },
   footer: {
     before:

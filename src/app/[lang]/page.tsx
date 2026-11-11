@@ -16,6 +16,7 @@ import {
   catalogUrl,
   getPrimaryCatalogUrl,
   getSecondaryCatalogUrl,
+  facilityImage,
   heroImage,
   ovokoUrl,
   phoneDisplay,
@@ -381,8 +382,19 @@ export default async function Home({
                   </div>
                 </dl>
               </div>
-              <div className="min-h-[16rem] overflow-hidden border-t border-line lg:min-h-full lg:border-t-0 lg:border-l">
-                <MapEmbed title={dict.contact.mapTitle} />
+              <div className="grid border-t border-line lg:min-h-full lg:border-t-0 lg:border-l lg:grid-rows-[1.05fr_0.95fr]">
+                <figure className="relative min-h-[14rem] overflow-hidden border-b border-line">
+                  <Image
+                    src={facilityImage}
+                    alt={dict.contact.photoAlt}
+                    fill
+                    sizes="(min-width: 1024px) 45vw, 100vw"
+                    className="object-cover"
+                  />
+                </figure>
+                <div className="min-h-[14rem] overflow-hidden lg:min-h-0">
+                  <MapEmbed title={dict.contact.mapTitle} />
+                </div>
               </div>
             </div>
           </Appear>

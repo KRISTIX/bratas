@@ -58,7 +58,7 @@ export const en: Dictionary = {
     {
       title: "Sale and dispatch",
       text: "Stock is listed on RRR.lt and Ovoko, then packed and shipped from the warehouse.",
-      alt: "Forklift lifting a car engine outside the warehouse",
+      alt: "Packing workstation in the warehouse with a scale and boxes",
     },
   ],
   parts: {
@@ -116,6 +116,7 @@ export const en: Dictionary = {
     hoursShort: "Mon–Fri, 07:00–16:00 (EET/EEST)",
     mapTitle: "Map of Šlamai village",
     marketplaceNote: "Parts are sold on RRR.lt and Ovoko.",
+    photoAlt: "Forklift lifting a car engine outside the warehouse",
   },
   footer: {
     before:
