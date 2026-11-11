@@ -76,15 +76,14 @@ export type Dictionary = {
     vatLabel: string;
     hoursLabel: string;
     hoursShort: string;
-    mapTitle: string;
     marketplaceNote: string;
     photoAlt: string;
   };
   footer: {
-    before: string;
-    middle: string;
-    after: string;
+    rights: string;
+    legal: string;
     privacy: string;
+    solution: string;
   };
   privacy: {
     title: string;

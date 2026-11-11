@@ -21,12 +21,12 @@ export const lt: Dictionary = {
     contact: "Kontaktai",
   },
   hero: {
-    eyebrow: "LIETUVA · EUROPA",
+    eyebrow: "BRATAS · EUROPA",
     titleLines: [
-      "Naudotos dalys iš Jungtinės Karalystės.",
-      "Sandėliuojamos Lietuvoje, parduodamos Europoje.",
+      "Naudotų dalių lyderiai.",
+      "Sandėlis Lietuvoje, rinka – visa Europa.",
     ],
-    lead: "UAB Bratas įveža naudotas atsargines dalis iš Jungtinės Karalystės, laiko jas sandėlyje Lietuvoje ir parduoda per RRR.lt bei Ovoko. TOP Įmonė 2026 – tarp 6 % patikimiausių įmonių Lietuvoje (Rekvizitai.lt).",
+    lead: "Bratas – vienas patikimiausių naudotų automobilių dalių tiekėjų Lietuvoje. Platus sandėlis, greitas siuntimas ir prekyba per RRR.lt bei Ovoko. TOP Įmonė 2026 – tarp 6 % patikimiausių įmonių šalyje.",
     catalog: "Atidaryti katalogą",
     call: "Skambinti",
     imageAlt: "Sandėlio praėjimas su bamperiais medinėse lentynose",
@@ -118,16 +118,14 @@ export const lt: Dictionary = {
     vatLabel: "PVM",
     hoursLabel: "LAIKAS",
     hoursShort: "I–V, 07:00–16:00 (EET/EEST)",
-    mapTitle: "Šlamų kaimo žemėlapis",
     marketplaceNote: "Dalys parduodamos per RRR.lt ir Ovoko.",
     photoAlt: "Krautuvas kelia automobilio variklį prie sandėlio",
   },
   footer: {
-    before:
-      "© 2026 UAB Bratas. Įmonės kodas 306008010 · PVM LT100014759115. Dalys parduodamos per ",
-    middle: " ir ",
-    after: ".",
+    rights: "© 2026 UAB Bratas",
+    legal: "Įmonės kodas 306008010 · PVM LT100014759115",
     privacy: "Privatumas",
+    solution: "Sprendimas",
   },
   privacy: {
     title: "Privatumo pranešimas",

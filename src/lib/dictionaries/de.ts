@@ -21,12 +21,12 @@ export const de: Dictionary = {
     contact: "Kontakt",
   },
   hero: {
-    eyebrow: "LITAUEN · EUROPA",
+    eyebrow: "BRATAS · EUROPA",
     titleLines: [
-      "Gebrauchte Teile aus dem Vereinigten Königreich.",
-      "Gelagert in Litauen, verkauft in Europa.",
+      "Führend bei Gebrauchtteilen.",
+      "Lager in Litauen, Markt ganz Europa.",
     ],
-    lead: "UAB Bratas importiert gebrauchte Ersatzteile aus dem Vereinigten Königreich, lagert sie in Litauen und verkauft über RRR.lt und Ovoko. Top Company 2026 — unter den 6 % zuverlässigsten Unternehmen Litauens (Rekvizitai.lt).",
+    lead: "Bratas zählt zu den zuverlässigsten Anbietern gebrauchter Autoteile in Litauen. Großes Lager, schneller Versand und Verkauf über RRR.lt und Ovoko. Top Company 2026 — unter den 6 % zuverlässigsten Unternehmen des Landes.",
     catalog: "Katalog öffnen",
     call: "Anrufen",
     imageAlt: "Lagergang mit Stoßfängern in Holzregalen",
@@ -118,16 +118,14 @@ export const de: Dictionary = {
     vatLabel: "USt-IdNr.",
     hoursLabel: "ÖFFNUNGSZEITEN",
     hoursShort: "Mo–Fr, 07:00–16:00 (EET/EEST)",
-    mapTitle: "Karte von Šlamai",
     marketplaceNote: "Teile werden über RRR.lt und Ovoko verkauft.",
     photoAlt: "Gabelstapler hebt einen Automotor vor dem Lager",
   },
   footer: {
-    before:
-      "© 2026 UAB Bratas. Unternehmenscode 306008010 · USt-IdNr. LT100014759115. Teile verkauft über ",
-    middle: " und ",
-    after: ".",
+    rights: "© 2026 UAB Bratas",
+    legal: "Unternehmenscode 306008010 · USt-IdNr. LT100014759115",
     privacy: "Datenschutz",
+    solution: "Lösung",
   },
   privacy: {
     title: "Datenschutzhinweis",

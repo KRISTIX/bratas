@@ -21,12 +21,12 @@ export const pl: Dictionary = {
     contact: "Kontakt",
   },
   hero: {
-    eyebrow: "LITWA · EUROPA",
+    eyebrow: "BRATAS · EUROPA",
     titleLines: [
-      "Używane części z Wielkiej Brytanii.",
-      "Magazynowane na Litwie, sprzedawane w Europie.",
+      "Liderzy w używanych częściach.",
+      "Magazyn na Litwie, rynek — cała Europa.",
     ],
-    lead: "UAB Bratas importuje używane części zamienne z Wielkiej Brytanii, trzyma je w magazynie na Litwie i sprzedaje przez RRR.lt oraz Ovoko. Top Company 2026 — wśród 6% najbardziej wiarygodnych firm na Litwie (Rekvizitai.lt).",
+    lead: "Bratas to jeden z najbardziej wiarygodnych dostawców używanych części samochodowych na Litwie. Duży magazyn, szybka wysyłka i sprzedaż przez RRR.lt oraz Ovoko. Top Company 2026 — wśród 6% najbardziej wiarygodnych firm w kraju.",
     catalog: "Otwórz katalog",
     call: "Zadzwoń",
     imageAlt: "Alejka magazynu ze zderzakami na drewnianych półkach",
@@ -118,16 +118,14 @@ export const pl: Dictionary = {
     vatLabel: "NIP UE",
     hoursLabel: "GODZINY",
     hoursShort: "Pn–Pt, 07:00–16:00 (EET/EEST)",
-    mapTitle: "Mapa miejscowości Šlamai",
     marketplaceNote: "Części sprzedawane są przez RRR.lt i Ovoko.",
     photoAlt: "Wózek widłowy podnosi silnik samochodu przed magazynem",
   },
   footer: {
-    before:
-      "© 2026 UAB Bratas. Kod firmy 306008010 · NIP UE LT100014759115. Części sprzedawane przez ",
-    middle: " i ",
-    after: ".",
+    rights: "© 2026 UAB Bratas",
+    legal: "Kod firmy 306008010 · NIP UE LT100014759115",
     privacy: "Prywatność",
+    solution: "Rozwiązanie",
   },
   privacy: {
     title: "Informacja o prywatności",

@@ -249,35 +249,40 @@ export function Header({
             </Button>
           </div>
 
-          <button
-            type="button"
-            className="relative z-10 inline-flex size-10 items-center justify-center rounded-full border border-line bg-white text-ink transition-colors hover:bg-canvas lg:hidden"
-            aria-expanded={open}
-            aria-controls="mobile-nav"
-            aria-label={open ? close : menu}
-            onClick={() => setOpen((value) => !value)}
-          >
-            <span className="relative block size-4" aria-hidden>
-              <span
-                className={cn(
-                  "absolute left-0 block h-0.5 w-4 rounded-full bg-current transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
-                  open ? "top-1/2 -translate-y-1/2 rotate-45" : "top-0.5",
-                )}
-              />
-              <span
-                className={cn(
-                  "absolute top-1/2 left-0 block h-0.5 w-4 -translate-y-1/2 rounded-full bg-current transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
-                  open && "scale-x-0 opacity-0",
-                )}
-              />
-              <span
-                className={cn(
-                  "absolute left-0 block h-0.5 w-4 rounded-full bg-current transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
-                  open ? "top-1/2 -translate-y-1/2 -rotate-45" : "bottom-0.5",
-                )}
-              />
-            </span>
-          </button>
+          <div className="relative z-10 flex items-center gap-2 lg:hidden">
+            <div className="md:hidden">
+              <LanguageSwitcher current={lang} label={language} />
+            </div>
+            <button
+              type="button"
+              className="inline-flex size-10 items-center justify-center rounded-full border border-line bg-white text-ink transition-colors hover:bg-canvas"
+              aria-expanded={open}
+              aria-controls="mobile-nav"
+              aria-label={open ? close : menu}
+              onClick={() => setOpen((value) => !value)}
+            >
+              <span className="relative block size-4" aria-hidden>
+                <span
+                  className={cn(
+                    "absolute left-0 block h-0.5 w-4 rounded-full bg-current transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                    open ? "top-1/2 -translate-y-1/2 rotate-45" : "top-0.5",
+                  )}
+                />
+                <span
+                  className={cn(
+                    "absolute top-1/2 left-0 block h-0.5 w-4 -translate-y-1/2 rounded-full bg-current transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                    open && "scale-x-0 opacity-0",
+                  )}
+                />
+                <span
+                  className={cn(
+                    "absolute left-0 block h-0.5 w-4 rounded-full bg-current transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                    open ? "top-1/2 -translate-y-1/2 -rotate-45" : "bottom-0.5",
+                  )}
+                />
+              </span>
+            </button>
+          </div>
         </div>
 
         <nav
@@ -292,14 +297,7 @@ export function Header({
           aria-label={mobileNav}
           aria-hidden={!open}
         >
-          <div className="md:hidden">
-            <LanguageSwitcher
-              current={lang}
-              label={language}
-              onNavigate={() => setOpen(false)}
-            />
-          </div>
-          <ul className="mt-2 flex flex-col">
+          <ul className="flex flex-col">
             {nav.map((item) => (
               <li key={item.href}>
                 <a
@@ -315,7 +313,7 @@ export function Header({
           </ul>
           <a
             href={phoneHref}
-            className="mt-2 block rounded-2xl px-2 py-3 text-base font-semibold"
+            className="mt-1 block rounded-2xl px-2 py-3 text-base font-semibold"
             tabIndex={open ? undefined : -1}
           >
             {phoneDisplay}

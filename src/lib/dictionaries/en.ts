@@ -21,12 +21,12 @@ export const en: Dictionary = {
     contact: "Contact",
   },
   hero: {
-    eyebrow: "LITHUANIA · EUROPE",
+    eyebrow: "BRATAS · EUROPE",
     titleLines: [
-      "Used parts from the United Kingdom.",
-      "Held in Lithuania, sold across Europe.",
+      "Leaders in used car parts.",
+      "Warehoused in Lithuania, serving all of Europe.",
     ],
-    lead: "UAB Bratas imports used spare parts from the United Kingdom, holds them in warehouse stock in Lithuania, and sells through RRR.lt and Ovoko. Top Company 2026 — among the 6% most reliable companies in Lithuania (Rekvizitai.lt).",
+    lead: "Bratas is one of Lithuania's most reliable used automotive parts suppliers. Deep warehouse stock, fast dispatch, and catalogue sales through RRR.lt and Ovoko. Top Company 2026 — among the 6% most reliable companies in the country.",
     catalog: "Open catalogue",
     call: "Call",
     imageAlt: "Warehouse aisle lined with car bumpers on wooden shelves",
@@ -114,16 +114,14 @@ export const en: Dictionary = {
     vatLabel: "VAT",
     hoursLabel: "HOURS",
     hoursShort: "Mon–Fri, 07:00–16:00 (EET/EEST)",
-    mapTitle: "Map of Šlamai village",
     marketplaceNote: "Parts are sold on RRR.lt and Ovoko.",
     photoAlt: "Forklift lifting a car engine outside the warehouse",
   },
   footer: {
-    before:
-      "© 2026 UAB Bratas. Company code 306008010 · VAT LT100014759115. Parts sold on ",
-    middle: " and ",
-    after: ".",
+    rights: "© 2026 UAB Bratas",
+    legal: "Company code 306008010 · VAT LT100014759115",
     privacy: "Privacy",
+    solution: "Solution",
   },
   privacy: {
     title: "Privacy notice",

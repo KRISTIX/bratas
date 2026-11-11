@@ -21,12 +21,12 @@ export const fr: Dictionary = {
     contact: "Contact",
   },
   hero: {
-    eyebrow: "LITUANIE · EUROPE",
+    eyebrow: "BRATAS · EUROPE",
     titleLines: [
-      "Pièces d'occasion du Royaume-Uni.",
-      "Stockées en Lituanie, vendues en Europe.",
+      "Leaders des pièces d'occasion.",
+      "Entrepôt en Lituanie, marché européen.",
     ],
-    lead: "UAB Bratas importe des pièces de rechange d'occasion du Royaume-Uni, les conserve en entrepôt en Lituanie et les vend via RRR.lt et Ovoko. Entreprise TOP 2026 — parmi les 6 % d'entreprises les plus fiables de Lituanie (Rekvizitai.lt).",
+    lead: "Bratas compte parmi les fournisseurs de pièces auto d'occasion les plus fiables de Lituanie. Large stock, expédition rapide et vente via RRR.lt et Ovoko. Entreprise TOP 2026 — parmi les 6 % d'entreprises les plus fiables du pays.",
     catalog: "Ouvrir le catalogue",
     call: "Appeler",
     imageAlt: "Allée d'entrepôt bordée de pare-chocs sur des étagères en bois",
@@ -118,16 +118,14 @@ export const fr: Dictionary = {
     vatLabel: "TVA",
     hoursLabel: "HORAIRES",
     hoursShort: "Lun–Ven, 07:00–16:00 (EET/EEST)",
-    mapTitle: "Carte du village de Šlamai",
     marketplaceNote: "Les pièces sont vendues sur RRR.lt et Ovoko.",
     photoAlt: "Chariot élévateur soulevant un moteur automobile devant l'entrepôt",
   },
   footer: {
-    before:
-      "© 2026 UAB Bratas. Code d'entreprise 306008010 · TVA LT100014759115. Pièces vendues sur ",
-    middle: " et ",
-    after: ".",
+    rights: "© 2026 UAB Bratas",
+    legal: "Code d'entreprise 306008010 · TVA LT100014759115",
     privacy: "Confidentialité",
+    solution: "Solution",
   },
   privacy: {
     title: "Avis de confidentialité",

@@ -5,8 +5,8 @@ import { notFound } from "next/navigation";
 import { Appear } from "@/components/appear";
 import { AwardSeal } from "@/components/award-seal";
 import { Header } from "@/components/header";
+import { ExternalLinkIcon, PhoneIcon } from "@/components/icons";
 import { JsonLd } from "@/components/json-ld";
-import { MapEmbed } from "@/components/map-embed";
 import { PartIcon } from "@/components/part-icon";
 import { StockCounter } from "@/components/stock-counter";
 import { Button } from "@/components/ui/button";
@@ -93,6 +93,7 @@ export default async function Home({
                       rel="noopener noreferrer"
                     >
                       {dict.hero.catalog}
+                      <ExternalLinkIcon />
                     </a>
                   </Button>
                   <Button
@@ -102,6 +103,7 @@ export default async function Home({
                     className="focus-visible:ring-offset-ink"
                   >
                     <a href={phoneHref}>
+                      <PhoneIcon />
                       {dict.hero.call} {phoneDisplay}
                     </a>
                   </Button>
@@ -196,10 +198,10 @@ export default async function Home({
                           />
                         </div>
                         <div className="flex flex-1 flex-col p-6 md:p-7">
-                          <p className="text-xs font-semibold tracking-[0.18em] text-brand lg:hidden">
+                          <p className="mb-3 inline-flex w-fit items-center rounded-full bg-brand/10 px-3.5 py-1.5 font-display text-2xl font-bold tracking-tight text-brand lg:hidden">
                             {String(index + 1).padStart(2, "0")}
                           </p>
-                          <h3 className="mt-2 font-display text-xl font-semibold tracking-tight sm:text-2xl lg:mt-0">
+                          <h3 className="font-display text-xl font-semibold tracking-tight sm:text-2xl">
                             {service.title}
                           </h3>
                           <p className="mt-3 flex-1 text-pretty leading-relaxed text-muted">
@@ -304,21 +306,26 @@ export default async function Home({
                 </h2>
                 <p className="mt-3 text-lg text-white/70">{dict.band.lead}</p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <Button asChild size="lg" className="focus-visible:ring-offset-ink">
+              <div className="flex w-full flex-row gap-2 sm:w-auto sm:gap-3">
+                <Button
+                  asChild
+                  size="lg"
+                  className="min-w-0 flex-1 px-3 text-sm focus-visible:ring-offset-ink sm:flex-none sm:px-6 sm:text-base"
+                >
                   <a
                     href={primaryCatalogUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {primaryCatalogLabel}
+                    <ExternalLinkIcon />
                   </a>
                 </Button>
                 <Button
                   asChild
                   size="lg"
                   variant="outline"
-                  className="focus-visible:ring-offset-ink"
+                  className="min-w-0 flex-1 px-3 text-sm focus-visible:ring-offset-ink sm:flex-none sm:px-6 sm:text-base"
                 >
                   <a
                     href={secondaryCatalogUrl}
@@ -326,6 +333,7 @@ export default async function Home({
                     rel="noopener noreferrer"
                   >
                     {secondaryCatalogLabel}
+                    <ExternalLinkIcon />
                   </a>
                 </Button>
               </div>
@@ -335,7 +343,7 @@ export default async function Home({
 
         <section id="contact" className="scroll-mt-28 px-3 pt-4 pb-8 md:px-5">
           <Appear className="mx-auto max-w-6xl overflow-hidden rounded-[1.75rem] bg-ivory shadow-card">
-            <div className="grid gap-0 lg:grid-cols-[1fr_1.05fr]">
+            <div className="grid lg:grid-cols-2">
               <div className="flex flex-col justify-between gap-8 p-6 sm:p-8 md:p-10">
                 <div>
                   <p className="text-xs font-semibold tracking-[0.22em] text-brand">
@@ -347,8 +355,9 @@ export default async function Home({
                   <p className="mt-2 text-muted">{dict.contact.place}</p>
                   <a
                     href={phoneHref}
-                    className="mt-6 block font-display text-3xl font-bold tracking-tight transition-colors hover:text-brand sm:text-4xl"
+                    className="mt-6 inline-flex items-center gap-3 font-display text-3xl font-bold tracking-tight transition-colors hover:text-brand sm:text-4xl"
                   >
+                    <PhoneIcon className="size-7 text-brand sm:size-8" />
                     {phoneDisplay}
                   </a>
                   <p className="mt-4 max-w-md text-sm leading-relaxed text-muted">
@@ -382,64 +391,84 @@ export default async function Home({
                   </div>
                 </dl>
               </div>
-              <div className="grid border-t border-line lg:min-h-full lg:border-t-0 lg:border-l lg:grid-rows-[1.05fr_0.95fr]">
-                <figure className="relative min-h-[14rem] overflow-hidden border-b border-line">
-                  <Image
-                    src={facilityImage}
-                    alt={dict.contact.photoAlt}
-                    fill
-                    sizes="(min-width: 1024px) 45vw, 100vw"
-                    className="object-cover"
-                  />
-                </figure>
-                <div className="min-h-[14rem] overflow-hidden lg:min-h-0">
-                  <MapEmbed title={dict.contact.mapTitle} />
-                </div>
-              </div>
+              <figure className="relative min-h-[18rem] w-full sm:min-h-[22rem] lg:min-h-full">
+                <Image
+                  src={facilityImage}
+                  alt={dict.contact.photoAlt}
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </figure>
             </div>
           </Appear>
         </section>
       </main>
       <footer className="px-3 pt-2 pb-8 md:px-5">
-        <div className="mx-auto flex max-w-6xl flex-col gap-6 rounded-[1.75rem] bg-ink px-6 py-8 text-white shadow-float md:flex-row md:items-center md:justify-between md:px-10">
-          <span className="inline-flex w-fit rounded-2xl bg-white px-3 py-2">
-            <Image
-              src="/brand/logo.png"
-              alt=""
-              width={1104}
-              height={304}
-              className="h-8 w-auto"
-            />
-          </span>
-          <div className="max-w-xl space-y-3 text-sm leading-relaxed text-white/70">
-            <p>
-              {dict.footer.before}
+        <div className="mx-auto max-w-6xl rounded-[1.75rem] bg-ink px-5 py-5 text-white shadow-float sm:px-8">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <span className="inline-flex w-fit rounded-xl bg-white px-2.5 py-1.5">
+              <Image
+                src="/brand/logo.png"
+                alt=""
+                width={1104}
+                height={304}
+                className="h-6 w-auto"
+              />
+            </span>
+            <nav
+              aria-label={dict.nav.primary}
+              className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-semibold"
+            >
               <a
                 href={catalogUrl}
-                className="font-semibold text-white underline-offset-4 hover:underline"
+                className="text-white/80 underline-offset-4 transition-colors hover:text-white hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 RRR.lt
               </a>
-              {dict.footer.middle}
               <a
                 href={ovokoUrl}
-                className="font-semibold text-white underline-offset-4 hover:underline"
+                className="text-white/80 underline-offset-4 transition-colors hover:text-white hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Ovoko
               </a>
-              {dict.footer.after}
-            </p>
-            <p>
+              <a
+                href={phoneHref}
+                className="text-white/80 underline-offset-4 transition-colors hover:text-white hover:underline"
+              >
+                {phoneDisplay}
+              </a>
               <Link
                 href={`/${lang}/privacy`}
-                className="font-semibold text-white underline-offset-4 hover:underline"
+                className="text-white/80 underline-offset-4 transition-colors hover:text-white hover:underline"
               >
                 {dict.footer.privacy}
               </Link>
+            </nav>
+          </div>
+          <div className="mt-4 flex flex-col gap-1.5 border-t border-white/10 pt-3 text-xs leading-relaxed text-white/55 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+            <p>
+              {dict.footer.rights}
+              <span className="mx-1.5 text-white/25" aria-hidden>
+                ·
+              </span>
+              {dict.footer.legal}
+            </p>
+            <p>
+              {dict.footer.solution}
+              {": "}
+              <a
+                href="https://boostery.io"
+                className="font-semibold text-white/80 underline-offset-4 transition-colors hover:text-white hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Boostery
+              </a>
             </p>
           </div>
         </div>
