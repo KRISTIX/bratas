@@ -33,11 +33,6 @@ export const en: Dictionary = {
     imageCaption: "Warehouse",
     stockNote: "LIVE",
     stockLabel: "parts in warehouse",
-    proofs: [
-      { value: "RRR / Ovoko", note: "current catalogue" },
-      { value: "6%", note: "Top Company 2026, Lithuania" },
-      { value: "Mon–Fri", note: "07:00–16:00 EET/EEST" },
-    ],
   },
   operation: {
     eyebrow: "OPERATIONS",

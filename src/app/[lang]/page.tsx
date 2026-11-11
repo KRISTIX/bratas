@@ -115,21 +115,6 @@ export default async function Home({
                     label={dict.hero.stockLabel}
                   />
                 </div>
-                <dl className="rise rise-6 mt-7 divide-y divide-white/12 border-t border-white/15 sm:grid sm:grid-cols-3 sm:gap-0 sm:divide-y-0 sm:divide-x sm:divide-white/15">
-                  {dict.hero.proofs.map((proof) => (
-                    <div
-                      key={proof.note}
-                      className="flex items-baseline justify-between gap-4 py-3.5 sm:flex-col sm:items-start sm:justify-start sm:gap-0 sm:px-5 sm:py-0 sm:pt-5 sm:first:pl-0 sm:last:pr-0"
-                    >
-                      <dd className="shrink-0 font-display text-xl font-bold tracking-tight sm:text-3xl">
-                        {proof.value}
-                      </dd>
-                      <dt className="text-right text-sm leading-snug text-white/60 sm:mt-1.5 sm:max-w-[13rem] sm:text-left">
-                        {proof.note}
-                      </dt>
-                    </div>
-                  ))}
-                </dl>
               </div>
             </div>
             <figure className="rise rise-3 relative min-h-[16rem] overflow-hidden sm:min-h-[18rem] lg:min-h-full">

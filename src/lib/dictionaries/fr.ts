@@ -33,11 +33,6 @@ export const fr: Dictionary = {
     imageCaption: "Entrepôt",
     stockNote: "EN DIRECT",
     stockLabel: "pièces en entrepôt",
-    proofs: [
-      { value: "RRR / Ovoko", note: "catalogue en ligne" },
-      { value: "6 %", note: "Entreprise TOP 2026, Lituanie" },
-      { value: "Lun–Ven", note: "07:00–16:00 EET/EEST" },
-    ],
   },
   operation: {
     eyebrow: "ACTIVITÉ",

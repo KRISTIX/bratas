@@ -33,11 +33,6 @@ export const lt: Dictionary = {
     imageCaption: "Sandėlis",
     stockNote: "GYVAI",
     stockLabel: "dalių sandėlyje",
-    proofs: [
-      { value: "RRR / Ovoko", note: "aktualus katalogas" },
-      { value: "6%", note: "TOP Įmonė 2026, Lietuva" },
-      { value: "I–V", note: "07:00–16:00 EET/EEST" },
-    ],
   },
   operation: {
     eyebrow: "VEIKLA",

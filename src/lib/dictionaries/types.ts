@@ -25,11 +25,6 @@ export type Dictionary = {
     imageCaption: string;
     stockNote: string;
     stockLabel: string;
-    proofs: [
-      { value: string; note: string },
-      { value: string; note: string },
-      { value: string; note: string },
-    ];
   };
   operation: {
     eyebrow: string;

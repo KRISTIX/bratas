@@ -33,11 +33,6 @@ export const pl: Dictionary = {
     imageCaption: "Magazyn",
     stockNote: "NA ŻYWO",
     stockLabel: "części w magazynie",
-    proofs: [
-      { value: "RRR / Ovoko", note: "aktualny katalog" },
-      { value: "6%", note: "Top Company 2026, Litwa" },
-      { value: "Pn–Pt", note: "07:00–16:00 EET/EEST" },
-    ],
   },
   operation: {
     eyebrow: "DZIAŁALNOŚĆ",
