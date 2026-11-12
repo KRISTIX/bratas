@@ -2,7 +2,7 @@ import type { Dictionary } from "@/lib/dictionaries/types";
 
 export const lt: Dictionary = {
   meta: {
-    title: "UAB Bratas — naudotos dalys iš Jungtinės Karalystės",
+    title: "UAB Bratas: naudotos dalys iš Jungtinės Karalystės",
     description:
       "UAB Bratas įveža, sandėliuoja ir parduoda naudotas automobilių dalis iš Jungtinės Karalystės. Katalogas RRR.lt ir Ovoko. TOP Įmonė 2026. Lietuva.",
     imageAlt: "UAB Bratas sandėlis: bamperiai medinėse lentynose",
@@ -18,6 +18,7 @@ export const lt: Dictionary = {
     operation: "Veikla",
     parts: "Dalys",
     recognition: "Įvertinimas",
+    wholesale: "Didmena",
     contact: "Kontaktai",
   },
   hero: {
@@ -29,8 +30,12 @@ export const lt: Dictionary = {
     lead: "Bratas – vienas patikimiausių naudotų automobilių dalių tiekėjų Lietuvoje. Platus sandėlis, greitas siuntimas ir prekyba per RRR.lt bei Ovoko. TOP Įmonė 2026 – tarp 6 % patikimiausių įmonių šalyje.",
     catalog: "Atidaryti katalogą",
     call: "Skambinti",
-    imageAlt: "Sandėlio praėjimas su bamperiais medinėse lentynose",
-    imageCaption: "Sandėlis",
+    imageAlts: [
+      "Sandėlio praėjimas su bamperiais medinėse lentynose",
+      "Sandėlio aleja su bamperiais abiejose pusėse",
+    ],
+    imageCaptions: ["Sandėlis", "Bamperiai"],
+    nextImage: "Kita sandėlio nuotrauka",
     stockNote: "GYVAI",
     stockLabel: "dalių sandėlyje",
   },
@@ -48,7 +53,7 @@ export const lt: Dictionary = {
     {
       title: "Sandėlio atsargos",
       text: "Dalys rūšiuojamos, saugomos ir laikomos paruoštos siuntimui.",
-      alt: "Bamperiai, sukrauti sandėlio medinėse lentynose",
+      alt: "Sandėlio lentynos su žibintais, vairo mechanizmais ir kitomis dalimis",
     },
     {
       title: "Pardavimas ir siuntimas",
@@ -94,6 +99,30 @@ export const lt: Dictionary = {
       "UAB Bratas įtraukta į TOP Įmonė 2026 sąrašą – tarp 6 % patikimiausių ir finansiškai stabiliausių įmonių Lietuvoje (Rekvizitai.lt).",
     body: "2026 m. ženklas žymi dešimtąją TOP Įmonė įvertinimo sukaktį.",
     seal: "TOP Įmonė 2026",
+    reviewsTitle: "Klientų atsiliepimai",
+    reviewsLead: "Įvertinimai pirkėjų, kurie užsakė dalis.",
+    reviews: [
+      {
+        name: "Janis",
+        score: "10",
+        text: "Rekomenduoju Mercedes dalims.",
+      },
+      {
+        name: "UAB",
+        score: "9",
+        text: "Laikosi duotų terminų, super!",
+      },
+      {
+        name: "Arnoldas",
+        score: "10",
+        text: "Greitai išsiuntė užsakymą.",
+      },
+      {
+        name: "Kristijonas",
+        score: "10",
+        text: "Rekomenduoju, pirkau dalis.",
+      },
+    ],
   },
   band: {
     eyebrow: "KATALOGAS",
@@ -101,6 +130,31 @@ export const lt: Dictionary = {
     lead: "Užsakymai vykdomi per RRR.lt arba Ovoko.",
     openRrr: "Atidaryti RRR.lt",
     openOvoko: "Atidaryti Ovoko",
+  },
+  wholesale: {
+    eyebrow: "DIDMENA",
+    title: "Paraiška didmenai",
+    lead: "Nurodykite mėnesinį poreikį ir dalių rūšis – atsakysime dėl didmeninių sąlygų.",
+    photoAlt: "Krautuvas kelia automobilio variklį prie sandėlio",
+    nameLabel: "VARDAS",
+    companyLabel: "ĮMONĖ",
+    emailLabel: "EL. PAŠTAS",
+    phoneLabel: "TELEFONAS",
+    volumeLabel: "DALIŲ PER MĖNESĮ",
+    volumeOptions: [
+      { value: "1-50", label: "1–50" },
+      { value: "51-150", label: "51–150" },
+      { value: "151-500", label: "151–500" },
+      { value: "500+", label: "500+" },
+    ],
+    partsLabel: "KOKIŲ DALIŲ REIKIA (pasirinkite visas reikalingas)",
+    messageLabel: "ŽINUTĖ (neprivaloma)",
+    submitLabel: "Siųsti paraišką",
+    successMessage: "Paraiška gauta. Ačiū, greitai susisieksime.",
+    requiredHint: "Pasirinkite bent vieną dalių rūšį.",
+    errorMessage:
+      "Automatinis siuntimas nepavyko. Galite išsiųsti paraišką el. paštu.",
+    mailtoLabel: "Atidaryti el. paštą",
   },
   contact: {
     eyebrow: "KONTAKTAI",
@@ -114,7 +168,8 @@ export const lt: Dictionary = {
     hoursLabel: "LAIKAS",
     hoursShort: "I–V, 07:00–16:00 (EET/EEST)",
     marketplaceNote: "Dalys parduodamos per RRR.lt ir Ovoko.",
-    photoAlt: "Krautuvas kelia automobilio variklį prie sandėlio",
+    mapTitle: "UAB Bratas vieta žemėlapyje",
+    mapOpen: "Atidaryti Google Maps",
   },
   footer: {
     rights: "© 2026 UAB Bratas",
@@ -124,7 +179,7 @@ export const lt: Dictionary = {
   },
   privacy: {
     title: "Privatumo pranešimas",
-    updated: "Atnaujinta: 2026 m. lapkričio 10 d.",
+    updated: "Atnaujinta: 2026 m. lapkričio 12 d.",
     intro:
       "Kaip UAB Bratas tvarko asmens duomenis, kai lankotės šioje svetainėje. Skirta lankytojams Europos ekonominėje erdvėje.",
     sections: [
@@ -134,15 +189,15 @@ export const lt: Dictionary = {
       },
       {
         heading: "Ką daro ši svetainė",
-        body: "Svetainė pristato įmonę, sandėlio vietą ir nuorodas į katalogus RRR.lt bei Ovoko. Čia nėra apmokėjimo, paskyrų ar reklamos sekiklių.",
+        body: "Svetainė pristato įmonę, sandėlio vietą, didmenos paraiškos formą ir nuorodas į katalogus RRR.lt bei Ovoko. Čia nėra apmokėjimo, paskyrų ar reklamos sekiklių.",
       },
       {
         heading: "Kokius duomenis tvarkome",
-        body: "Talpinimo paslaugų teikėjas Vercel tvarko techninius žurnalus (IP adresą, naršyklę, užklausos URL), reikalingus svetainei veikti ir saugoti. Analitiniai slapukai ir reklamos taškai nenaudojami.",
+        body: "Talpinimo paslaugų teikėjas Vercel tvarko techninius žurnalus (IP adresą, naršyklę, užklausos URL), reikalingus svetainei veikti ir saugoti. Didmenos paraiškos pirmiausia perduodamos per FormSubmit.co, o tada pristatomos el. paštu, kad galėtume atsakyti. Analitinių slapukų ir reklamos pikselių nenaudojame.",
       },
       {
-        heading: "Žemėlapis (OpenStreetMap)",
-        body: "Kontaktų žemėlapis įkeliamas tik pasirinkus \"Rodyti žemėlapį\". Tuomet naršyklė kreipiasi į openstreetmap.org, kuri gali tvarkyti jūsų IP adresą pagal savo taisykles.",
+        heading: "Žemėlapis (Google Maps)",
+        body: "Kontaktų skiltyje rodomas Google Maps žemėlapis. Jūsų naršyklė kreipiasi į Google, kuri gali tvarkyti jūsų IP adresą ir susijusius duomenis pagal savo privatumo politiką.",
       },
       {
         heading: "Išorinės prekyvietės",
@@ -150,7 +205,7 @@ export const lt: Dictionary = {
       },
       {
         heading: "Teisinis pagrindas ir saugojimas",
-        body: "Talpinimo žurnalai tvarkomi teisėto intereso pagrindu – kad svetainė veiktų ir būtų saugi. Jie saugomi tiek, kiek numato talpinimo paslaugų teikėjas.",
+        body: "Talpinimo žurnalai tvarkomi teisėto intereso pagrindu, kad svetainė veiktų ir būtų saugi. Didmenos paraiškas tvarkome siekdami sudaryti sutartį arba dėl teisėto intereso atsakyti į užklausą. Duomenys saugomi tiek, kiek reikia atsakyti ir vykdyti teisines prievoles.",
       },
       {
         heading: "Jūsų teisės",
@@ -158,7 +213,7 @@ export const lt: Dictionary = {
       },
       {
         heading: "Slapukai",
-        body: "Ši svetainė nenustato nebūtinų slapukų. Įkėlus OpenStreetMap įterptinį turinį, trečioji šalis gali nustatyti savo slapukus.",
+        body: "Ši svetainė nenustato nebūtinų slapukų. Įkėlus Google Maps žemėlapį, Google gali nustatyti savo slapukus.",
       },
     ],
   },

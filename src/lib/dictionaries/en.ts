@@ -18,6 +18,7 @@ export const en: Dictionary = {
     operation: "Operations",
     parts: "Parts",
     recognition: "Recognition",
+    wholesale: "Wholesale",
     contact: "Contact",
   },
   hero: {
@@ -29,8 +30,12 @@ export const en: Dictionary = {
     lead: "Bratas is one of Lithuania's most reliable used automotive parts suppliers. Deep warehouse stock, fast dispatch, and catalogue sales through RRR.lt and Ovoko. Top Company 2026 — among the 6% most reliable companies in the country.",
     catalog: "Open catalogue",
     call: "Call",
-    imageAlt: "Warehouse aisle lined with car bumpers on wooden shelves",
-    imageCaption: "Warehouse",
+    imageAlts: [
+      "Warehouse aisle lined with car bumpers on wooden shelves",
+      "Warehouse aisle with bumpers stacked on both sides",
+    ],
+    imageCaptions: ["Warehouse", "Bumpers"],
+    nextImage: "Show next warehouse photo",
     stockNote: "LIVE",
     stockLabel: "parts in warehouse",
   },
@@ -48,7 +53,7 @@ export const en: Dictionary = {
     {
       title: "Warehouse stock",
       text: "Parts are sorted, stored and held ready for dispatch.",
-      alt: "Car bumpers stacked on wooden warehouse shelves",
+      alt: "Warehouse shelves with lights, steering parts and other stock",
     },
     {
       title: "Sale and dispatch",
@@ -90,6 +95,30 @@ export const en: Dictionary = {
       "UAB Bratas is on the Top Company 2026 list — among the 6% most reliable and financially stable companies in Lithuania (Rekvizitai.lt).",
     body: "The 2026 seal marks ten years of the Top Company distinction.",
     seal: "Top Company 2026",
+    reviewsTitle: "Customer reviews",
+    reviewsLead: "Ratings from buyers who ordered parts.",
+    reviews: [
+      {
+        name: "Janis",
+        score: "10",
+        text: "Recommend for Mercedes parts.",
+      },
+      {
+        name: "UAB",
+        score: "9",
+        text: "They keep the deadlines they give — great!",
+      },
+      {
+        name: "Arnoldas",
+        score: "10",
+        text: "Dispatched the order quickly.",
+      },
+      {
+        name: "Kristijonas",
+        score: "10",
+        text: "I recommend them — I bought parts.",
+      },
+    ],
   },
   band: {
     eyebrow: "CATALOGUE",
@@ -97,6 +126,31 @@ export const en: Dictionary = {
     lead: "Orders go through RRR.lt or Ovoko.",
     openRrr: "Open RRR.lt",
     openOvoko: "Open Ovoko",
+  },
+  wholesale: {
+    eyebrow: "WHOLESALE",
+    title: "Apply for wholesale",
+    lead: "Tell us your monthly volume and the part kinds you need — we will follow up on wholesale terms.",
+    photoAlt: "Forklift lifting a car engine outside the warehouse",
+    nameLabel: "NAME",
+    companyLabel: "COMPANY",
+    emailLabel: "EMAIL",
+    phoneLabel: "PHONE",
+    volumeLabel: "PARTS PER MONTH",
+    volumeOptions: [
+      { value: "1-50", label: "1–50" },
+      { value: "51-150", label: "51–150" },
+      { value: "151-500", label: "151–500" },
+      { value: "500+", label: "500+" },
+    ],
+    partsLabel: "WHICH PARTS (select all that apply)",
+    messageLabel: "MESSAGE (optional)",
+    submitLabel: "Send application",
+    successMessage: "Application received. Thank you — we will be in touch.",
+    requiredHint: "Select at least one part kind.",
+    errorMessage:
+      "Automatic sending failed. You can still email the application.",
+    mailtoLabel: "Open email app",
   },
   contact: {
     eyebrow: "CONTACT",
@@ -110,7 +164,8 @@ export const en: Dictionary = {
     hoursLabel: "HOURS",
     hoursShort: "Mon–Fri, 07:00–16:00 (EET/EEST)",
     marketplaceNote: "Parts are sold on RRR.lt and Ovoko.",
-    photoAlt: "Forklift lifting a car engine outside the warehouse",
+    mapTitle: "UAB Bratas on the map",
+    mapOpen: "Open in Google Maps",
   },
   footer: {
     rights: "© 2026 UAB Bratas",
@@ -120,7 +175,7 @@ export const en: Dictionary = {
   },
   privacy: {
     title: "Privacy notice",
-    updated: "Last updated: 10 November 2026",
+    updated: "Last updated: 12 November 2026",
     intro:
       "How UAB Bratas processes personal data when you visit this website. For visitors in the European Economic Area.",
     sections: [
@@ -130,15 +185,15 @@ export const en: Dictionary = {
       },
       {
         heading: "What this site does",
-        body: "This site presents the company, warehouse location, and links to catalogues on RRR.lt and Ovoko. It has no checkout, accounts, or advertising trackers.",
+        body: "This site presents the company, warehouse location, a wholesale application form, and links to catalogues on RRR.lt and Ovoko. It has no checkout, accounts, or advertising trackers.",
       },
       {
         heading: "Data we process",
-        body: "The hosting provider (Vercel) processes technical logs such as IP address, browser type, and requested URL for delivery and security. No analytics cookies or advertising pixels are used.",
+        body: "The hosting provider (Vercel) processes technical logs such as IP address, browser type, and requested URL for delivery and security. Wholesale applications are submitted via FormSubmit.co and then delivered by email so we can reply. No analytics cookies or advertising pixels are used.",
       },
       {
-        heading: "Map (OpenStreetMap)",
-        body: "The contact map loads only after you choose “Show map”. Your browser then requests content from openstreetmap.org, which may process your IP address under its own policies.",
+        heading: "Map (Google Maps)",
+        body: "The contact section embeds Google Maps. Your browser requests content from Google, which may process your IP address and related data under its own privacy policy.",
       },
       {
         heading: "External marketplaces",
@@ -146,7 +201,7 @@ export const en: Dictionary = {
       },
       {
         heading: "Legal basis and retention",
-        body: "Hosting logs are processed for legitimate interests in operating and securing the website, and retained only as long as the hosting provider keeps them.",
+        body: "Hosting logs are processed for legitimate interests in operating and securing the website. Wholesale applications are processed to take steps toward a contract or for the legitimate interest of answering enquiries, and kept only as long as needed to reply and meet legal duties.",
       },
       {
         heading: "Your rights",
@@ -154,7 +209,7 @@ export const en: Dictionary = {
       },
       {
         heading: "Cookies",
-        body: "This site does not set non-essential cookies. Loading the OpenStreetMap embed may allow that third party to set its own cookies.",
+        body: "This site does not set non-essential cookies. Loading the Google Maps embed may allow that third party to set its own cookies.",
       },
     ],
   },

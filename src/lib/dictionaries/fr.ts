@@ -18,6 +18,7 @@ export const fr: Dictionary = {
     operation: "Activité",
     parts: "Pièces",
     recognition: "Distinction",
+    wholesale: "Gros",
     contact: "Contact",
   },
   hero: {
@@ -29,8 +30,12 @@ export const fr: Dictionary = {
     lead: "Bratas compte parmi les fournisseurs de pièces auto d'occasion les plus fiables de Lituanie. Large stock, expédition rapide et vente via RRR.lt et Ovoko. Entreprise TOP 2026 — parmi les 6 % d'entreprises les plus fiables du pays.",
     catalog: "Ouvrir le catalogue",
     call: "Appeler",
-    imageAlt: "Allée d'entrepôt bordée de pare-chocs sur des étagères en bois",
-    imageCaption: "Entrepôt",
+    imageAlts: [
+      "Allée d'entrepôt bordée de pare-chocs sur des étagères en bois",
+      "Allée d'entrepôt avec des pare-chocs de chaque côté",
+    ],
+    imageCaptions: ["Entrepôt", "Pare-chocs"],
+    nextImage: "Afficher la photo suivante",
     stockNote: "EN DIRECT",
     stockLabel: "pièces en entrepôt",
   },
@@ -48,7 +53,7 @@ export const fr: Dictionary = {
     {
       title: "Stock en entrepôt",
       text: "Les pièces sont triées, stockées et tenues prêtes à l'expédition.",
-      alt: "Pare-chocs empilés sur des étagères en bois dans l'entrepôt",
+      alt: "Étagères d'entrepôt avec phares, direction et autres pièces",
     },
     {
       title: "Vente et expédition",
@@ -94,6 +99,30 @@ export const fr: Dictionary = {
       "UAB Bratas figure sur la liste Entreprise TOP 2026 — parmi les 6 % d'entreprises les plus fiables et les plus stables financièrement de Lituanie (Rekvizitai.lt).",
     body: "Le sceau 2026 marque dix ans de la distinction Entreprise TOP.",
     seal: "Entreprise TOP 2026",
+    reviewsTitle: "Avis clients",
+    reviewsLead: "Notes de clients ayant commandé des pièces.",
+    reviews: [
+      {
+        name: "Janis",
+        score: "10",
+        text: "Je recommande pour les pièces Mercedes.",
+      },
+      {
+        name: "UAB",
+        score: "9",
+        text: "Ils respectent les délais annoncés — super !",
+      },
+      {
+        name: "Arnoldas",
+        score: "10",
+        text: "Ont expédié la commande rapidement.",
+      },
+      {
+        name: "Kristijonas",
+        score: "10",
+        text: "Je recommande — j'ai acheté des pièces.",
+      },
+    ],
   },
   band: {
     eyebrow: "CATALOGUE",
@@ -101,6 +130,31 @@ export const fr: Dictionary = {
     lead: "Les commandes passent par RRR.lt ou Ovoko.",
     openRrr: "Ouvrir RRR.lt",
     openOvoko: "Ouvrir Ovoko",
+  },
+  wholesale: {
+    eyebrow: "GROS",
+    title: "Demande de gros",
+    lead: "Indiquez votre volume mensuel et les types de pièces — nous reviendrons vers vous sur les conditions.",
+    photoAlt: "Chariot élévateur soulevant un moteur automobile devant l'entrepôt",
+    nameLabel: "NOM",
+    companyLabel: "SOCIÉTÉ",
+    emailLabel: "E-MAIL",
+    phoneLabel: "TÉLÉPHONE",
+    volumeLabel: "PIÈCES PAR MOIS",
+    volumeOptions: [
+      { value: "1-50", label: "1–50" },
+      { value: "51-150", label: "51–150" },
+      { value: "151-500", label: "151–500" },
+      { value: "500+", label: "500+" },
+    ],
+    partsLabel: "QUELLES PIÈCES (sélection multiple)",
+    messageLabel: "MESSAGE (facultatif)",
+    submitLabel: "Envoyer la demande",
+    successMessage: "Demande reçue. Merci — nous vous recontactons.",
+    requiredHint: "Sélectionnez au moins un type de pièce.",
+    errorMessage:
+      "L'envoi automatique a échoué. Vous pouvez encore envoyer la demande par e-mail.",
+    mailtoLabel: "Ouvrir l'application mail",
   },
   contact: {
     eyebrow: "CONTACT",
@@ -114,7 +168,8 @@ export const fr: Dictionary = {
     hoursLabel: "HORAIRES",
     hoursShort: "Lun–Ven, 07:00–16:00 (EET/EEST)",
     marketplaceNote: "Les pièces sont vendues sur RRR.lt et Ovoko.",
-    photoAlt: "Chariot élévateur soulevant un moteur automobile devant l'entrepôt",
+    mapTitle: "UAB Bratas sur la carte",
+    mapOpen: "Ouvrir dans Google Maps",
   },
   footer: {
     rights: "© 2026 UAB Bratas",
@@ -124,7 +179,7 @@ export const fr: Dictionary = {
   },
   privacy: {
     title: "Avis de confidentialité",
-    updated: "Dernière mise à jour : 10 novembre 2026",
+    updated: "Dernière mise à jour : 12 novembre 2026",
     intro:
       "Comment UAB Bratas traite les données personnelles lorsque vous visitez ce site. Pour les visiteurs de l'Espace économique européen.",
     sections: [
@@ -134,15 +189,15 @@ export const fr: Dictionary = {
       },
       {
         heading: "Rôle de ce site",
-        body: "Ce site présente l'entreprise, l'entrepôt et des liens vers les catalogues RRR.lt et Ovoko. Il n'héberge ni paiement, ni comptes, ni traceurs publicitaires.",
+        body: "Ce site présente l'entreprise, l'entrepôt, un formulaire de gros et des liens vers les catalogues RRR.lt et Ovoko. Il n'héberge ni paiement, ni comptes, ni traceurs publicitaires.",
       },
       {
         heading: "Données traitées",
-        body: "L'hébergeur (Vercel) traite des journaux techniques (adresse IP, navigateur, URL) nécessaires à la fourniture et à la sécurité du site. Aucun cookie analytique ni pixel publicitaire n'est utilisé.",
+        body: "L'hébergeur (Vercel) traite des journaux techniques (adresse IP, navigateur, URL) nécessaires à la fourniture et à la sécurité du site. Les demandes de gros passent par FormSubmit.co, puis sont livrées par e-mail pour permettre une réponse. Aucun cookie analytique ni pixel publicitaire n'est utilisé.",
       },
       {
-        heading: "Carte (OpenStreetMap)",
-        body: "La carte de contact n'est chargée qu'après « Afficher la carte ». Votre navigateur interroge alors openstreetmap.org, qui peut traiter votre adresse IP selon sa propre politique.",
+        heading: "Carte (Google Maps)",
+        body: "La section contact intègre Google Maps. Votre navigateur interroge Google, qui peut traiter votre adresse IP et des données associées selon sa propre politique de confidentialité.",
       },
       {
         heading: "Places de marché externes",
@@ -150,7 +205,7 @@ export const fr: Dictionary = {
       },
       {
         heading: "Base légale et conservation",
-        body: "Les journaux d'hébergement sont traités pour l'intérêt légitime d'exploiter et de sécuriser le site, et conservés selon la durée de l'hébergeur.",
+        body: "Les journaux d'hébergement sont traités pour l'intérêt légitime d'exploiter et de sécuriser le site. Les demandes de gros sont traitées en vue d'un contrat ou pour l'intérêt légitime de répondre, et conservées le temps nécessaire à la réponse et aux obligations légales.",
       },
       {
         heading: "Vos droits",
@@ -158,7 +213,7 @@ export const fr: Dictionary = {
       },
       {
         heading: "Cookies",
-        body: "Ce site ne dépose pas de cookies non essentiels. Le chargement de l'embed OpenStreetMap peut permettre à ce tiers de déposer ses propres cookies.",
+        body: "Ce site ne dépose pas de cookies non essentiels. Le chargement de l'embed Google Maps peut permettre à ce tiers de déposer ses propres cookies.",
       },
     ],
   },

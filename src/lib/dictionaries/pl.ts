@@ -18,6 +18,7 @@ export const pl: Dictionary = {
     operation: "Działalność",
     parts: "Części",
     recognition: "Wyróżnienie",
+    wholesale: "Hurt",
     contact: "Kontakt",
   },
   hero: {
@@ -29,8 +30,12 @@ export const pl: Dictionary = {
     lead: "Bratas to jeden z najbardziej wiarygodnych dostawców używanych części samochodowych na Litwie. Duży magazyn, szybka wysyłka i sprzedaż przez RRR.lt oraz Ovoko. Top Company 2026 — wśród 6% najbardziej wiarygodnych firm w kraju.",
     catalog: "Otwórz katalog",
     call: "Zadzwoń",
-    imageAlt: "Alejka magazynu ze zderzakami na drewnianych półkach",
-    imageCaption: "Magazyn",
+    imageAlts: [
+      "Alejka magazynu ze zderzakami na drewnianych półkach",
+      "Alejka magazynu ze zderzakami po obu stronach",
+    ],
+    imageCaptions: ["Magazyn", "Zderzaki"],
+    nextImage: "Pokaż kolejne zdjęcie magazynu",
     stockNote: "NA ŻYWO",
     stockLabel: "części w magazynie",
   },
@@ -48,7 +53,7 @@ export const pl: Dictionary = {
     {
       title: "Zapas magazynowy",
       text: "Części są sortowane, przechowywane i utrzymywane gotowe do wysyłki.",
-      alt: "Zderzaki ułożone na drewnianych półkach magazynu",
+      alt: "Półki magazynowe z lampami, elementami układu kierowniczego i innymi częściami",
     },
     {
       title: "Sprzedaż i wysyłka",
@@ -94,6 +99,30 @@ export const pl: Dictionary = {
       "UAB Bratas jest na liście Top Company 2026 — wśród 6% najbardziej wiarygodnych i finansowo stabilnych firm na Litwie (Rekvizitai.lt).",
     body: "Pieczęć 2026 oznacza dziesięć lat wyróżnienia Top Company.",
     seal: "Top Company 2026",
+    reviewsTitle: "Opinie klientów",
+    reviewsLead: "Oceny od kupujących, którzy zamawiali części.",
+    reviews: [
+      {
+        name: "Janis",
+        score: "10",
+        text: "Polecam części Mercedes.",
+      },
+      {
+        name: "UAB",
+        score: "9",
+        text: "Trzymają się ustalonych terminów — super!",
+      },
+      {
+        name: "Arnoldas",
+        score: "10",
+        text: "Szybko wysłali zamówienie.",
+      },
+      {
+        name: "Kristijonas",
+        score: "10",
+        text: "Polecam — kupiłem części.",
+      },
+    ],
   },
   band: {
     eyebrow: "KATALOG",
@@ -101,6 +130,31 @@ export const pl: Dictionary = {
     lead: "Zamówienia realizowane są przez RRR.lt lub Ovoko.",
     openRrr: "Otwórz RRR.lt",
     openOvoko: "Otwórz Ovoko",
+  },
+  wholesale: {
+    eyebrow: "HURT",
+    title: "Wniosek o hurt",
+    lead: "Podaj miesięczne zapotrzebowanie i rodzaje części — odezwiemy się w sprawie warunków hurtowych.",
+    photoAlt: "Wózek widłowy podnosi silnik samochodu przed magazynem",
+    nameLabel: "IMIĘ I NAZWISKO",
+    companyLabel: "FIRMA",
+    emailLabel: "E-MAIL",
+    phoneLabel: "TELEFON",
+    volumeLabel: "CZĘŚCI NA MIESIĄC",
+    volumeOptions: [
+      { value: "1-50", label: "1–50" },
+      { value: "51-150", label: "51–150" },
+      { value: "151-500", label: "151–500" },
+      { value: "500+", label: "500+" },
+    ],
+    partsLabel: "JAKIE CZĘŚCI (zaznacz wszystkie potrzebne)",
+    messageLabel: "WIADOMOŚĆ (opcjonalnie)",
+    submitLabel: "Wyślij wniosek",
+    successMessage: "Wniosek otrzymany. Dziękujemy — wkrótce się odezwiemy.",
+    requiredHint: "Wybierz co najmniej jeden rodzaj części.",
+    errorMessage:
+      "Automatyczne wysyłanie nie powiodło się. Możesz wysłać wniosek e-mailem.",
+    mailtoLabel: "Otwórz aplikację poczty",
   },
   contact: {
     eyebrow: "KONTAKT",
@@ -114,7 +168,8 @@ export const pl: Dictionary = {
     hoursLabel: "GODZINY",
     hoursShort: "Pn–Pt, 07:00–16:00 (EET/EEST)",
     marketplaceNote: "Części sprzedawane są przez RRR.lt i Ovoko.",
-    photoAlt: "Wózek widłowy podnosi silnik samochodu przed magazynem",
+    mapTitle: "UAB Bratas na mapie",
+    mapOpen: "Otwórz w Google Maps",
   },
   footer: {
     rights: "© 2026 UAB Bratas",
@@ -124,7 +179,7 @@ export const pl: Dictionary = {
   },
   privacy: {
     title: "Informacja o prywatności",
-    updated: "Ostatnia aktualizacja: 10 listopada 2026",
+    updated: "Ostatnia aktualizacja: 12 listopada 2026",
     intro:
       "Jak UAB Bratas przetwarza dane osobowe podczas wizyty na tej stronie. Dla odwiedzających z Europejskiego Obszaru Gospodarczego.",
     sections: [
@@ -134,15 +189,15 @@ export const pl: Dictionary = {
       },
       {
         heading: "Rola tej strony",
-        body: "Strona przedstawia firmę, lokalizację magazynu oraz linki do katalogów RRR.lt i Ovoko. Nie ma tu płatności, kont użytkowników ani trackerów reklamowych.",
+        body: "Strona przedstawia firmę, lokalizację magazynu, formularz hurtowy oraz linki do katalogów RRR.lt i Ovoko. Nie ma tu płatności, kont użytkowników ani trackerów reklamowych.",
       },
       {
         heading: "Przetwarzane dane",
-        body: "Dostawca hostingu (Vercel) przetwarza logi techniczne (adres IP, przeglądarka, URL) potrzebne do działania i bezpieczeństwa strony. Nie używamy plików cookie analitycznych ani pikseli reklamowych.",
+        body: "Dostawca hostingu (Vercel) przetwarza logi techniczne (adres IP, przeglądarka, URL) potrzebne do działania i bezpieczeństwa strony. Wnioski hurtowe są przekazywane przez FormSubmit.co, a następnie dostarczane e-mailem, abyśmy mogli odpowiedzieć. Nie używamy plików cookie analitycznych ani pikseli reklamowych.",
       },
       {
-        heading: "Mapa (OpenStreetMap)",
-        body: "Mapa kontaktowa ładuje się dopiero po wyborze „Pokaż mapę”. Przeglądarka wtedy odpytuje openstreetmap.org, które może przetwarzać Twój adres IP według własnych zasad.",
+        heading: "Mapa (Google Maps)",
+        body: "W sekcji kontaktu osadzona jest Google Maps. Przeglądarka odpytuje Google, które może przetwarzać Twój adres IP i powiązane dane według własnej polityki prywatności.",
       },
       {
         heading: "Zewnętrzne marketplace",
@@ -150,7 +205,7 @@ export const pl: Dictionary = {
       },
       {
         heading: "Podstawa prawna i przechowywanie",
-        body: "Logi hostingu są przetwarzane w prawnie uzasadnionym interesie utrzymania i zabezpieczenia strony, i przechowywane tak długo, jak przewiduje dostawca hostingu.",
+        body: "Logi hostingu są przetwarzane w prawnie uzasadnionym interesie utrzymania i zabezpieczenia strony. Wnioski hurtowe — w celu zawarcia umowy lub odpowiedzi na zapytanie — i przechowywane tak długo, jak potrzeba do odpowiedzi i obowiązków prawnych.",
       },
       {
         heading: "Twoje prawa",
@@ -158,7 +213,7 @@ export const pl: Dictionary = {
       },
       {
         heading: "Pliki cookie",
-        body: "Ta strona nie ustawia zbędnych plików cookie. Załadowanie osadzenia OpenStreetMap może pozwolić tej stronie trzeciej ustawić własne pliki cookie.",
+        body: "Ta strona nie ustawia zbędnych plików cookie. Załadowanie osadzenia Google Maps może pozwolić tej stronie trzeciej ustawić własne pliki cookie.",
       },
     ],
   },

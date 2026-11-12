@@ -11,8 +11,9 @@ function randomInRange() {
   return Math.floor(MIN + Math.random() * (MAX - MIN + 1));
 }
 
+/** Random delay between 5 and 8 seconds (inclusive of 5s, exclusive of 9s). */
 function nextDelay() {
-  return 5000 + Math.floor(Math.random() * 5000);
+  return 5000 + Math.floor(Math.random() * 3001);
 }
 
 function formatCount(value: number, locale: string) {
@@ -32,29 +33,31 @@ export function StockCounter({
   const [flash, setFlash] = useState(false);
 
   useEffect(() => {
-    setCount(randomInRange());
-
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) return;
-
     let timeoutId = 0;
     let flashId = 0;
+    let seedId = 0;
 
-    const tick = () => {
-      setCount((current) => {
-        const step = Math.random() > 0.55 ? 1 : 2;
-        const direction = Math.random() > 0.5 ? 1 : -1;
-        const next = current + direction * step;
-        return Math.min(MAX, Math.max(MIN, next));
-      });
-      setFlash(true);
-      flashId = window.setTimeout(() => setFlash(false), 320);
+    seedId = window.setTimeout(() => {
+      setCount(randomInRange());
+      if (reduce) return;
+
+      const tick = () => {
+        setCount((current) => {
+          const direction = Math.random() > 0.5 ? 1 : -1;
+          const next = current + direction;
+          return Math.min(MAX, Math.max(MIN, next));
+        });
+        setFlash(true);
+        flashId = window.setTimeout(() => setFlash(false), 320);
+        timeoutId = window.setTimeout(tick, nextDelay());
+      };
+
       timeoutId = window.setTimeout(tick, nextDelay());
-    };
-
-    timeoutId = window.setTimeout(tick, nextDelay());
+    }, 0);
 
     return () => {
+      window.clearTimeout(seedId);
       window.clearTimeout(timeoutId);
       window.clearTimeout(flashId);
     };

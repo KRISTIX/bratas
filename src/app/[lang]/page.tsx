@@ -4,20 +4,22 @@ import { notFound } from "next/navigation";
 
 import { Appear } from "@/components/appear";
 import { AwardSeal } from "@/components/award-seal";
+import { ContactMap } from "@/components/contact-map";
 import { Header } from "@/components/header";
+import { HeroGallery } from "@/components/hero-gallery";
 import { ExternalLinkIcon, PhoneIcon } from "@/components/icons";
 import { JsonLd } from "@/components/json-ld";
 import { PartIcon } from "@/components/part-icon";
 import { StockCounter } from "@/components/stock-counter";
+import { WholesaleForm } from "@/components/wholesale-form";
 import { Button } from "@/components/ui/button";
 import { getDictionary } from "@/lib/dictionaries";
 import { hasLocale } from "@/lib/i18n";
 import {
   catalogUrl,
+  facilityImage,
   getPrimaryCatalogUrl,
   getSecondaryCatalogUrl,
-  facilityImage,
-  heroImage,
   ovokoUrl,
   phoneDisplay,
   phoneHref,
@@ -49,6 +51,7 @@ export default async function Home({
           { href: "#operation", label: dict.nav.operation },
           { href: "#parts", label: dict.nav.parts },
           { href: "#recognition", label: dict.nav.recognition },
+          { href: "#wholesale", label: dict.nav.wholesale },
           { href: "#contact", label: dict.nav.contact },
         ]}
         menu={dict.nav.menu}
@@ -117,21 +120,11 @@ export default async function Home({
                 </div>
               </div>
             </div>
-            <figure className="rise rise-3 relative min-h-[16rem] overflow-hidden sm:min-h-[18rem] lg:min-h-full">
-              <Image
-                src={heroImage}
-                alt={dict.hero.imageAlt}
-                fill
-                preload
-                sizes="(min-width: 1024px) 45vw, 100vw"
-                className="object-cover"
-              />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/70 to-transparent px-5 pt-16 pb-5">
-                <span className="inline-flex rounded-full bg-white/95 px-3 py-1 text-sm font-semibold text-ink shadow-sm">
-                  {dict.hero.imageCaption}
-                </span>
-              </figcaption>
-            </figure>
+            <HeroGallery
+              alts={dict.hero.imageAlts}
+              captions={dict.hero.imageCaptions}
+              nextLabel={dict.hero.nextImage}
+            />
           </div>
         </section>
 
@@ -250,33 +243,76 @@ export default async function Home({
         </section>
 
         <section id="recognition" className="scroll-mt-28 px-3 md:px-5">
-          <Appear>
-            <div className="mx-auto flex max-w-6xl flex-col gap-6 rounded-[1.75rem] bg-ivory px-5 py-6 shadow-card sm:px-8 sm:py-7 md:flex-row md:items-center md:gap-10 md:px-10 md:py-8">
-              <div className="shrink-0 self-center md:self-auto">
-                <AwardSeal label={dict.award.seal} mark={dict.award.mark} />
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="text-xs font-semibold tracking-[0.22em] text-brand">
-                  {dict.award.eyebrow}
-                </p>
-                <div className="mt-2 flex flex-wrap items-end gap-x-5 gap-y-1">
-                  <h2 className="font-display text-2xl font-bold tracking-tight text-balance sm:text-3xl">
-                    {dict.award.title}
-                  </h2>
-                  <p className="font-display text-4xl font-bold tracking-tight text-brand sm:text-5xl">
-                    {dict.award.figure}
+          <div className="mx-auto flex max-w-6xl flex-col gap-4">
+            <Appear>
+              <div className="flex flex-col gap-6 rounded-[1.75rem] bg-ivory px-5 py-6 shadow-card sm:px-8 sm:py-7 md:flex-row md:items-center md:gap-10 md:px-10 md:py-8">
+                <div className="shrink-0 self-center md:self-auto">
+                  <AwardSeal label={dict.award.seal} mark={dict.award.mark} />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="text-xs font-semibold tracking-[0.22em] text-brand">
+                    {dict.award.eyebrow}
+                  </p>
+                  <div className="mt-2 flex flex-wrap items-end gap-x-5 gap-y-1">
+                    <h2 className="font-display text-2xl font-bold tracking-tight text-balance sm:text-3xl">
+                      {dict.award.title}
+                    </h2>
+                    <p className="font-display text-4xl font-bold tracking-tight text-brand sm:text-5xl">
+                      {dict.award.figure}
+                    </p>
+                  </div>
+                  <p className="mt-1 text-sm text-muted sm:text-base">
+                    {dict.award.figureLabel}
+                  </p>
+                  <blockquote className="mt-4 max-w-3xl border-l-2 border-brand pl-4 text-base leading-relaxed text-pretty">
+                    {dict.award.quote}
+                  </blockquote>
+                  <p className="mt-3 max-w-3xl text-sm text-pretty text-muted sm:text-base">
+                    {dict.award.body}
                   </p>
                 </div>
-                <p className="mt-1 text-sm text-muted sm:text-base">{dict.award.figureLabel}</p>
-                <blockquote className="mt-4 max-w-3xl border-l-2 border-brand pl-4 text-base leading-relaxed text-pretty">
-                  {dict.award.quote}
-                </blockquote>
-                <p className="mt-3 max-w-3xl text-sm text-pretty text-muted sm:text-base">
-                  {dict.award.body}
-                </p>
               </div>
-            </div>
-          </Appear>
+            </Appear>
+
+            <Appear>
+              <div className="pt-2">
+                <p className="text-xs font-semibold tracking-[0.22em] text-brand">
+                  {dict.award.reviewsTitle}
+                </p>
+                <h3 className="mt-3 font-display text-2xl font-bold tracking-tight text-balance sm:text-3xl">
+                  {dict.award.reviewsLead}
+                </h3>
+                <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {dict.award.reviews.map((review) => (
+                    <li
+                      key={`${review.name}-${review.text}`}
+                      className="flex items-start gap-4 rounded-[1.35rem] bg-ivory px-5 py-5 shadow-card sm:gap-5 sm:px-6 sm:py-6"
+                    >
+                      <span
+                        aria-hidden
+                        className="inline-flex size-[4.25rem] shrink-0 flex-col items-center justify-center rounded-[1.15rem] bg-canvas font-display leading-none"
+                      >
+                        <span className="text-2xl font-bold tabular-nums text-brand sm:text-3xl">
+                          {review.score}
+                        </span>
+                        <span className="mt-0.5 text-[0.7rem] font-semibold tracking-[0.12em] text-muted">
+                          /10
+                        </span>
+                      </span>
+                      <span className="min-w-0 pt-0.5">
+                        <span className="block font-display text-xl font-semibold tracking-tight sm:text-2xl">
+                          {review.name}
+                        </span>
+                        <span className="mt-2 block text-base leading-relaxed text-pretty text-muted sm:text-lg">
+                          {review.text}
+                        </span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Appear>
+          </div>
         </section>
 
         <section className="px-3 pt-4 md:px-5">
@@ -322,6 +358,51 @@ export default async function Home({
                   </a>
                 </Button>
               </div>
+            </div>
+          </Appear>
+        </section>
+
+        <section id="wholesale" className="scroll-mt-28 px-3 pt-4 md:px-5">
+          <Appear className="mx-auto max-w-6xl overflow-hidden rounded-[1.75rem] bg-ivory shadow-card">
+            <figure className="relative aspect-[2/1] w-full sm:aspect-[21/9]">
+              <Image
+                src={facilityImage}
+                alt={dict.wholesale.photoAlt}
+                fill
+                quality={100}
+                sizes="(min-width: 1152px) 1152px, 100vw"
+                className="object-cover"
+              />
+            </figure>
+            <div className="flex flex-col gap-6 p-6 sm:p-8 md:p-10">
+              <div className="max-w-3xl">
+                <p className="text-xs font-semibold tracking-[0.22em] text-brand">
+                  {dict.wholesale.eyebrow}
+                </p>
+                <h2 className="mt-2 font-display text-3xl font-bold tracking-tight sm:text-4xl">
+                  {dict.wholesale.title}
+                </h2>
+                <p className="mt-3 text-lg text-muted">{dict.wholesale.lead}</p>
+              </div>
+              <WholesaleForm
+                volumeLabel={dict.wholesale.volumeLabel}
+                volumeOptions={dict.wholesale.volumeOptions}
+                partsLabel={dict.wholesale.partsLabel}
+                partOptions={dict.parts.categories.map((c) => ({
+                  id: c.id,
+                  name: c.name,
+                }))}
+                nameLabel={dict.wholesale.nameLabel}
+                companyLabel={dict.wholesale.companyLabel}
+                emailLabel={dict.wholesale.emailLabel}
+                phoneLabel={dict.wholesale.phoneLabel}
+                messageLabel={dict.wholesale.messageLabel}
+                submitLabel={dict.wholesale.submitLabel}
+                successMessage={dict.wholesale.successMessage}
+                requiredHint={dict.wholesale.requiredHint}
+                errorMessage={dict.wholesale.errorMessage}
+                mailtoLabel={dict.wholesale.mailtoLabel}
+              />
             </div>
           </Appear>
         </section>
@@ -376,15 +457,10 @@ export default async function Home({
                   </div>
                 </dl>
               </div>
-              <figure className="relative min-h-[18rem] w-full sm:min-h-[22rem] lg:min-h-full">
-                <Image
-                  src={facilityImage}
-                  alt={dict.contact.photoAlt}
-                  fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </figure>
+              <ContactMap
+                title={dict.contact.mapTitle}
+                openLabel={dict.contact.mapOpen}
+              />
             </div>
           </Appear>
         </section>

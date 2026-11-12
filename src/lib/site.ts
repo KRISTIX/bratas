@@ -4,18 +4,32 @@ export const phoneDisplay = "+370 687 49115";
 export const phoneHref = "tel:+37068749115";
 export const catalogUrl = "https://rrr.lt/pardavejas/bratas";
 export const ovokoUrl = "https://www.ovoko.com/";
-/** Main hero photograph (Bratas-4: bumper aisle). */
+export const wholesaleEmail = "test@boostery.io";
+
+/** Hero photograph A (Bratas-4 bumper aisle). */
 export const heroImage = "/photos/hero-warehouse.jpg";
+/** Hero photograph B (Bratas-3 bumper aisle). */
+export const heroBumperImage = "/photos/hero-bumpers.jpg";
+/** Warehouse stock photograph (Bratas-16). */
+export const warehouseStockImage = "/photos/warehouse-stock.jpg";
+
+/** Hero gallery slides: both bumper-aisle photographs. */
+export const heroImages = [heroImage, heroBumperImage] as const;
 
 /** Photographs for the three-part line-of-work section. */
 export const serviceImages = [
   "/photos/import-lot.jpg",
-  "/photos/body-panels.jpg",
+  warehouseStockImage,
   "/photos/packing.jpg",
 ] as const;
 
-/** Facility photograph shown with the contact block (Bratas-1). */
+/** Facility photograph used in the wholesale block (former contact photo). */
 export const facilityImage = "/photos/engines.jpg";
+
+/** Contact map — Šlamų k. 1B-1, Pasvalys district. */
+export const mapsQuery = "Šlamų k. 1B-1, Pasvalio r., Lithuania";
+export const mapsEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(mapsQuery)}&z=14&output=embed`;
+export const mapsOpenUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery)}`;
 
 /** Stable ids for the current-stock category grid. */
 export const partCategoryIds = [

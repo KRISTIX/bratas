@@ -13,6 +13,7 @@ export type Dictionary = {
     operation: string;
     parts: string;
     recognition: string;
+    wholesale: string;
     contact: string;
   };
   hero: {
@@ -21,8 +22,9 @@ export type Dictionary = {
     lead: string;
     catalog: string;
     call: string;
-    imageAlt: string;
-    imageCaption: string;
+    imageAlts: [string, string];
+    imageCaptions: [string, string];
+    nextImage: string;
     stockNote: string;
     stockLabel: string;
   };
@@ -52,6 +54,9 @@ export type Dictionary = {
     quote: string;
     body: string;
     seal: string;
+    reviewsTitle: string;
+    reviewsLead: string;
+    reviews: { name: string; score: string; text: string }[];
   };
   band: {
     eyebrow: string;
@@ -59,6 +64,25 @@ export type Dictionary = {
     lead: string;
     openRrr: string;
     openOvoko: string;
+  };
+  wholesale: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    photoAlt: string;
+    nameLabel: string;
+    companyLabel: string;
+    emailLabel: string;
+    phoneLabel: string;
+    volumeLabel: string;
+    volumeOptions: { value: string; label: string }[];
+    partsLabel: string;
+    messageLabel: string;
+    submitLabel: string;
+    successMessage: string;
+    requiredHint: string;
+    errorMessage: string;
+    mailtoLabel: string;
   };
   contact: {
     eyebrow: string;
@@ -72,7 +96,8 @@ export type Dictionary = {
     hoursLabel: string;
     hoursShort: string;
     marketplaceNote: string;
-    photoAlt: string;
+    mapTitle: string;
+    mapOpen: string;
   };
   footer: {
     rights: string;
