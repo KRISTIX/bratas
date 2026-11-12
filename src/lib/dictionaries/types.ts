@@ -34,8 +34,8 @@ export type Dictionary = {
     lead: string;
   };
   services: [
-    { title: string; text: string; alt: string },
-    { title: string; text: string; alt: string },
+    { title: string; text: string; alt: string; alts?: [string, string] },
+    { title: string; text: string; alt: string; alts?: [string, string] },
     { title: string; text: string; alt: string },
   ];
   parts: {
@@ -56,6 +56,8 @@ export type Dictionary = {
     seal: string;
     reviewsTitle: string;
     reviewsLead: string;
+    reviewsPrev: string;
+    reviewsNext: string;
     reviews: { name: string; score: string; text: string }[];
   };
   band: {
@@ -70,6 +72,9 @@ export type Dictionary = {
     title: string;
     lead: string;
     photoAlt: string;
+    openLabel: string;
+    openHint: string;
+    closeLabel: string;
     nameLabel: string;
     companyLabel: string;
     emailLabel: string;

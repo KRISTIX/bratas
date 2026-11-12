@@ -49,11 +49,19 @@ export const de: Dictionary = {
       title: "Import aus dem UK",
       text: "Ersatzteile werden im Vereinigten Königreich gekauft und an das Lager in Litauen geliefert.",
       alt: "Lagerhof mit geöffneten Hallentoren",
+      alts: [
+        "Lagerhof mit geöffneten Hallentoren",
+        "Gabelstapler hebt einen Automotor vor dem Lager",
+      ],
     },
     {
       title: "Lagerbestand",
       text: "Teile werden sortiert, gelagert und versandbereit gehalten.",
-      alt: "Lagerregale mit Leuchten, Lenkungsteilen und weiterem Bestand",
+      alt: "Lagergang mit schwarzen Kisten und Teilen in Holzregalen",
+      alts: [
+        "Lagergang mit beschrifteten Kisten und Teilen in Regalen",
+        "Lagergang mit schwarzen Kisten und Teilen in Holzregalen",
+      ],
     },
     {
       title: "Verkauf und Versand",
@@ -101,6 +109,8 @@ export const de: Dictionary = {
     seal: "Top Company 2026",
     reviewsTitle: "Kundenbewertungen",
     reviewsLead: "Bewertungen von Käufern, die Teile bestellt haben.",
+    reviewsPrev: "Vorherige Bewertung",
+    reviewsNext: "Nächste Bewertung",
     reviews: [
       {
         name: "Janis",
@@ -136,6 +146,9 @@ export const de: Dictionary = {
     title: "Großhandelsanfrage",
     lead: "Nennen Sie Ihren Monatsbedarf und die benötigten Teilearten — wir melden uns zu den Konditionen.",
     photoAlt: "Gabelstapler hebt einen Automotor vor dem Lager",
+    openLabel: "Großhandelsanfrage öffnen",
+    openHint: "Nennen Sie Bedarf und Teilearten — wir melden uns.",
+    closeLabel: "Schließen",
     nameLabel: "NAME",
     companyLabel: "UNTERNEHMEN",
     emailLabel: "E-MAIL",

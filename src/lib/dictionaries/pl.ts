@@ -49,11 +49,19 @@ export const pl: Dictionary = {
       title: "Import z Wielkiej Brytanii",
       text: "Części zamienne kupujemy w Wielkiej Brytanii i dostarczamy do magazynu na Litwie.",
       alt: "Podwórze magazynu z otwartymi bramami hali",
+      alts: [
+        "Podwórze magazynu z otwartymi bramami hali",
+        "Wózek widłowy podnosi silnik samochodu przed magazynem",
+      ],
     },
     {
       title: "Zapas magazynowy",
       text: "Części są sortowane, przechowywane i utrzymywane gotowe do wysyłki.",
-      alt: "Półki magazynowe z lampami, elementami układu kierowniczego i innymi częściami",
+      alt: "Alejka magazynu z czarnymi skrzynkami i częściami na drewnianych półkach",
+      alts: [
+        "Alejka magazynu z oznaczonymi skrzynkami i częściami na półkach",
+        "Alejka magazynu z czarnymi skrzynkami i częściami na drewnianych półkach",
+      ],
     },
     {
       title: "Sprzedaż i wysyłka",
@@ -101,6 +109,8 @@ export const pl: Dictionary = {
     seal: "Top Company 2026",
     reviewsTitle: "Opinie klientów",
     reviewsLead: "Oceny od kupujących, którzy zamawiali części.",
+    reviewsPrev: "Poprzednia opinia",
+    reviewsNext: "Następna opinia",
     reviews: [
       {
         name: "Janis",
@@ -136,6 +146,9 @@ export const pl: Dictionary = {
     title: "Wniosek o hurt",
     lead: "Podaj miesięczne zapotrzebowanie i rodzaje części — odezwiemy się w sprawie warunków hurtowych.",
     photoAlt: "Wózek widłowy podnosi silnik samochodu przed magazynem",
+    openLabel: "Otwórz wniosek hurtowy",
+    openHint: "Podaj zapotrzebowanie i rodzaje części — odezwiemy się.",
+    closeLabel: "Zamknij",
     nameLabel: "IMIĘ I NAZWISKO",
     companyLabel: "FIRMA",
     emailLabel: "E-MAIL",

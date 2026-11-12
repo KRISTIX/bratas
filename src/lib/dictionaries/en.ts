@@ -49,11 +49,19 @@ export const en: Dictionary = {
       title: "Import from the UK",
       text: "Spare parts are purchased in the United Kingdom and delivered to the Lithuania warehouse.",
       alt: "Warehouse yard with open bay doors",
+      alts: [
+        "Warehouse yard with open bay doors",
+        "Forklift lifting a car engine outside the warehouse",
+      ],
     },
     {
       title: "Warehouse stock",
       text: "Parts are sorted, stored and held ready for dispatch.",
-      alt: "Warehouse shelves with lights, steering parts and other stock",
+      alt: "Warehouse aisle with black crates and parts on wooden shelves",
+      alts: [
+        "Warehouse aisle with labelled crates and parts on shelves",
+        "Warehouse aisle with black crates and parts on wooden shelves",
+      ],
     },
     {
       title: "Sale and dispatch",
@@ -97,6 +105,8 @@ export const en: Dictionary = {
     seal: "Top Company 2026",
     reviewsTitle: "Customer reviews",
     reviewsLead: "Ratings from buyers who ordered parts.",
+    reviewsPrev: "Previous review",
+    reviewsNext: "Next review",
     reviews: [
       {
         name: "Janis",
@@ -132,6 +142,9 @@ export const en: Dictionary = {
     title: "Apply for wholesale",
     lead: "Tell us your monthly volume and the part kinds you need — we will follow up on wholesale terms.",
     photoAlt: "Forklift lifting a car engine outside the warehouse",
+    openLabel: "Open wholesale application",
+    openHint: "Tell us your volume and part kinds — we will follow up.",
+    closeLabel: "Close",
     nameLabel: "NAME",
     companyLabel: "COMPANY",
     emailLabel: "EMAIL",

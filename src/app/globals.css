@@ -119,6 +119,27 @@ body {
   transform: none;
 }
 
+@keyframes review-slide {
+  from {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.review-slide {
+  animation: review-slide 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .review-slide {
+    animation: none;
+  }
+}
+
 .flow-shell {
   position: relative;
 }

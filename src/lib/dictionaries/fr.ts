@@ -49,11 +49,19 @@ export const fr: Dictionary = {
       title: "Importation du Royaume-Uni",
       text: "Les pièces de rechange sont achetées au Royaume-Uni et livrées à l'entrepôt en Lituanie.",
       alt: "Cour d'entrepôt avec portes de hall ouvertes",
+      alts: [
+        "Cour d'entrepôt avec portes de hall ouvertes",
+        "Chariot élévateur soulevant un moteur automobile devant l'entrepôt",
+      ],
     },
     {
       title: "Stock en entrepôt",
       text: "Les pièces sont triées, stockées et tenues prêtes à l'expédition.",
-      alt: "Étagères d'entrepôt avec phares, direction et autres pièces",
+      alt: "Allée d'entrepôt avec caisses noires et pièces sur étagères en bois",
+      alts: [
+        "Allée d'entrepôt avec caisses étiquetées et pièces en rayons",
+        "Allée d'entrepôt avec caisses noires et pièces sur étagères en bois",
+      ],
     },
     {
       title: "Vente et expédition",
@@ -101,6 +109,8 @@ export const fr: Dictionary = {
     seal: "Entreprise TOP 2026",
     reviewsTitle: "Avis clients",
     reviewsLead: "Notes de clients ayant commandé des pièces.",
+    reviewsPrev: "Avis précédent",
+    reviewsNext: "Avis suivant",
     reviews: [
       {
         name: "Janis",
@@ -136,6 +146,9 @@ export const fr: Dictionary = {
     title: "Demande de gros",
     lead: "Indiquez votre volume mensuel et les types de pièces — nous reviendrons vers vous sur les conditions.",
     photoAlt: "Chariot élévateur soulevant un moteur automobile devant l'entrepôt",
+    openLabel: "Ouvrir la demande de gros",
+    openHint: "Indiquez volume et types de pièces — nous reviendrons vers vous.",
+    closeLabel: "Fermer",
     nameLabel: "NOM",
     companyLabel: "SOCIÉTÉ",
     emailLabel: "E-MAIL",

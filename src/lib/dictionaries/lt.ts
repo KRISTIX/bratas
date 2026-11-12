@@ -49,11 +49,19 @@ export const lt: Dictionary = {
       title: "Įvežimas iš JK",
       text: "Atsarginės dalys perkamos Jungtinėje Karalystėje ir pristatomos į sandėlį Lietuvoje.",
       alt: "Sandėlio kiemas su atviromis angaro durimis",
+      alts: [
+        "Sandėlio kiemas su atviromis angaro durimis",
+        "Krautuvas kelia automobilio variklį prie sandėlio",
+      ],
     },
     {
       title: "Sandėlio atsargos",
       text: "Dalys rūšiuojamos, saugomos ir laikomos paruoštos siuntimui.",
-      alt: "Sandėlio lentynos su žibintais, vairo mechanizmais ir kitomis dalimis",
+      alt: "Sandėlio praėjimas su juodomis dėžėmis ir dalimis medinėse lentynose",
+      alts: [
+        "Sandėlio praėjimas su pažymėtomis dėžėmis ir dalimis lentynose",
+        "Sandėlio praėjimas su juodomis dėžėmis ir dalimis medinėse lentynose",
+      ],
     },
     {
       title: "Pardavimas ir siuntimas",
@@ -101,6 +109,8 @@ export const lt: Dictionary = {
     seal: "TOP Įmonė 2026",
     reviewsTitle: "Klientų atsiliepimai",
     reviewsLead: "Įvertinimai pirkėjų, kurie užsakė dalis.",
+    reviewsPrev: "Ankstesnis atsiliepimas",
+    reviewsNext: "Kitas atsiliepimas",
     reviews: [
       {
         name: "Janis",
@@ -136,6 +146,9 @@ export const lt: Dictionary = {
     title: "Paraiška didmenai",
     lead: "Nurodykite mėnesinį poreikį ir dalių rūšis – atsakysime dėl didmeninių sąlygų.",
     photoAlt: "Krautuvas kelia automobilio variklį prie sandėlio",
+    openLabel: "Pildyti didmenos paraišką",
+    openHint: "Nurodykite poreikį ir dalių rūšis – atsakysime greitai.",
+    closeLabel: "Uždaryti",
     nameLabel: "VARDAS",
     companyLabel: "ĮMONĖ",
     emailLabel: "EL. PAŠTAS",

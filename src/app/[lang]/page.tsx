@@ -10,14 +10,15 @@ import { HeroGallery } from "@/components/hero-gallery";
 import { ExternalLinkIcon, PhoneIcon } from "@/components/icons";
 import { JsonLd } from "@/components/json-ld";
 import { PartIcon } from "@/components/part-icon";
+import { PhotoFade } from "@/components/photo-fade";
+import { ReviewsCarousel } from "@/components/reviews-carousel";
 import { StockCounter } from "@/components/stock-counter";
-import { WholesaleForm } from "@/components/wholesale-form";
+import { WholesaleSection } from "@/components/wholesale-section";
 import { Button } from "@/components/ui/button";
 import { getDictionary } from "@/lib/dictionaries";
 import { hasLocale } from "@/lib/i18n";
 import {
   catalogUrl,
-  facilityImage,
   getPrimaryCatalogUrl,
   getSecondaryCatalogUrl,
   ovokoUrl,
@@ -161,20 +162,24 @@ export default async function Home({
 
               <div className="flow-cards grid items-stretch gap-4 lg:grid-cols-3">
                 {dict.services.map((service, index) => {
-                  const src = serviceImages[index];
+                  const images = serviceImages[index];
+                  const alts =
+                    "alts" in service && service.alts
+                      ? service.alts
+                      : ([service.alt] as const);
                   return (
                     <Appear key={service.title} delay={index * 80} className="h-full">
                       <article className="group lift flex h-full flex-col overflow-hidden rounded-[1.75rem] bg-ivory shadow-card ring-1 ring-black/[0.03]">
                         <div className="h-1 w-full bg-gradient-to-r from-brand/80 via-brand to-brand/40" />
-                        <div className="relative aspect-[4/3] overflow-hidden bg-paper">
-                          <Image
-                            src={src}
-                            alt={service.alt}
-                            fill
-                            sizes="(min-width: 1024px) 360px, 100vw"
-                            className="object-cover transition duration-700 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-                          />
-                        </div>
+                        <PhotoFade
+                          images={images}
+                          alts={alts}
+                          className="aspect-[4/3] bg-paper transition duration-700 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                          sizes="(min-width: 1024px) 360px, 100vw"
+                          quality={100}
+                          clickable={images.length > 1}
+                          nextLabel={dict.hero.nextImage}
+                        />
                         <div className="flex flex-1 flex-col p-6 md:p-7">
                           <p className="mb-3 inline-flex w-fit items-center rounded-full bg-brand/10 px-3.5 py-1.5 font-display text-2xl font-bold tracking-tight text-brand lg:hidden">
                             {String(index + 1).padStart(2, "0")}
@@ -275,42 +280,13 @@ export default async function Home({
             </Appear>
 
             <Appear>
-              <div className="pt-2">
-                <p className="text-xs font-semibold tracking-[0.22em] text-brand">
-                  {dict.award.reviewsTitle}
-                </p>
-                <h3 className="mt-3 font-display text-2xl font-bold tracking-tight text-balance sm:text-3xl">
-                  {dict.award.reviewsLead}
-                </h3>
-                <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-                  {dict.award.reviews.map((review) => (
-                    <li
-                      key={`${review.name}-${review.text}`}
-                      className="flex items-start gap-4 rounded-[1.35rem] bg-ivory px-5 py-5 shadow-card sm:gap-5 sm:px-6 sm:py-6"
-                    >
-                      <span
-                        aria-hidden
-                        className="inline-flex size-[4.25rem] shrink-0 flex-col items-center justify-center rounded-[1.15rem] bg-canvas font-display leading-none"
-                      >
-                        <span className="text-2xl font-bold tabular-nums text-brand sm:text-3xl">
-                          {review.score}
-                        </span>
-                        <span className="mt-0.5 text-[0.7rem] font-semibold tracking-[0.12em] text-muted">
-                          /10
-                        </span>
-                      </span>
-                      <span className="min-w-0 pt-0.5">
-                        <span className="block font-display text-xl font-semibold tracking-tight sm:text-2xl">
-                          {review.name}
-                        </span>
-                        <span className="mt-2 block text-base leading-relaxed text-pretty text-muted sm:text-lg">
-                          {review.text}
-                        </span>
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <ReviewsCarousel
+                title={dict.award.reviewsTitle}
+                lead={dict.award.reviewsLead}
+                reviews={dict.award.reviews}
+                prevLabel={dict.award.reviewsPrev}
+                nextLabel={dict.award.reviewsNext}
+              />
             </Appear>
           </div>
         </section>
@@ -363,47 +339,35 @@ export default async function Home({
         </section>
 
         <section id="wholesale" className="scroll-mt-28 px-3 pt-4 md:px-5">
-          <Appear className="mx-auto max-w-6xl overflow-hidden rounded-[1.75rem] bg-ivory shadow-card">
-            <figure className="relative aspect-[2/1] w-full sm:aspect-[21/9]">
-              <Image
-                src={facilityImage}
-                alt={dict.wholesale.photoAlt}
-                fill
-                quality={100}
-                sizes="(min-width: 1152px) 1152px, 100vw"
-                className="object-cover"
-              />
-            </figure>
-            <div className="flex flex-col gap-6 p-6 sm:p-8 md:p-10">
-              <div className="max-w-3xl">
-                <p className="text-xs font-semibold tracking-[0.22em] text-brand">
-                  {dict.wholesale.eyebrow}
-                </p>
-                <h2 className="mt-2 font-display text-3xl font-bold tracking-tight sm:text-4xl">
-                  {dict.wholesale.title}
-                </h2>
-                <p className="mt-3 text-lg text-muted">{dict.wholesale.lead}</p>
-              </div>
-              <WholesaleForm
-                volumeLabel={dict.wholesale.volumeLabel}
-                volumeOptions={dict.wholesale.volumeOptions}
-                partsLabel={dict.wholesale.partsLabel}
-                partOptions={dict.parts.categories.map((c) => ({
+          <Appear className="mx-auto max-w-6xl">
+            <WholesaleSection
+              eyebrow={dict.wholesale.eyebrow}
+              title={dict.wholesale.title}
+              lead={dict.wholesale.lead}
+              photoAlt={dict.wholesale.photoAlt}
+              openLabel={dict.wholesale.openLabel}
+              openHint={dict.wholesale.openHint}
+              closeLabel={dict.wholesale.closeLabel}
+              form={{
+                volumeLabel: dict.wholesale.volumeLabel,
+                volumeOptions: dict.wholesale.volumeOptions,
+                partsLabel: dict.wholesale.partsLabel,
+                partOptions: dict.parts.categories.map((c) => ({
                   id: c.id,
                   name: c.name,
-                }))}
-                nameLabel={dict.wholesale.nameLabel}
-                companyLabel={dict.wholesale.companyLabel}
-                emailLabel={dict.wholesale.emailLabel}
-                phoneLabel={dict.wholesale.phoneLabel}
-                messageLabel={dict.wholesale.messageLabel}
-                submitLabel={dict.wholesale.submitLabel}
-                successMessage={dict.wholesale.successMessage}
-                requiredHint={dict.wholesale.requiredHint}
-                errorMessage={dict.wholesale.errorMessage}
-                mailtoLabel={dict.wholesale.mailtoLabel}
-              />
-            </div>
+                })),
+                nameLabel: dict.wholesale.nameLabel,
+                companyLabel: dict.wholesale.companyLabel,
+                emailLabel: dict.wholesale.emailLabel,
+                phoneLabel: dict.wholesale.phoneLabel,
+                messageLabel: dict.wholesale.messageLabel,
+                submitLabel: dict.wholesale.submitLabel,
+                successMessage: dict.wholesale.successMessage,
+                requiredHint: dict.wholesale.requiredHint,
+                errorMessage: dict.wholesale.errorMessage,
+                mailtoLabel: dict.wholesale.mailtoLabel,
+              }}
+            />
           </Appear>
         </section>
 

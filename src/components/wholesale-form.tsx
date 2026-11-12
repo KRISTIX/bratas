@@ -9,6 +9,9 @@ import { cn } from "@/lib/utils";
 type VolumeOption = { value: string; label: string };
 type PartOption = { id: string; name: string };
 
+const labelClass =
+  "font-display text-sm font-bold tracking-tight text-ink sm:text-base";
+
 const fieldClass =
   "mt-2 w-full rounded-xl border border-line bg-white px-4 py-3 text-base outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/20";
 
@@ -184,9 +187,7 @@ export function WholesaleForm({
     <form onSubmit={onSubmit} className="flex flex-col gap-5">
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
-          <span className="text-xs font-semibold tracking-[0.16em] text-muted">
-            {nameLabel}
-          </span>
+          <span className={labelClass}>{nameLabel}</span>
           <input
             name="name"
             type="text"
@@ -196,9 +197,7 @@ export function WholesaleForm({
           />
         </label>
         <label className="block">
-          <span className="text-xs font-semibold tracking-[0.16em] text-muted">
-            {companyLabel}
-          </span>
+          <span className={labelClass}>{companyLabel}</span>
           <input
             name="company"
             type="text"
@@ -207,9 +206,7 @@ export function WholesaleForm({
           />
         </label>
         <label className="block">
-          <span className="text-xs font-semibold tracking-[0.16em] text-muted">
-            {emailLabel}
-          </span>
+          <span className={labelClass}>{emailLabel}</span>
           <input
             name="email"
             type="email"
@@ -219,9 +216,7 @@ export function WholesaleForm({
           />
         </label>
         <label className="block">
-          <span className="text-xs font-semibold tracking-[0.16em] text-muted">
-            {phoneLabel}
-          </span>
+          <span className={labelClass}>{phoneLabel}</span>
           <input
             name="phone"
             type="tel"
@@ -232,9 +227,7 @@ export function WholesaleForm({
       </div>
 
       <label className="block">
-        <span className="text-xs font-semibold tracking-[0.16em] text-muted">
-          {volumeLabel}
-        </span>
+        <span className={labelClass}>{volumeLabel}</span>
         <select name="volume" required defaultValue="" className={fieldClass}>
           <option value="" disabled>
             —
@@ -248,9 +241,7 @@ export function WholesaleForm({
       </label>
 
       <fieldset>
-        <legend className="text-xs font-semibold tracking-[0.16em] text-muted">
-          {partsLabel}
-        </legend>
+        <legend className={labelClass}>{partsLabel}</legend>
         <div className="mt-2 grid gap-2 sm:grid-cols-2">
           {partOptions.map((part) => {
             const checked = selectedParts.includes(part.id);
@@ -280,9 +271,7 @@ export function WholesaleForm({
       </fieldset>
 
       <label className="block">
-        <span className="text-xs font-semibold tracking-[0.16em] text-muted">
-          {messageLabel}
-        </span>
+        <span className={labelClass}>{messageLabel}</span>
         <textarea name="message" rows={3} className={fieldClass} />
       </label>
 

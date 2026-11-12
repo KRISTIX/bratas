@@ -10,21 +10,24 @@ export const wholesaleEmail = "test@boostery.io";
 export const heroImage = "/photos/hero-warehouse.jpg";
 /** Hero photograph B (Bratas-3 bumper aisle). */
 export const heroBumperImage = "/photos/hero-bumpers.jpg";
-/** Warehouse stock photograph (Bratas-16). */
-export const warehouseStockImage = "/photos/warehouse-stock.jpg";
+/** Warehouse stock photographs (Bratas-13 + Bratas-17). */
+export const warehouseStockImages = [
+  "/photos/warehouse-aisle-2.jpg",
+  "/photos/warehouse-aisle.jpg",
+] as const;
 
 /** Hero gallery slides: both bumper-aisle photographs. */
 export const heroImages = [heroImage, heroBumperImage] as const;
 
+/** Facility photograph used in wholesale and import rotation (forklift). */
+export const facilityImage = "/photos/engines.jpg";
+
 /** Photographs for the three-part line-of-work section. */
 export const serviceImages = [
-  "/photos/import-lot.jpg",
-  warehouseStockImage,
-  "/photos/packing.jpg",
+  ["/photos/import-lot.jpg", facilityImage],
+  warehouseStockImages,
+  ["/photos/packing.jpg"],
 ] as const;
-
-/** Facility photograph used in the wholesale block (former contact photo). */
-export const facilityImage = "/photos/engines.jpg";
 
 /** Contact map — Šlamų k. 1B-1, Pasvalys district. */
 export const mapsQuery = "Šlamų k. 1B-1, Pasvalio r., Lithuania";
