@@ -13,7 +13,6 @@ import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import { localeNames, locales, type Locale } from "@/lib/i18n";
-import { phoneDisplay, phoneHref } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 function localeHref(locale: Locale) {
@@ -236,12 +235,6 @@ export function Header({
 
           <div className="relative z-10 hidden items-center gap-3 md:flex">
             <LanguageSwitcher current={lang} label={language} />
-            <a
-              href={phoneHref}
-              className="hidden text-sm font-semibold tracking-tight xl:inline"
-            >
-              {phoneDisplay}
-            </a>
             <Button asChild size="sm">
               <a href={catalogHref} target="_blank" rel="noopener noreferrer">
                 {catalog}
@@ -311,13 +304,6 @@ export function Header({
               </li>
             ))}
           </ul>
-          <a
-            href={phoneHref}
-            className="mt-1 block rounded-2xl px-2 py-3 text-base font-semibold"
-            tabIndex={open ? undefined : -1}
-          >
-            {phoneDisplay}
-          </a>
         </nav>
       </div>
     </header>

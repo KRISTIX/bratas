@@ -2,30 +2,22 @@ import type { Locale } from "@/lib/i18n";
 
 export const phoneDisplay = "+370 687 49115";
 export const phoneHref = "tel:+37068749115";
+export const contactEmail = "info@bratas.eu";
+export const contactEmailHref = "mailto:info@bratas.eu";
 export const catalogUrl = "https://rrr.lt/pardavejas/bratas";
 export const ovokoUrl = "https://www.ovoko.com/";
 export const wholesaleEmail = "test@boostery.io";
 
-/** Hero photograph A (Bratas-4 bumper aisle). */
-export const heroImage = "/photos/hero-warehouse.jpg";
-/** Hero photograph B (Bratas-3 bumper aisle). */
-export const heroBumperImage = "/photos/hero-bumpers.jpg";
-/** Warehouse stock photographs (Bratas-13 + Bratas-17). */
-export const warehouseStockImages = [
-  "/photos/warehouse-aisle-2.jpg",
-  "/photos/warehouse-aisle.jpg",
-] as const;
+/** Hero photograph (warehouse bumper aisle). */
+export const heroImage = "/photos/hero-aisle.jpg";
 
-/** Hero gallery slides: both bumper-aisle photographs. */
-export const heroImages = [heroImage, heroBumperImage] as const;
-
-/** Facility photograph used in wholesale and import rotation (forklift). */
-export const facilityImage = "/photos/engines.jpg";
+/** Facility photograph used in wholesale section. */
+export const facilityImage = "/photos/wholesale-forklift.jpg";
 
 /** Photographs for the three-part line-of-work section. */
 export const serviceImages = [
-  ["/photos/import-lot.jpg", facilityImage],
-  warehouseStockImages,
+  ["/photos/import-forklift.jpg"],
+  ["/photos/warehouse-aisle-2.jpg"],
   ["/photos/packing.jpg"],
 ] as const;
 

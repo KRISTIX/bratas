@@ -4,7 +4,7 @@ export const fr: Dictionary = {
   meta: {
     title: "UAB Bratas — pièces auto d'occasion du Royaume-Uni",
     description:
-      "UAB Bratas importe, stocke et vend des pièces auto d'occasion du Royaume-Uni. Catalogue sur RRR.lt et Ovoko. Entreprise TOP 2026. Lituanie.",
+      "UAB Bratas importe, stocke et vend des pièces auto d'occasion du Royaume-Uni. Catalogue sur RRR.lt, Ovoko et eBay. Entreprise TOP 2026. Lituanie.",
     imageAlt: "Entrepôt UAB Bratas : pare-chocs sur des étagères en bois",
   },
   skip: "Aller au contenu",
@@ -23,56 +23,43 @@ export const fr: Dictionary = {
   },
   hero: {
     eyebrow: "BRATAS · EUROPE",
-    titleLines: [
-      "Leaders des pièces d'occasion.",
-      "Entrepôt en Lituanie, marché européen.",
-    ],
-    lead: "Bratas compte parmi les fournisseurs de pièces auto d'occasion les plus fiables de Lituanie. Large stock, expédition rapide et vente via RRR.lt et Ovoko. Entreprise TOP 2026 — parmi les 6 % d'entreprises les plus fiables du pays.",
+    title: "Pièces Mercedes-Benz d'occasion de qualité, venues du Royaume-Uni.",
+    lead: "Nous sommes spécialisés dans les pièces Mercedes-Benz d'occasion de qualité provenant du Royaume-Uni, tout en proposant un large choix pour d'autres marques. Les pièces sont stockées en Lituanie et vendues dans toute l'Europe via RRR.lt, Ovoko et eBay. Entreprise TOP 2026 — parmi les 6 % d'entreprises les plus fiables de Lituanie.",
+    trust: ["Qualité contrôlée", "Expédition rapide", "Livraison en Europe"],
     catalog: "Ouvrir le catalogue",
     call: "Appeler",
-    imageAlts: [
-      "Allée d'entrepôt bordée de pare-chocs sur des étagères en bois",
-      "Allée d'entrepôt avec des pare-chocs de chaque côté",
-    ],
-    imageCaptions: ["Entrepôt", "Pare-chocs"],
-    nextImage: "Afficher la photo suivante",
+    email: "E-mail",
+    imageAlt: "Allée d'entrepôt bordée de pare-chocs sur des étagères en bois",
+    imageCaption: "Entrepôt",
     stockNote: "EN DIRECT",
     stockLabel: "pièces en entrepôt",
   },
   operation: {
     eyebrow: "ACTIVITÉ",
     title: "Importation, entrepôt, expédition.",
-    lead: "Les pièces sont achetées au Royaume-Uni, tenues en entrepôt en Lituanie et vendues via RRR.lt et Ovoko.",
+    lead: "Les pièces sont achetées au Royaume-Uni, tenues en entrepôt en Lituanie et vendues via RRR.lt, Ovoko et eBay.",
   },
   services: [
     {
       title: "Importation du Royaume-Uni",
       text: "Les pièces de rechange sont achetées au Royaume-Uni et livrées à l'entrepôt en Lituanie.",
-      alt: "Cour d'entrepôt avec portes de hall ouvertes",
-      alts: [
-        "Cour d'entrepôt avec portes de hall ouvertes",
-        "Chariot élévateur soulevant un moteur automobile devant l'entrepôt",
-      ],
+      alt: "Chariot élévateur soulevant un moteur automobile devant l'entrepôt",
     },
     {
       title: "Stock en entrepôt",
       text: "Les pièces sont triées, stockées et tenues prêtes à l'expédition.",
-      alt: "Allée d'entrepôt avec caisses noires et pièces sur étagères en bois",
-      alts: [
-        "Allée d'entrepôt avec caisses étiquetées et pièces en rayons",
-        "Allée d'entrepôt avec caisses noires et pièces sur étagères en bois",
-      ],
+      alt: "Allée d'entrepôt avec caisses étiquetées et pièces en rayons",
     },
     {
       title: "Vente et expédition",
-      text: "Le stock est publié sur RRR.lt et Ovoko, puis emballé et expédié depuis l'entrepôt.",
+      text: "Le stock est publié sur RRR.lt, Ovoko et eBay, puis emballé et expédié depuis l'entrepôt.",
       alt: "Poste d'emballage dans l'entrepôt avec balance et cartons",
     },
   ],
   parts: {
     eyebrow: "PIÈCES",
     title: "Catégories d'entrepôt",
-    lead: "Le catalogue complet est sur RRR.lt et Ovoko.",
+    lead: "Le catalogue complet est sur RRR.lt, Ovoko et eBay.",
     catalog: "Ouvrir le catalogue",
     categories: [
       { id: "lights", name: "Phares", note: "Avant et arrière" },
@@ -137,7 +124,7 @@ export const fr: Dictionary = {
   band: {
     eyebrow: "CATALOGUE",
     title: "Ouvrir le catalogue.",
-    lead: "Les commandes passent par RRR.lt ou Ovoko.",
+    lead: "Les commandes passent par RRR.lt, Ovoko ou eBay.",
     openRrr: "Ouvrir RRR.lt",
     openOvoko: "Ouvrir Ovoko",
   },
@@ -176,11 +163,12 @@ export const fr: Dictionary = {
     companyLabel: "SOCIÉTÉ",
     company: "UAB Bratas",
     phoneLabel: "TÉLÉPHONE",
+    emailLabel: "E-MAIL",
     codeLabel: "CODE",
     vatLabel: "TVA",
     hoursLabel: "HORAIRES",
     hoursShort: "Lun–Ven, 07:00–16:00 (EET/EEST)",
-    marketplaceNote: "Les pièces sont vendues sur RRR.lt et Ovoko.",
+    marketplaceNote: "Les pièces sont vendues sur RRR.lt, Ovoko et eBay.",
     mapTitle: "UAB Bratas sur la carte",
     mapOpen: "Ouvrir dans Google Maps",
   },
@@ -198,11 +186,11 @@ export const fr: Dictionary = {
     sections: [
       {
         heading: "Responsable du traitement",
-        body: "UAB Bratas, code d'entreprise 306008010, TVA LT100014759115, Šlamų k. 1B-1, district de Pasvalys, Lituanie. Téléphone +370 687 49115.",
+        body: "UAB Bratas, code d'entreprise 306008010, TVA LT100014759115, Šlamų k. 1B-1, district de Pasvalys, Lituanie. Téléphone +370 687 49115. E-mail info@bratas.eu.",
       },
       {
         heading: "Rôle de ce site",
-        body: "Ce site présente l'entreprise, l'entrepôt, un formulaire de gros et des liens vers les catalogues RRR.lt et Ovoko. Il n'héberge ni paiement, ni comptes, ni traceurs publicitaires.",
+        body: "Ce site présente l'entreprise, l'entrepôt, un formulaire de gros et des liens vers les catalogues RRR.lt, Ovoko et eBay. Il n'héberge ni paiement, ni comptes, ni traceurs publicitaires.",
       },
       {
         heading: "Données traitées",
@@ -214,7 +202,7 @@ export const fr: Dictionary = {
       },
       {
         heading: "Places de marché externes",
-        body: "RRR.lt et Ovoko traitent les données selon leurs avis de confidentialité. Les achats suivent les conditions de la place de marché.",
+        body: "RRR.lt, Ovoko et eBay traitent les données selon leurs avis de confidentialité. Les achats suivent les conditions de la place de marché.",
       },
       {
         heading: "Base légale et conservation",

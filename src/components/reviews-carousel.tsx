@@ -44,28 +44,19 @@ export function ReviewsCarousel({
   if (reviews.length === 0) return null;
 
   return (
-    <div className="pt-2">
+    <div className="w-full pt-2">
       <p className="text-xs font-semibold tracking-[0.22em] text-brand">{title}</p>
       <h3 className="mt-3 font-display text-2xl font-bold tracking-tight text-balance sm:text-3xl">
         {lead}
       </h3>
 
-      <div className="mt-6 flex items-center gap-2 sm:gap-4">
-        <button
-          type="button"
-          onClick={() => go(-1)}
-          aria-label={prevLabel}
-          className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-ivory text-ink shadow-card transition hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand sm:size-11"
-        >
-          <ChevronLeft className="size-5" />
-        </button>
-
-        <div className="grid min-w-0 flex-1" aria-live="polite" aria-atomic="true">
+      <div className="group/reviews relative mt-6 w-full">
+        <div className="grid w-full" aria-live="polite" aria-atomic="true">
           {reviews.map((review, i) => (
             <div
               key={`${review.name}-${review.text}`}
               className={cn(
-                "col-start-1 row-start-1 flex items-start gap-4 rounded-[1.35rem] bg-ivory px-5 py-5 shadow-card sm:gap-5 sm:px-6 sm:py-6",
+                "col-start-1 row-start-1 flex w-full items-start gap-4 rounded-[1.35rem] bg-ivory px-14 py-5 shadow-card sm:gap-5 sm:px-16 sm:py-6 md:px-16",
                 i === index
                   ? "review-slide visible z-10"
                   : "invisible z-0 pointer-events-none",
@@ -94,14 +85,26 @@ export function ReviewsCarousel({
           ))}
         </div>
 
-        <button
-          type="button"
-          onClick={() => go(1)}
-          aria-label={nextLabel}
-          className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-ivory text-ink shadow-card transition hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand sm:size-11"
-        >
-          <ChevronRight className="size-5" />
-        </button>
+        {reviews.length > 1 ? (
+          <>
+            <button
+              type="button"
+              onClick={() => go(-1)}
+              aria-label={prevLabel}
+              className="absolute top-1/2 left-2 z-20 inline-flex size-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-ink shadow-lift ring-1 ring-black/[0.06] backdrop-blur-sm transition duration-300 hover:scale-105 hover:bg-white hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand sm:left-3 sm:size-11 md:opacity-0 md:group-hover/reviews:opacity-100 md:focus-visible:opacity-100"
+            >
+              <ChevronLeft className="size-5" />
+            </button>
+            <button
+              type="button"
+              onClick={() => go(1)}
+              aria-label={nextLabel}
+              className="absolute top-1/2 right-2 z-20 inline-flex size-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-ink shadow-lift ring-1 ring-black/[0.06] backdrop-blur-sm transition duration-300 hover:scale-105 hover:bg-white hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand sm:right-3 sm:size-11 md:opacity-0 md:group-hover/reviews:opacity-100 md:focus-visible:opacity-100"
+            >
+              <ChevronRight className="size-5" />
+            </button>
+          </>
+        ) : null}
       </div>
 
       <div className="mt-4 flex justify-center gap-1.5" aria-hidden>

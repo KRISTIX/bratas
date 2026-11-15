@@ -1,5 +1,12 @@
 import type { Locale } from "@/lib/i18n";
-import { catalogUrl, getSiteUrl, heroImage, ovokoUrl, phoneHref } from "@/lib/site";
+import {
+  catalogUrl,
+  contactEmail,
+  getSiteUrl,
+  heroImage,
+  ovokoUrl,
+  phoneHref,
+} from "@/lib/site";
 
 export function JsonLd({
   lang,
@@ -18,6 +25,7 @@ export function JsonLd({
     inLanguage: lang,
     image: `${getSiteUrl()}${heroImage}`,
     telephone: phoneHref.replace("tel:", ""),
+    email: contactEmail,
     currenciesAccepted: "EUR",
     address: {
       "@type": "PostalAddress",

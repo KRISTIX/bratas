@@ -7,7 +7,7 @@ import { AwardSeal } from "@/components/award-seal";
 import { ContactMap } from "@/components/contact-map";
 import { Header } from "@/components/header";
 import { HeroGallery } from "@/components/hero-gallery";
-import { ExternalLinkIcon, PhoneIcon } from "@/components/icons";
+import { ExternalLinkIcon, MailIcon, PhoneIcon } from "@/components/icons";
 import { JsonLd } from "@/components/json-ld";
 import { PartIcon } from "@/components/part-icon";
 import { PhotoFade } from "@/components/photo-fade";
@@ -19,6 +19,8 @@ import { getDictionary } from "@/lib/dictionaries";
 import { hasLocale } from "@/lib/i18n";
 import {
   catalogUrl,
+  contactEmail,
+  contactEmailHref,
   getPrimaryCatalogUrl,
   getSecondaryCatalogUrl,
   ovokoUrl,
@@ -26,6 +28,9 @@ import {
   phoneHref,
   serviceImages,
 } from "@/lib/site";
+import { Package, ShieldCheck, Truck } from "lucide-react";
+
+const heroTrustIcons = [ShieldCheck, Truck, Package] as const;
 
 export default async function Home({
   params,
@@ -66,53 +71,87 @@ export default async function Home({
       <main id="content">
         <section aria-labelledby="hero-title" className="px-3 pt-3 md:px-5 md:pt-4">
           <div className="rise mx-auto grid max-w-6xl overflow-hidden rounded-[1.75rem] bg-ink text-white shadow-float lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="relative flex flex-col justify-center px-6 py-8 sm:px-10 sm:py-10 md:px-12 md:py-11">
+            <div className="relative flex flex-col justify-center px-5 pt-7 pb-5 sm:px-10 sm:pt-10 sm:pb-8 md:px-12 md:py-11">
               <div
                 aria-hidden
                 className="pointer-events-none absolute -top-20 -left-16 size-56 rounded-full bg-brand/20 blur-3xl"
               />
               <div className="relative">
-                <p className="rise rise-2 flex items-center gap-3 text-xs font-semibold tracking-[0.22em] text-brand">
+                <p className="rise rise-2 flex items-center gap-3 text-[0.7rem] font-semibold tracking-[0.22em] text-brand uppercase sm:text-xs">
                   <span className="h-0.5 w-8 rounded-full bg-brand" aria-hidden />
                   {dict.hero.eyebrow}
                 </p>
                 <h1
                   id="hero-title"
-                  className="rise rise-3 mt-4 max-w-xl font-display text-[2.15rem] leading-[1.02] font-bold tracking-tight text-balance sm:text-5xl"
+                  className="rise rise-3 mt-4 max-w-xl font-display text-[2.05rem] leading-[1.08] font-bold tracking-tight text-balance sm:text-5xl"
                 >
-                  {dict.hero.titleLines.map((line) => (
-                    <span key={line} className="block">
-                      {line}
-                    </span>
-                  ))}
+                  {dict.hero.title}
                 </h1>
-                <p className="rise rise-4 mt-4 max-w-lg text-base leading-relaxed text-pretty text-white/70 sm:text-[1.05rem]">
+                <p className="rise rise-4 mt-4 max-w-lg text-[0.95rem] leading-relaxed text-pretty text-white/80 sm:text-[1.05rem]">
                   {dict.hero.lead}
                 </p>
-                <div className="rise rise-5 mt-6 flex flex-col gap-3 sm:flex-row">
-                  <Button asChild size="lg" className="focus-visible:ring-offset-ink">
+                <ul className="rise rise-4 mt-5 grid grid-cols-3 gap-3 sm:mt-6 sm:gap-4">
+                  {dict.hero.trust.map((label, index) => {
+                    const Icon = heroTrustIcons[index];
+                    return (
+                      <li
+                        key={label}
+                        className="flex flex-col items-start gap-1.5 text-left"
+                      >
+                        <Icon
+                          aria-hidden
+                          className="size-5 text-brand sm:size-6"
+                          strokeWidth={2}
+                        />
+                        <span className="text-[0.72rem] leading-snug font-semibold text-white sm:text-sm">
+                          {label}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
+                <div className="rise rise-5 mt-6 flex flex-col gap-3">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="w-full justify-between px-5 focus-visible:ring-offset-ink"
+                  >
                     <a
                       href={primaryCatalogUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {dict.hero.catalog}
+                      <span className="inline-flex items-center gap-2">
+                        <Package aria-hidden className="size-4" strokeWidth={2} />
+                        {dict.hero.catalog}
+                      </span>
                       <ExternalLinkIcon />
                     </a>
                   </Button>
-                  <Button
-                    asChild
-                    size="lg"
-                    variant="outline"
-                    className="focus-visible:ring-offset-ink"
-                  >
-                    <a href={phoneHref}>
-                      <PhoneIcon />
-                      {dict.hero.call} {phoneDisplay}
-                    </a>
-                  </Button>
-                </div>
-                <div className="mt-6">
+                  <div className="flex flex-col gap-3 sm:flex-row">
+                    <Button
+                      asChild
+                      size="lg"
+                      variant="outline"
+                      className="w-full focus-visible:ring-offset-ink sm:flex-1"
+                    >
+                      <a href={phoneHref}>
+                        <PhoneIcon />
+                        {dict.hero.call} {phoneDisplay}
+                      </a>
+                    </Button>
+                    <Button
+                      asChild
+                      size="lg"
+                      variant="outline"
+                      className="w-full focus-visible:ring-offset-ink sm:flex-1"
+                    >
+                      <a href={contactEmailHref}>
+                        <MailIcon />
+                        {contactEmail}
+                      </a>
+                    </Button>
+                  </div>
                   <StockCounter
                     locale={lang}
                     note={dict.hero.stockNote}
@@ -121,11 +160,12 @@ export default async function Home({
                 </div>
               </div>
             </div>
-            <HeroGallery
-              alts={dict.hero.imageAlts}
-              captions={dict.hero.imageCaptions}
-              nextLabel={dict.hero.nextImage}
-            />
+            <div className="px-5 pb-5 sm:px-10 sm:pb-8 lg:contents">
+              <HeroGallery
+                alt={dict.hero.imageAlt}
+                caption={dict.hero.imageCaption}
+              />
+            </div>
           </div>
         </section>
 
@@ -163,22 +203,16 @@ export default async function Home({
               <div className="flow-cards grid items-stretch gap-4 lg:grid-cols-3">
                 {dict.services.map((service, index) => {
                   const images = serviceImages[index];
-                  const alts =
-                    "alts" in service && service.alts
-                      ? service.alts
-                      : ([service.alt] as const);
                   return (
                     <Appear key={service.title} delay={index * 80} className="h-full">
                       <article className="group lift flex h-full flex-col overflow-hidden rounded-[1.75rem] bg-ivory shadow-card ring-1 ring-black/[0.03]">
                         <div className="h-1 w-full bg-gradient-to-r from-brand/80 via-brand to-brand/40" />
                         <PhotoFade
                           images={images}
-                          alts={alts}
+                          alts={[service.alt]}
                           className="aspect-[4/3] bg-paper transition duration-700 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                           sizes="(min-width: 1024px) 360px, 100vw"
                           quality={100}
-                          clickable={images.length > 1}
-                          nextLabel={dict.hero.nextImage}
                         />
                         <div className="flex flex-1 flex-col p-6 md:p-7">
                           <p className="mb-3 inline-flex w-fit items-center rounded-full bg-brand/10 px-3.5 py-1.5 font-display text-2xl font-bold tracking-tight text-brand lg:hidden">
@@ -383,13 +417,22 @@ export default async function Home({
                     {dict.contact.title}
                   </h2>
                   <p className="mt-2 text-muted">{dict.contact.place}</p>
-                  <a
-                    href={phoneHref}
-                    className="mt-6 inline-flex items-center gap-3 font-display text-3xl font-bold tracking-tight transition-colors hover:text-brand sm:text-4xl"
-                  >
-                    <PhoneIcon className="size-7 text-brand sm:size-8" />
-                    {phoneDisplay}
-                  </a>
+                  <div className="mt-6 flex flex-col gap-3">
+                    <a
+                      href={phoneHref}
+                      className="inline-flex items-center gap-3 font-display text-2xl font-bold tracking-tight transition-colors hover:text-brand sm:text-3xl"
+                    >
+                      <PhoneIcon className="size-6 text-brand sm:size-7" />
+                      {phoneDisplay}
+                    </a>
+                    <a
+                      href={contactEmailHref}
+                      className="inline-flex items-center gap-3 font-display text-2xl font-bold tracking-tight transition-colors hover:text-brand sm:text-3xl"
+                    >
+                      <MailIcon className="size-6 text-brand sm:size-7" />
+                      {contactEmail}
+                    </a>
+                  </div>
                   <p className="mt-4 max-w-md text-sm leading-relaxed text-muted">
                     {dict.contact.marketplaceNote}
                   </p>
@@ -466,6 +509,12 @@ export default async function Home({
                 className="text-white/80 underline-offset-4 transition-colors hover:text-white hover:underline"
               >
                 {phoneDisplay}
+              </a>
+              <a
+                href={contactEmailHref}
+                className="text-white/80 underline-offset-4 transition-colors hover:text-white hover:underline"
+              >
+                {contactEmail}
               </a>
               <Link
                 href={`/${lang}/privacy`}

@@ -4,7 +4,7 @@ export const en: Dictionary = {
   meta: {
     title: "UAB Bratas — used car parts from the United Kingdom",
     description:
-      "UAB Bratas imports, warehouses and sells used car parts from the United Kingdom. Catalogue on RRR.lt and Ovoko. Top Company 2026. Lithuania.",
+      "UAB Bratas imports, warehouses and sells used car parts from the United Kingdom. Catalogue on RRR.lt, Ovoko and eBay. Top Company 2026. Lithuania.",
     imageAlt: "UAB Bratas warehouse: car bumpers on wooden shelves",
   },
   skip: "Skip to content",
@@ -23,56 +23,43 @@ export const en: Dictionary = {
   },
   hero: {
     eyebrow: "BRATAS · EUROPE",
-    titleLines: [
-      "Leaders in used car parts.",
-      "Warehoused in Lithuania, serving all of Europe.",
-    ],
-    lead: "Bratas is one of Lithuania's most reliable used automotive parts suppliers. Deep warehouse stock, fast dispatch, and catalogue sales through RRR.lt and Ovoko. Top Company 2026 — among the 6% most reliable companies in the country.",
+    title: "Quality Used Mercedes-Benz Parts from the UK.",
+    lead: "We specialise in quality used Mercedes-Benz parts from the United Kingdom, while also offering a wide selection of parts for other makes. Parts are warehoused in Lithuania and sold across Europe via RRR.lt, Ovoko and eBay. Top Company 2026 — among the 6% most reliable companies in Lithuania.",
+    trust: ["Quality checked", "Fast dispatch", "Europe-wide delivery"],
     catalog: "Open catalogue",
     call: "Call",
-    imageAlts: [
-      "Warehouse aisle lined with car bumpers on wooden shelves",
-      "Warehouse aisle with bumpers stacked on both sides",
-    ],
-    imageCaptions: ["Warehouse", "Bumpers"],
-    nextImage: "Show next warehouse photo",
+    email: "Email",
+    imageAlt: "Warehouse aisle lined with car bumpers on wooden shelves",
+    imageCaption: "Warehouse",
     stockNote: "LIVE",
     stockLabel: "parts in warehouse",
   },
   operation: {
     eyebrow: "OPERATIONS",
     title: "Import, warehouse, dispatch.",
-    lead: "Parts are bought in the United Kingdom, held in the Lithuania warehouse, and sold through RRR.lt and Ovoko.",
+    lead: "Parts are bought in the United Kingdom, held in the Lithuania warehouse, and sold through RRR.lt, Ovoko and eBay.",
   },
   services: [
     {
       title: "Import from the UK",
       text: "Spare parts are purchased in the United Kingdom and delivered to the Lithuania warehouse.",
-      alt: "Warehouse yard with open bay doors",
-      alts: [
-        "Warehouse yard with open bay doors",
-        "Forklift lifting a car engine outside the warehouse",
-      ],
+      alt: "Forklift lifting a car engine outside the warehouse",
     },
     {
       title: "Warehouse stock",
       text: "Parts are sorted, stored and held ready for dispatch.",
-      alt: "Warehouse aisle with black crates and parts on wooden shelves",
-      alts: [
-        "Warehouse aisle with labelled crates and parts on shelves",
-        "Warehouse aisle with black crates and parts on wooden shelves",
-      ],
+      alt: "Warehouse aisle with labelled crates and parts on shelves",
     },
     {
       title: "Sale and dispatch",
-      text: "Stock is listed on RRR.lt and Ovoko, then packed and shipped from the warehouse.",
+      text: "Stock is listed on RRR.lt, Ovoko and eBay, then packed and shipped from the warehouse.",
       alt: "Packing workstation in the warehouse with a scale and boxes",
     },
   ],
   parts: {
     eyebrow: "PARTS",
     title: "Warehouse categories",
-    lead: "Full stock is listed on RRR.lt and Ovoko.",
+    lead: "Full stock is listed on RRR.lt, Ovoko and eBay.",
     catalog: "Open catalogue",
     categories: [
       { id: "lights", name: "Lights", note: "Front and rear" },
@@ -133,7 +120,7 @@ export const en: Dictionary = {
   band: {
     eyebrow: "CATALOGUE",
     title: "Open the catalogue.",
-    lead: "Orders go through RRR.lt or Ovoko.",
+    lead: "Orders go through RRR.lt, Ovoko or eBay.",
     openRrr: "Open RRR.lt",
     openOvoko: "Open Ovoko",
   },
@@ -172,11 +159,12 @@ export const en: Dictionary = {
     companyLabel: "COMPANY",
     company: "UAB Bratas",
     phoneLabel: "PHONE",
+    emailLabel: "EMAIL",
     codeLabel: "COMPANY CODE",
     vatLabel: "VAT",
     hoursLabel: "HOURS",
     hoursShort: "Mon–Fri, 07:00–16:00 (EET/EEST)",
-    marketplaceNote: "Parts are sold on RRR.lt and Ovoko.",
+    marketplaceNote: "Parts are sold on RRR.lt, Ovoko and eBay.",
     mapTitle: "UAB Bratas on the map",
     mapOpen: "Open in Google Maps",
   },
@@ -194,11 +182,11 @@ export const en: Dictionary = {
     sections: [
       {
         heading: "Controller",
-        body: "UAB Bratas, company code 306008010, VAT LT100014759115, Šlamų k. 1B-1, Pasvalys district, Lithuania. Phone +370 687 49115.",
+        body: "UAB Bratas, company code 306008010, VAT LT100014759115, Šlamų k. 1B-1, Pasvalys district, Lithuania. Phone +370 687 49115. Email info@bratas.eu.",
       },
       {
         heading: "What this site does",
-        body: "This site presents the company, warehouse location, a wholesale application form, and links to catalogues on RRR.lt and Ovoko. It has no checkout, accounts, or advertising trackers.",
+        body: "This site presents the company, warehouse location, a wholesale application form, and links to catalogues on RRR.lt, Ovoko and eBay. It has no checkout, accounts, or advertising trackers.",
       },
       {
         heading: "Data we process",
@@ -210,7 +198,7 @@ export const en: Dictionary = {
       },
       {
         heading: "External marketplaces",
-        body: "RRR.lt and Ovoko process data under their own privacy notices. Purchases follow marketplace terms.",
+        body: "RRR.lt, Ovoko and eBay process data under their own privacy notices. Purchases follow marketplace terms.",
       },
       {
         heading: "Legal basis and retention",

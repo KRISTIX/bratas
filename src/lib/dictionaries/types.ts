@@ -18,13 +18,14 @@ export type Dictionary = {
   };
   hero: {
     eyebrow: string;
-    titleLines: [string, string];
+    title: string;
     lead: string;
+    trust: [string, string, string];
     catalog: string;
     call: string;
-    imageAlts: [string, string];
-    imageCaptions: [string, string];
-    nextImage: string;
+    email: string;
+    imageAlt: string;
+    imageCaption: string;
     stockNote: string;
     stockLabel: string;
   };
@@ -34,8 +35,8 @@ export type Dictionary = {
     lead: string;
   };
   services: [
-    { title: string; text: string; alt: string; alts?: [string, string] },
-    { title: string; text: string; alt: string; alts?: [string, string] },
+    { title: string; text: string; alt: string },
+    { title: string; text: string; alt: string },
     { title: string; text: string; alt: string },
   ];
   parts: {
@@ -96,6 +97,7 @@ export type Dictionary = {
     companyLabel: string;
     company: string;
     phoneLabel: string;
+    emailLabel: string;
     codeLabel: string;
     vatLabel: string;
     hoursLabel: string;
