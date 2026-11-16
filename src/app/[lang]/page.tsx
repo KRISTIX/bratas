@@ -114,7 +114,7 @@ export default async function Home({
                   <Button
                     asChild
                     size="lg"
-                    className="w-full justify-between px-5 focus-visible:ring-offset-ink"
+                    className="w-full justify-center gap-3 px-5 focus-visible:ring-offset-ink"
                   >
                     <a
                       href={primaryCatalogUrl}
