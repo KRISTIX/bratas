@@ -168,7 +168,6 @@ export const lt: Dictionary = {
     vatLabel: "PVM",
     hoursLabel: "LAIKAS",
     hoursShort: "I–V, 07:00–16:00 (EET/EEST)",
-    marketplaceNote: "Dalys parduodamos per RRR.lt, Ovoko ir eBay.",
     mapTitle: "UAB Bratas vieta žemėlapyje",
     mapOpen: "Atidaryti Google Maps",
   },

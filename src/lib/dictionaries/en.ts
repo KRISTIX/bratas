@@ -164,7 +164,6 @@ export const en: Dictionary = {
     vatLabel: "VAT",
     hoursLabel: "HOURS",
     hoursShort: "Mon–Fri, 07:00–16:00 (EET/EEST)",
-    marketplaceNote: "Parts are sold on RRR.lt, Ovoko and eBay.",
     mapTitle: "UAB Bratas on the map",
     mapOpen: "Open in Google Maps",
   },

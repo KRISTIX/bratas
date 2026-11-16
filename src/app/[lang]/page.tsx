@@ -96,7 +96,7 @@ export default async function Home({
                     return (
                       <li
                         key={label}
-                        className="flex flex-col items-start gap-2 text-left"
+                        className="flex flex-col items-center gap-2 text-center"
                       >
                         <Icon
                           aria-hidden
@@ -439,9 +439,6 @@ export default async function Home({
                       {contactEmail}
                     </a>
                   </div>
-                  <p className="mt-4 max-w-md text-sm leading-relaxed text-muted">
-                    {dict.contact.marketplaceNote}
-                  </p>
                 </div>
                 <dl className="grid grid-cols-2 gap-x-4 gap-y-5 border-t border-line pt-5">
                   <div>

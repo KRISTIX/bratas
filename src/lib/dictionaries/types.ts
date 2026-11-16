@@ -102,7 +102,6 @@ export type Dictionary = {
     vatLabel: string;
     hoursLabel: string;
     hoursShort: string;
-    marketplaceNote: string;
     mapTitle: string;
     mapOpen: string;
   };
