@@ -24,7 +24,7 @@ export const lt: Dictionary = {
   hero: {
     eyebrow: "BRATAS · EUROPA",
     title: "Kokybiškos naudotos Mercedes-Benz dalys iš Jungtinės Karalystės.",
-    lead: "Specializuojamės kokybiškomis naudotomis Mercedes-Benz dalimis iš Jungtinės Karalystės, taip pat siūlome platų kitų markių asortimentą. Dalys sandėliuojamos Lietuvoje ir parduodamos visoje Europoje per RRR.lt, Ovoko ir eBay. TOP Įmonė 2026 – tarp 6 % patikimiausių įmonių Lietuvoje.",
+    lead: "Specializuojamės kokybiškomis naudotomis Mercedes-Benz dalimis iš Jungtinės Karalystės ir turime platų kitų markių asortimentą. Sandėliuojame Lietuvoje, parduodame visoje Europoje per RRR.lt, Ovoko ir eBay.",
     trust: ["Patikrinta kokybė", "Greitas siuntimas", "Pristatymas Europoje"],
     catalog: "Atidaryti katalogą",
     call: "Skambinti",

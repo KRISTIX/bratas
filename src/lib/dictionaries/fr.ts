@@ -24,7 +24,7 @@ export const fr: Dictionary = {
   hero: {
     eyebrow: "BRATAS · EUROPE",
     title: "Pièces Mercedes-Benz d'occasion de qualité, venues du Royaume-Uni.",
-    lead: "Nous sommes spécialisés dans les pièces Mercedes-Benz d'occasion de qualité provenant du Royaume-Uni, tout en proposant un large choix pour d'autres marques. Les pièces sont stockées en Lituanie et vendues dans toute l'Europe via RRR.lt, Ovoko et eBay. Entreprise TOP 2026 — parmi les 6 % d'entreprises les plus fiables de Lituanie.",
+    lead: "Nous sommes spécialisés dans les pièces Mercedes-Benz d'occasion de qualité provenant du Royaume-Uni, avec un large choix pour d'autres marques. Stockées en Lituanie et vendues dans toute l'Europe via RRR.lt, Ovoko et eBay.",
     trust: ["Qualité contrôlée", "Expédition rapide", "Livraison en Europe"],
     catalog: "Ouvrir le catalogue",
     call: "Appeler",

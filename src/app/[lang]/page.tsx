@@ -28,9 +28,9 @@ import {
   phoneHref,
   serviceImages,
 } from "@/lib/site";
-import { Package, ShieldCheck, Truck } from "lucide-react";
+import { BadgeCheck, Globe, Package, Truck } from "lucide-react";
 
-const heroTrustIcons = [ShieldCheck, Truck, Package] as const;
+const heroTrustIcons = [BadgeCheck, Truck, Globe] as const;
 
 export default async function Home({
   params,
@@ -96,12 +96,12 @@ export default async function Home({
                     return (
                       <li
                         key={label}
-                        className="flex flex-col items-start gap-1.5 text-left"
+                        className="flex flex-col items-start gap-2 text-left"
                       >
                         <Icon
                           aria-hidden
-                          className="size-5 text-brand sm:size-6"
-                          strokeWidth={2}
+                          className="size-10 text-brand sm:size-9"
+                          strokeWidth={1.75}
                         />
                         <span className="text-[0.72rem] leading-snug font-semibold text-white sm:text-sm">
                           {label}
@@ -128,27 +128,33 @@ export default async function Home({
                       <ExternalLinkIcon />
                     </a>
                   </Button>
-                  <div className="flex flex-col gap-3 sm:flex-row">
+                  <div className="flex flex-row gap-3">
                     <Button
                       asChild
                       size="lg"
                       variant="outline"
-                      className="w-full focus-visible:ring-offset-ink sm:flex-1"
+                      className="min-w-0 flex-1 basis-1/2 focus-visible:ring-offset-ink"
                     >
                       <a href={phoneHref}>
-                        <PhoneIcon />
-                        {dict.hero.call} {phoneDisplay}
+                        <PhoneIcon className="size-4 shrink-0" />
+                        <span className="truncate sm:hidden">{dict.hero.call}</span>
+                        <span className="hidden truncate sm:inline">
+                          {dict.hero.call} {phoneDisplay}
+                        </span>
                       </a>
                     </Button>
                     <Button
                       asChild
                       size="lg"
                       variant="outline"
-                      className="w-full focus-visible:ring-offset-ink sm:flex-1"
+                      className="min-w-0 flex-1 basis-1/2 focus-visible:ring-offset-ink"
                     >
                       <a href={contactEmailHref}>
-                        <MailIcon />
-                        {contactEmail}
+                        <MailIcon className="size-4 shrink-0" />
+                        <span className="truncate sm:hidden">{dict.hero.email}</span>
+                        <span className="hidden truncate sm:inline">
+                          {contactEmail}
+                        </span>
                       </a>
                     </Button>
                   </div>

@@ -24,7 +24,7 @@ export const en: Dictionary = {
   hero: {
     eyebrow: "BRATAS · EUROPE",
     title: "Quality Used Mercedes-Benz Parts from the UK.",
-    lead: "We specialise in quality used Mercedes-Benz parts from the United Kingdom, while also offering a wide selection of parts for other makes. Parts are warehoused in Lithuania and sold across Europe via RRR.lt, Ovoko and eBay. Top Company 2026 — among the 6% most reliable companies in Lithuania.",
+    lead: "We specialise in quality used Mercedes-Benz parts from the UK, with a wide range of other makes. Warehoused in Lithuania and sold across Europe via RRR.lt, Ovoko and eBay.",
     trust: ["Quality checked", "Fast dispatch", "Europe-wide delivery"],
     catalog: "Open catalogue",
     call: "Call",
