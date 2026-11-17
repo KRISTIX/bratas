@@ -21,6 +21,7 @@ import {
   catalogUrl,
   contactEmail,
   contactEmailHref,
+  getCategoryUrl,
   getPrimaryCatalogUrl,
   getSecondaryCatalogUrl,
   ovokoUrl,
@@ -69,7 +70,10 @@ export default async function Home({
         language={dict.language}
       />
       <main id="content">
-        <section aria-labelledby="hero-title" className="px-3 pt-3 md:px-5 md:pt-4">
+        <section
+          aria-labelledby="hero-title"
+          className="px-3 pt-3 md:px-5 md:pt-4"
+        >
           <div className="rise mx-auto grid max-w-6xl overflow-hidden rounded-[1.75rem] bg-ink text-white shadow-float lg:grid-cols-[1.05fr_0.95fr]">
             <div className="relative flex flex-col justify-center px-5 pt-7 pb-5 sm:px-10 sm:pt-10 sm:pb-8 md:px-12 md:py-11">
               <div
@@ -78,7 +82,10 @@ export default async function Home({
               />
               <div className="relative">
                 <p className="rise rise-2 flex items-center gap-3 text-[0.7rem] font-semibold tracking-[0.22em] text-brand uppercase sm:text-xs">
-                  <span className="h-0.5 w-8 rounded-full bg-brand" aria-hidden />
+                  <span
+                    className="h-0.5 w-8 rounded-full bg-brand"
+                    aria-hidden
+                  />
                   {dict.hero.eyebrow}
                 </p>
                 <h1
@@ -122,7 +129,11 @@ export default async function Home({
                       rel="noopener noreferrer"
                     >
                       <span className="inline-flex items-center gap-2">
-                        <Package aria-hidden className="size-4" strokeWidth={2} />
+                        <Package
+                          aria-hidden
+                          className="size-4"
+                          strokeWidth={2}
+                        />
                         {dict.hero.catalog}
                       </span>
                       <ExternalLinkIcon />
@@ -137,7 +148,9 @@ export default async function Home({
                     >
                       <a href={phoneHref}>
                         <PhoneIcon className="size-4 shrink-0" />
-                        <span className="truncate sm:hidden">{dict.hero.call}</span>
+                        <span className="truncate sm:hidden">
+                          {dict.hero.call}
+                        </span>
                         <span className="hidden truncate sm:inline">
                           {dict.hero.call} {phoneDisplay}
                         </span>
@@ -151,7 +164,9 @@ export default async function Home({
                     >
                       <a href={contactEmailHref}>
                         <MailIcon className="size-4 shrink-0" />
-                        <span className="truncate sm:hidden">{dict.hero.email}</span>
+                        <span className="truncate sm:hidden">
+                          {dict.hero.email}
+                        </span>
                         <span className="hidden truncate sm:inline">
                           {contactEmail}
                         </span>
@@ -210,7 +225,11 @@ export default async function Home({
                 {dict.services.map((service, index) => {
                   const images = serviceImages[index];
                   return (
-                    <Appear key={service.title} delay={index * 80} className="h-full">
+                    <Appear
+                      key={service.title}
+                      delay={index * 80}
+                      className="h-full"
+                    >
                       <article className="group lift flex h-full flex-col overflow-hidden rounded-[1.75rem] bg-ivory shadow-card ring-1 ring-black/[0.03]">
                         <div className="h-1 w-full bg-gradient-to-r from-brand/80 via-brand to-brand/40" />
                         <PhotoFade
@@ -250,9 +269,15 @@ export default async function Home({
                 <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-balance sm:text-5xl">
                   {dict.parts.title}
                 </h2>
-                <p className="mt-4 text-lg text-pretty text-muted">{dict.parts.lead}</p>
+                <p className="mt-4 text-lg text-pretty text-muted">
+                  {dict.parts.lead}
+                </p>
               </div>
-              <Button asChild size="lg" className="shrink-0 self-start lg:self-auto">
+              <Button
+                asChild
+                size="lg"
+                className="shrink-0 self-start lg:self-auto"
+              >
                 <a
                   href={primaryCatalogUrl}
                   target="_blank"
@@ -264,23 +289,25 @@ export default async function Home({
             </Appear>
             <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {dict.parts.categories.map((category, index) => (
-                <Appear
-                  key={category.id}
-                  as="li"
-                  delay={index * 50}
-                  className="flex items-center gap-4 rounded-[1.35rem] bg-ivory px-4 py-4 shadow-card"
-                >
-                  <span className="inline-flex size-[4.25rem] shrink-0 items-center justify-center rounded-[1.15rem] bg-canvas text-brand">
-                    <PartIcon id={category.id} className="size-9" />
-                  </span>
-                  <span className="min-w-0">
-                    <span className="block font-display text-[0.95rem] font-semibold tracking-tight">
-                      {category.name}
+                <Appear key={category.id} as="li" delay={index * 50}>
+                  <a
+                    href={getCategoryUrl(lang, category.id)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="lift flex h-full items-center gap-4 rounded-[1.35rem] bg-ivory px-4 py-4 shadow-card transition hover:ring-1 hover:ring-brand/40 focus-visible:outline-2 focus-visible:outline-brand"
+                  >
+                    <span className="inline-flex size-[4.25rem] shrink-0 items-center justify-center rounded-[1.15rem] bg-canvas text-brand">
+                      <PartIcon id={category.id} className="size-9" />
                     </span>
-                    <span className="mt-1 block text-sm leading-snug text-muted">
-                      {category.note}
+                    <span className="min-w-0">
+                      <span className="block font-display text-[0.95rem] font-semibold tracking-tight">
+                        {category.name}
+                      </span>
+                      <span className="mt-1 block text-sm leading-snug text-muted">
+                        {category.note}
+                      </span>
                     </span>
-                  </span>
+                  </a>
                 </Appear>
               ))}
             </ul>
@@ -445,13 +472,17 @@ export default async function Home({
                     <dt className="text-[0.65rem] font-semibold tracking-[0.16em] text-muted">
                       {dict.contact.companyLabel}
                     </dt>
-                    <dd className="mt-1 text-sm font-semibold">{dict.contact.company}</dd>
+                    <dd className="mt-1 text-sm font-semibold">
+                      {dict.contact.company}
+                    </dd>
                   </div>
                   <div>
                     <dt className="text-[0.65rem] font-semibold tracking-[0.16em] text-muted">
                       {dict.contact.hoursLabel}
                     </dt>
-                    <dd className="mt-1 text-sm font-semibold">{dict.contact.hoursShort}</dd>
+                    <dd className="mt-1 text-sm font-semibold">
+                      {dict.contact.hoursShort}
+                    </dd>
                   </div>
                   <div>
                     <dt className="text-[0.65rem] font-semibold tracking-[0.16em] text-muted">
@@ -463,7 +494,9 @@ export default async function Home({
                     <dt className="text-[0.65rem] font-semibold tracking-[0.16em] text-muted">
                       {dict.contact.vatLabel}
                     </dt>
-                    <dd className="mt-1 text-sm font-semibold">LT100014759115</dd>
+                    <dd className="mt-1 text-sm font-semibold">
+                      LT100014759115
+                    </dd>
                   </div>
                 </dl>
               </div>

@@ -49,6 +49,69 @@ export function getSecondaryCatalogUrl(locale: Locale) {
   return locale === "lt" ? ovokoUrl : catalogUrl;
 }
 
+/** Bratas shop id on RRR.lt / Ovoko — `sh=5059` limits results to our stock. */
+const shopQuery = "sh=5059";
+
+// Category paths per marketplace. The code after "--" is shared across sites;
+// mirrors are a deep sub-category, so they use the search page's `cpc` filter.
+const categoryPaths: Record<
+  PartCategoryId,
+  { lt: string; fr: string; de: string }
+> = {
+  lights: {
+    lt: "/autodaliu-katalogas/apsvietimo-sistema--4j3a",
+    fr: "/liste-des-pieces/systeme-d-eclairage--4j3a",
+    de: "/ersatzteilliste/beleuchtungssystem--4j3a",
+  },
+  body: {
+    lt: "/autodaliu-katalogas/priekines-isores-detales--dtc8",
+    fr: "/liste-des-pieces/parties-exterieures-de-la-carrosserie-avant--dtc8",
+    de: "/ersatzteilliste/vordere-karosserieteile--dtc8",
+  },
+  engines: {
+    lt: "/autodaliu-katalogas/variklis--cm1i",
+    fr: "/liste-des-pieces/moteur--cm1i",
+    de: "/ersatzteilliste/motor--cm1i",
+  },
+  mirrors: {
+    lt: "/paieska?cpc=604",
+    fr: "/chercher?cpc=604",
+    de: "/suche?cpc=604",
+  },
+  electronics: {
+    lt: "/autodaliu-katalogas/prietaisai-jungikliai-el-sistema--7l6h",
+    fr: "/liste-des-pieces/dispositifs-interrupteurs-systeme-electronique--7l6h",
+    de: "/ersatzteilliste/geraete-schalter-elektrik--7l6h",
+  },
+  suspension: {
+    lt: "/autodaliu-katalogas/priekine-asis--4duq",
+    fr: "/liste-des-pieces/essieu-avant--4duq",
+    de: "/ersatzteilliste/vorderachse--4duq",
+  },
+  interior: {
+    lt: "/autodaliu-katalogas/salonas-interjeras--5f4s",
+    fr: "/liste-des-pieces/habitacle-interieur--5f4s",
+    de: "/ersatzteilliste/innenraum-interieur--5f4s",
+  },
+  wheels: {
+    lt: "/autodaliu-katalogas/ratai-padangos-gaubtai--cdqa",
+    fr: "/liste-des-pieces/roues-pneus-capuchons--cdqa",
+    de: "/ersatzteilliste/raeder-reifen-radkappen--cdqa",
+  },
+};
+
+/** LT → rrr.lt, FR → ovoko.fr, everyone else → ovoko.de. */
+export function getCategoryUrl(locale: Locale, id: PartCategoryId) {
+  const [host, key] =
+    locale === "lt"
+      ? (["https://rrr.lt", "lt"] as const)
+      : locale === "fr"
+        ? (["https://ovoko.fr", "fr"] as const)
+        : (["https://ovoko.de", "de"] as const);
+  const path = categoryPaths[id][key];
+  return `${host}${path}${path.includes("?") ? "&" : "?"}${shopQuery}`;
+}
+
 export function getSiteUrl() {
   const explicit = process.env.NEXT_PUBLIC_SITE_URL;
   if (explicit) return explicit.replace(/\/$/, "");
