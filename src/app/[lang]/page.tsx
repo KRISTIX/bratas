@@ -96,7 +96,7 @@ export default async function Home({
                     return (
                       <li
                         key={label}
-                        className="flex flex-col items-center gap-2 text-center"
+                        className="flex flex-col items-center gap-2 text-center lg:items-start lg:text-left"
                       >
                         <Icon
                           aria-hidden
