@@ -18,13 +18,13 @@ import { Button } from "@/components/ui/button";
 import { getDictionary } from "@/lib/dictionaries";
 import { hasLocale } from "@/lib/i18n";
 import {
-  catalogUrl,
   contactEmail,
   contactEmailHref,
   getCategoryUrl,
   getPrimaryCatalogUrl,
   getSecondaryCatalogUrl,
-  ovokoUrl,
+  getOvokoShopUrl,
+  rrrShopUrl,
   phoneDisplay,
   phoneHref,
   serviceImages,
@@ -343,6 +343,15 @@ export default async function Home({
                     {dict.award.body}
                   </p>
                 </div>
+                <div className="relative aspect-[3/2] w-full shrink-0 overflow-hidden rounded-[1.35rem] md:w-[38%]">
+                  <Image
+                    src="/photos/award-truck.jpg"
+                    alt={dict.award.imageAlt}
+                    fill
+                    sizes="(min-width: 768px) 40vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </Appear>
 
@@ -525,7 +534,7 @@ export default async function Home({
               className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-semibold"
             >
               <a
-                href={catalogUrl}
+                href={rrrShopUrl}
                 className="text-white/80 underline-offset-4 transition-colors hover:text-white hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -533,7 +542,7 @@ export default async function Home({
                 RRR.lt
               </a>
               <a
-                href={ovokoUrl}
+                href={getOvokoShopUrl(lang)}
                 className="text-white/80 underline-offset-4 transition-colors hover:text-white hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"

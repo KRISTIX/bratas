@@ -85,6 +85,7 @@ export const lt: Dictionary = {
     ],
   },
   award: {
+    imageAlt: "Priekaba, pakrauta supakuotų Mercedes-Benz priekių ir variklių",
     eyebrow: "ĮVERTINIMAS",
     title: "TOP Įmonė 2026",
     mark: "TOP ĮMONĖ",

@@ -85,6 +85,8 @@ export const fr: Dictionary = {
     ],
   },
   award: {
+    imageAlt:
+      "Remorque chargée de faces avant Mercedes-Benz emballées et de moteurs",
     eyebrow: "DISTINCTION",
     title: "Entreprise TOP 2026",
     mark: "ENTREPRISE TOP",
@@ -132,9 +134,11 @@ export const fr: Dictionary = {
     eyebrow: "GROS",
     title: "Demande de gros",
     lead: "Indiquez votre volume mensuel et les types de pièces — nous reviendrons vers vous sur les conditions.",
-    photoAlt: "Chariot élévateur soulevant un moteur automobile devant l'entrepôt",
+    photoAlt:
+      "Chariot élévateur soulevant un moteur automobile devant l'entrepôt",
     openLabel: "Ouvrir la demande de gros",
-    openHint: "Indiquez volume et types de pièces — nous reviendrons vers vous.",
+    openHint:
+      "Indiquez volume et types de pièces — nous reviendrons vers vous.",
     closeLabel: "Fermer",
     nameLabel: "NOM",
     companyLabel: "SOCIÉTÉ",

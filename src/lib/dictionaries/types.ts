@@ -47,6 +47,7 @@ export type Dictionary = {
     categories: { id: PartCategoryId; name: string; note: string }[];
   };
   award: {
+    imageAlt: string;
     eyebrow: string;
     title: string;
     mark: string;

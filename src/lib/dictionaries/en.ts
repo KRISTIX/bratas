@@ -76,11 +76,17 @@ export const en: Dictionary = {
         name: "Suspension and brakes",
         note: "Arms, dampers, discs",
       },
-      { id: "interior", name: "Interior", note: "Seats, steering wheels, handles" },
+      {
+        id: "interior",
+        name: "Interior",
+        note: "Seats, steering wheels, handles",
+      },
       { id: "wheels", name: "Wheels and tyres", note: "Alloys and discs" },
     ],
   },
   award: {
+    imageAlt:
+      "Trailer loaded with wrapped Mercedes-Benz front ends and engines",
     eyebrow: "RECOGNITION",
     title: "Top Company 2026",
     mark: "TOP COMPANY",

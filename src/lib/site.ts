@@ -40,13 +40,23 @@ export const partCategoryIds = [
 
 export type PartCategoryId = (typeof partCategoryIds)[number];
 
-/** Lithuanian visitors go to RRR.lt; others to Ovoko’s EU marketplace. */
+/** Full Bratas stock (shop 5059) on each marketplace. */
+export const rrrShopUrl = "https://rrr.lt/paieska?sh=5059";
+
+/** French visitors get ovoko.fr; everyone else ovoko.de. */
+export function getOvokoShopUrl(locale: Locale) {
+  return locale === "fr"
+    ? "https://ovoko.fr/chercher?sh=5059"
+    : "https://ovoko.de/suche?sh=5059";
+}
+
+/** Lithuanian visitors go to RRR.lt; others to Ovoko in their market. */
 export function getPrimaryCatalogUrl(locale: Locale) {
-  return locale === "lt" ? catalogUrl : ovokoUrl;
+  return locale === "lt" ? rrrShopUrl : getOvokoShopUrl(locale);
 }
 
 export function getSecondaryCatalogUrl(locale: Locale) {
-  return locale === "lt" ? ovokoUrl : catalogUrl;
+  return locale === "lt" ? getOvokoShopUrl(locale) : rrrShopUrl;
 }
 
 /** Bratas shop id on RRR.lt / Ovoko — `sh=5059` limits results to our stock. */
