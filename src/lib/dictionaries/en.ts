@@ -4,7 +4,7 @@ export const en: Dictionary = {
   meta: {
     title: "UAB Bratas — used car parts from the United Kingdom",
     description:
-      "UAB Bratas imports, warehouses and sells used car parts from the United Kingdom. Catalogue on RRR.lt, Ovoko and eBay. Top Company 2026. Lithuania.",
+      "UAB Bratas imports, warehouses and sells used car parts from the United Kingdom. Catalogue on RRR.lt, Ovoko and eBay. Strongest in Lithuania 2025–2026. Lithuania.",
     imageAlt: "UAB Bratas warehouse: car bumpers on wooden shelves",
   },
   skip: "Skip to content",
@@ -23,9 +23,9 @@ export const en: Dictionary = {
   },
   hero: {
     eyebrow: "BRATAS · EUROPE",
-    title: "Quality Used Mercedes-Benz Parts from the UK.",
+    title: "Quality Used\nMercedes-Benz\nParts from\nthe UK.",
     lead: "We specialise in quality used Mercedes-Benz parts from the UK, with a wide range of other makes. Warehoused in Lithuania and sold across Europe via RRR.lt, Ovoko and eBay.",
-    trust: ["Quality checked", "Fast dispatch", "Europe-wide delivery"],
+    trust: ["Quality\nchecked", "Fast\ndispatch", "Europe-wide\ndelivery"],
     catalog: "Open catalogue",
     call: "Call",
     email: "Email",
@@ -79,23 +79,22 @@ export const en: Dictionary = {
       {
         id: "interior",
         name: "Interior",
-        note: "Seats, steering wheels, handles",
+        note: "Seats, wheels, handles",
       },
       { id: "wheels", name: "Wheels and tyres", note: "Alloys and discs" },
     ],
   },
   award: {
     imageAlt:
-      "Trailer loaded with wrapped Mercedes-Benz front ends and engines",
+      "Strongest in Lithuania 2025–2026 certificate awarded to UAB Bratas by Creditinfo",
     eyebrow: "RECOGNITION",
-    title: "Top Company 2026",
-    mark: "TOP COMPANY",
-    figure: "6%",
-    figureLabel: "most reliable companies in Lithuania",
+    title: "Strongest in Lithuania",
+    figure: "2025–2026",
+    figureLabel: "Creditinfo certificate",
     quote:
-      "UAB Bratas is on the Top Company 2026 list — among the 6% most reliable and financially stable companies in Lithuania (Rekvizitai.lt).",
-    body: "The 2026 seal marks ten years of the Top Company distinction.",
-    seal: "Top Company 2026",
+      "Creditinfo acknowledges that UAB Bratas has a high credit score and contributes to the Lithuanian economy.",
+    body: "Issued on 18 November 2026. Signed by Satrajit Saha, Global CEO of Creditinfo Group.",
+    seal: "Strongest in Lithuania 2025–2026",
     reviewsTitle: "Customer reviews",
     reviewsLead: "Ratings from buyers who ordered parts.",
     reviewsPrev: "Previous review",

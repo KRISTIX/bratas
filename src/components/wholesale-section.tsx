@@ -77,7 +77,7 @@ export function WholesaleSection({
               <h2 className="mt-2 font-display text-3xl font-bold tracking-tight sm:text-4xl">
                 {title}
               </h2>
-              <p className="mt-3 text-lg text-muted">{lead}</p>
+              <p className="mt-3 text-lg text-muted max-lg:min-h-[3lh]">{lead}</p>
             </div>
 
             <button

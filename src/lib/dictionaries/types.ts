@@ -50,7 +50,6 @@ export type Dictionary = {
     imageAlt: string;
     eyebrow: string;
     title: string;
-    mark: string;
     figure: string;
     figureLabel: string;
     quote: string;

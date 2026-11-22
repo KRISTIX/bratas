@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { Appear } from "@/components/appear";
+import { BrandText, LockedLines, TwoLines } from "@/components/copy";
 import { AwardSeal } from "@/components/award-seal";
 import { ContactMap } from "@/components/contact-map";
 import { Header } from "@/components/header";
@@ -90,12 +91,12 @@ export default async function Home({
                 </p>
                 <h1
                   id="hero-title"
-                  className="rise rise-3 mt-4 max-w-xl font-display text-[2.05rem] leading-[1.08] font-bold tracking-tight text-balance sm:text-5xl"
+                  className="rise rise-3 mt-4 max-w-xl font-display text-[clamp(1.6rem,8.2vw,2.05rem)] leading-[1.08] font-bold tracking-tight text-balance lg:text-5xl"
                 >
-                  {dict.hero.title}
+                  <LockedLines text={dict.hero.title} />
                 </h1>
-                <p className="rise rise-4 mt-4 max-w-lg text-[0.95rem] leading-relaxed text-pretty text-white/80 sm:text-[1.05rem]">
-                  {dict.hero.lead}
+                <p className="rise rise-4 mt-4 max-w-lg text-[0.95rem] leading-relaxed text-pretty text-white/80 max-lg:min-h-[5lh] sm:text-[1.05rem]">
+                  <BrandText text={dict.hero.lead} />
                 </p>
                 <ul className="rise rise-4 mt-5 grid grid-cols-3 gap-3 sm:mt-6 sm:gap-4">
                   {dict.hero.trust.map((label, index) => {
@@ -110,8 +111,8 @@ export default async function Home({
                           className="size-10 text-brand sm:size-9"
                           strokeWidth={1.75}
                         />
-                        <span className="text-[0.72rem] leading-snug font-semibold text-white sm:text-sm">
-                          {label}
+                        <span className="text-[0.68rem] leading-tight font-semibold text-white sm:text-sm">
+                          <TwoLines text={label} />
                         </span>
                       </li>
                     );
@@ -243,10 +244,10 @@ export default async function Home({
                           <p className="mb-3 inline-flex w-fit items-center rounded-full bg-brand/10 px-3.5 py-1.5 font-display text-2xl font-bold tracking-tight text-brand lg:hidden">
                             {String(index + 1).padStart(2, "0")}
                           </p>
-                          <h3 className="font-display text-xl font-semibold tracking-tight sm:text-2xl">
+                          <h3 className="font-display text-xl font-semibold tracking-tight max-[380px]:min-h-[2.5em] sm:text-2xl">
                             {service.title}
                           </h3>
-                          <p className="mt-3 flex-1 text-pretty leading-relaxed text-muted">
+                          <p className="mt-3 flex-1 text-pretty leading-relaxed text-muted max-lg:min-h-[3lh]">
                             {service.text}
                           </p>
                         </div>
@@ -269,7 +270,7 @@ export default async function Home({
                 <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-balance sm:text-5xl">
                   {dict.parts.title}
                 </h2>
-                <p className="mt-4 text-lg text-pretty text-muted">
+                <p className="mt-4 text-lg text-pretty text-muted max-lg:min-h-[2lh]">
                   {dict.parts.lead}
                 </p>
               </div>
@@ -319,14 +320,14 @@ export default async function Home({
             <Appear>
               <div className="flex flex-col gap-6 rounded-[1.75rem] bg-ivory px-5 py-6 shadow-card sm:px-8 sm:py-7 md:flex-row md:items-center md:gap-10 md:px-10 md:py-8">
                 <div className="shrink-0 self-center md:self-auto">
-                  <AwardSeal label={dict.award.seal} mark={dict.award.mark} />
+                  <AwardSeal label={dict.award.seal} />
                 </div>
                 <div className="min-w-0 flex-1">
                   <p className="text-xs font-semibold tracking-[0.22em] text-brand">
                     {dict.award.eyebrow}
                   </p>
-                  <div className="mt-2 flex flex-wrap items-end gap-x-5 gap-y-1">
-                    <h2 className="font-display text-2xl font-bold tracking-tight text-balance sm:text-3xl">
+                  <div className="mt-2 flex flex-col items-start gap-1 sm:flex-row sm:items-end sm:gap-x-5">
+                    <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">
                       {dict.award.title}
                     </h2>
                     <p className="font-display text-4xl font-bold tracking-tight text-brand sm:text-5xl">
@@ -336,20 +337,20 @@ export default async function Home({
                   <p className="mt-1 text-sm text-muted sm:text-base">
                     {dict.award.figureLabel}
                   </p>
-                  <blockquote className="mt-4 max-w-3xl border-l-2 border-brand pl-4 text-base leading-relaxed text-pretty">
+                  <blockquote className="mt-4 max-w-3xl border-l-2 border-brand pl-4 text-base leading-relaxed text-pretty max-lg:min-h-[4lh]">
                     {dict.award.quote}
                   </blockquote>
-                  <p className="mt-3 max-w-3xl text-sm text-pretty text-muted sm:text-base">
+                  <p className="mt-3 max-w-3xl text-sm text-pretty text-muted max-lg:min-h-[2lh] sm:text-base">
                     {dict.award.body}
                   </p>
                 </div>
-                <div className="relative aspect-[3/2] w-full shrink-0 overflow-hidden rounded-[1.35rem] md:w-[38%]">
+                <div className="relative aspect-[360/528] w-full shrink-0 overflow-hidden rounded-[1.35rem] bg-canvas md:w-[32%]">
                   <Image
-                    src="/photos/award-truck.jpg"
+                    src="/awards/strongest-certificate.jpg"
                     alt={dict.award.imageAlt}
                     fill
-                    sizes="(min-width: 768px) 40vw, 100vw"
-                    className="object-cover"
+                    sizes="(min-width: 768px) 32vw, 100vw"
+                    className="object-contain"
                   />
                 </div>
               </div>
@@ -377,7 +378,9 @@ export default async function Home({
                 <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-balance sm:text-4xl">
                   {dict.band.title}
                 </h2>
-                <p className="mt-3 text-lg text-white/70">{dict.band.lead}</p>
+                <p className="mt-3 text-lg text-white/70 max-lg:min-h-[2lh]">
+                  {dict.band.lead}
+                </p>
               </div>
               <div className="flex w-full flex-row gap-2 sm:w-auto sm:gap-3">
                 <Button

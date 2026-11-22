@@ -86,11 +86,13 @@ export function StockCounter({
         {formatCount(count, locale)}
       </p>
       <span className="h-7 w-px shrink-0 bg-white/20" aria-hidden />
-      <p className="min-w-0 text-sm leading-snug">
-        <span className="font-semibold tracking-[0.14em] text-emerald-400">
+      <p className="min-w-0 text-[clamp(0.7rem,2.8vw,0.875rem)] leading-tight sm:text-sm sm:leading-snug">
+        <span className="block font-semibold tracking-[0.14em] whitespace-nowrap text-emerald-400 sm:inline">
           {note}
-        </span>{" "}
-        <span className="text-white/75">{label}</span>
+        </span>
+        <span className="block whitespace-nowrap text-white/75 sm:ml-1 sm:inline">
+          {label}
+        </span>
       </p>
     </div>
   );

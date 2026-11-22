@@ -4,7 +4,7 @@ export const lt: Dictionary = {
   meta: {
     title: "UAB Bratas: naudotos dalys iš Jungtinės Karalystės",
     description:
-      "UAB Bratas įveža, sandėliuoja ir parduoda naudotas automobilių dalis iš Jungtinės Karalystės. Katalogas RRR.lt, Ovoko ir eBay. TOP Įmonė 2026. Lietuva.",
+      "UAB Bratas įveža, sandėliuoja ir parduoda naudotas automobilių dalis iš Jungtinės Karalystės. Katalogas RRR.lt, Ovoko ir eBay. Stipriausi Lietuvoje 2025–2026. Lietuva.",
     imageAlt: "UAB Bratas sandėlis: bamperiai medinėse lentynose",
   },
   skip: "Pereiti prie turinio",
@@ -23,9 +23,10 @@ export const lt: Dictionary = {
   },
   hero: {
     eyebrow: "BRATAS · EUROPA",
-    title: "Kokybiškos naudotos Mercedes-Benz dalys iš Jungtinės Karalystės.",
+    title:
+      "Kokybiškos naudotos\nMercedes-Benz\ndalys iš\nJungtinės Karalystės.",
     lead: "Specializuojamės kokybiškomis naudotomis Mercedes-Benz dalimis iš Jungtinės Karalystės ir turime platų kitų markių asortimentą. Sandėliuojame Lietuvoje, parduodame visoje Europoje per RRR.lt, Ovoko ir eBay.",
-    trust: ["Patikrinta kokybė", "Greitas siuntimas", "Pristatymas Europoje"],
+    trust: ["Patikrinta\nkokybė", "Greitas\nsiuntimas", "Pristatymas\nEuropoje"],
     catalog: "Atidaryti katalogą",
     call: "Skambinti",
     email: "El. paštas",
@@ -78,23 +79,23 @@ export const lt: Dictionary = {
       {
         id: "suspension",
         name: "Pakaba ir stabdžiai",
-        note: "Svirtys, amortizatoriai, diskai",
+        note: "Svirtys, amortizatoriai",
       },
       { id: "interior", name: "Salonas", note: "Sėdynės, vairai, rankenėlės" },
       { id: "wheels", name: "Ratlankiai ir padangos", note: "Lieti ir diskai" },
     ],
   },
   award: {
-    imageAlt: "Priekaba, pakrauta supakuotų Mercedes-Benz priekių ir variklių",
+    imageAlt:
+      "Creditinfo sertifikatas Stipriausi Lietuvoje 2025–2026, įteiktas UAB Bratas",
     eyebrow: "ĮVERTINIMAS",
-    title: "TOP Įmonė 2026",
-    mark: "TOP ĮMONĖ",
-    figure: "6%",
-    figureLabel: "patikimiausių įmonių Lietuvoje",
+    title: "Stipriausi Lietuvoje",
+    figure: "2025–2026",
+    figureLabel: "Creditinfo sertifikatas",
     quote:
-      "UAB Bratas įtraukta į TOP Įmonė 2026 sąrašą – tarp 6 % patikimiausių ir finansiškai stabiliausių įmonių Lietuvoje (Rekvizitai.lt).",
-    body: "2026 m. ženklas žymi dešimtąją TOP Įmonė įvertinimo sukaktį.",
-    seal: "TOP Įmonė 2026",
+      "Creditinfo pripažįsta, kad UAB Bratas turi aukštą kredito reitingą ir prisideda prie Lietuvos ekonomikos.",
+    body: "Sertifikatas išduotas 2026 m. lapkričio 18 d. Jį pasirašė Satrajit Saha, Creditinfo Group generalinis direktorius.",
+    seal: "Stipriausi Lietuvoje 2025–2026",
     reviewsTitle: "Klientų atsiliepimai",
     reviewsLead: "Įvertinimai pirkėjų, kurie užsakė dalis.",
     reviewsPrev: "Ankstesnis atsiliepimas",
