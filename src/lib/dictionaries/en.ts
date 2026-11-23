@@ -4,7 +4,7 @@ export const en: Dictionary = {
   meta: {
     title: "UAB Bratas — used car parts from the United Kingdom",
     description:
-      "UAB Bratas imports, warehouses and sells used car parts from the United Kingdom. Catalogue on RRR.lt, Ovoko and eBay. Strongest in Lithuania 2025–2026. Lithuania.",
+      "UAB Bratas imports, warehouses and sells used car parts from the United Kingdom. Catalogue on RRR.lt, Ovoko and eBay. Strongest in Lithuania 2025–2026. Top Company 2026. Lithuania.",
     imageAlt: "UAB Bratas warehouse: car bumpers on wooden shelves",
   },
   skip: "Skip to content",
@@ -85,16 +85,31 @@ export const en: Dictionary = {
     ],
   },
   award: {
-    imageAlt:
-      "Strongest in Lithuania 2025–2026 certificate awarded to UAB Bratas by Creditinfo",
     eyebrow: "RECOGNITION",
-    title: "Strongest in Lithuania",
-    figure: "2025–2026",
-    figureLabel: "Creditinfo certificate",
-    quote:
-      "Creditinfo acknowledges that UAB Bratas has a high credit score and contributes to the Lithuanian economy.",
-    body: "Issued on 18 November 2026. Signed by Satrajit Saha, Global CEO of Creditinfo Group.",
-    seal: "Strongest in Lithuania 2025–2026",
+    proofs: [
+      {
+        badge: "medal",
+        title: "Strongest in Lithuania",
+        figure: "2025–2026",
+        figureLabel: "Creditinfo certificate",
+        quote:
+          "Creditinfo acknowledges that UAB Bratas has a high credit score and contributes to the Lithuanian economy.",
+        body: "Issued on 18 November 2026. Signed by Satrajit Saha, Global CEO of Creditinfo Group.",
+        seal: "Strongest in Lithuania 2025–2026",
+        mark: "",
+      },
+      {
+        badge: "top",
+        title: "Top Company 2026",
+        figure: "6%",
+        figureLabel: "most reliable companies in Lithuania",
+        quote:
+          "UAB Bratas is on the Top Company 2026 list — among the 6% most reliable and financially stable companies in Lithuania (Rekvizitai.lt).",
+        body: "The 2026 seal marks ten years of the Top Company distinction.",
+        seal: "Top Company 2026",
+        mark: "TOP COMPANY",
+      },
+    ],
     reviewsTitle: "Customer reviews",
     reviewsLead: "Ratings from buyers who ordered parts.",
     reviewsPrev: "Previous review",

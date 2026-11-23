@@ -47,14 +47,17 @@ export type Dictionary = {
     categories: { id: PartCategoryId; name: string; note: string }[];
   };
   award: {
-    imageAlt: string;
     eyebrow: string;
-    title: string;
-    figure: string;
-    figureLabel: string;
-    quote: string;
-    body: string;
-    seal: string;
+    proofs: {
+      badge: "medal" | "top";
+      title: string;
+      figure: string;
+      figureLabel: string;
+      quote: string;
+      body: string;
+      seal: string;
+      mark: string;
+    }[];
     reviewsTitle: string;
     reviewsLead: string;
     reviewsPrev: string;

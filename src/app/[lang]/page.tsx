@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 
 import { Appear } from "@/components/appear";
 import { BrandText, LockedLines, TwoLines } from "@/components/copy";
-import { AwardSeal } from "@/components/award-seal";
+import { AwardShowcase } from "@/components/award-seal";
 import { ContactMap } from "@/components/contact-map";
 import { Header } from "@/components/header";
 import { HeroGallery } from "@/components/hero-gallery";
@@ -318,42 +318,10 @@ export default async function Home({
         <section id="recognition" className="scroll-mt-28 px-3 md:px-5">
           <div className="mx-auto flex max-w-6xl flex-col gap-4">
             <Appear>
-              <div className="flex flex-col gap-6 rounded-[1.75rem] bg-ivory px-5 py-6 shadow-card sm:px-8 sm:py-7 md:flex-row md:items-center md:gap-10 md:px-10 md:py-8">
-                <div className="shrink-0 self-center md:self-auto">
-                  <AwardSeal label={dict.award.seal} />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <p className="text-xs font-semibold tracking-[0.22em] text-brand">
-                    {dict.award.eyebrow}
-                  </p>
-                  <div className="mt-2 flex flex-col items-start gap-1 sm:flex-row sm:items-end sm:gap-x-5">
-                    <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">
-                      {dict.award.title}
-                    </h2>
-                    <p className="font-display text-4xl font-bold tracking-tight text-brand sm:text-5xl">
-                      {dict.award.figure}
-                    </p>
-                  </div>
-                  <p className="mt-1 text-sm text-muted sm:text-base">
-                    {dict.award.figureLabel}
-                  </p>
-                  <blockquote className="mt-4 max-w-3xl border-l-2 border-brand pl-4 text-base leading-relaxed text-pretty max-lg:min-h-[4lh]">
-                    {dict.award.quote}
-                  </blockquote>
-                  <p className="mt-3 max-w-3xl text-sm text-pretty text-muted max-lg:min-h-[2lh] sm:text-base">
-                    {dict.award.body}
-                  </p>
-                </div>
-                <div className="relative aspect-[360/528] w-full shrink-0 overflow-hidden rounded-[1.35rem] bg-canvas md:w-[32%]">
-                  <Image
-                    src="/awards/strongest-certificate.jpg"
-                    alt={dict.award.imageAlt}
-                    fill
-                    sizes="(min-width: 768px) 32vw, 100vw"
-                    className="object-contain"
-                  />
-                </div>
-              </div>
+              <AwardShowcase
+                eyebrow={dict.award.eyebrow}
+                proofs={dict.award.proofs}
+              />
             </Appear>
 
             <Appear>

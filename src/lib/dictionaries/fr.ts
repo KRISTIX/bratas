@@ -4,7 +4,7 @@ export const fr: Dictionary = {
   meta: {
     title: "UAB Bratas — pièces auto d'occasion du Royaume-Uni",
     description:
-      "UAB Bratas importe, stocke et vend des pièces auto d'occasion du Royaume-Uni. Catalogue sur RRR.lt, Ovoko et eBay. Strongest in Lithuania 2025–2026. Lituanie.",
+      "UAB Bratas importe, stocke et vend des pièces auto d'occasion du Royaume-Uni. Catalogue sur RRR.lt, Ovoko et eBay. Strongest in Lithuania 2025–2026. Entreprise TOP 2026. Lituanie.",
     imageAlt: "Entrepôt UAB Bratas : pare-chocs sur des étagères en bois",
   },
   skip: "Aller au contenu",
@@ -85,16 +85,31 @@ export const fr: Dictionary = {
     ],
   },
   award: {
-    imageAlt:
-      "Certificat Strongest in Lithuania 2025–2026 décerné à UAB Bratas par Creditinfo",
     eyebrow: "DISTINCTION",
-    title: "La plus solide de Lituanie",
-    figure: "2025–2026",
-    figureLabel: "certificat Creditinfo",
-    quote:
-      "Creditinfo reconnaît qu'UAB Bratas a une cote de crédit élevée et contribue à l'économie lituanienne.",
-    body: "Certificat délivré le 18 novembre 2026, signé par Satrajit Saha, directeur général de Creditinfo Group.",
-    seal: "Strongest in Lithuania 2025–2026",
+    proofs: [
+      {
+        badge: "medal",
+        title: "La plus solide de Lituanie",
+        figure: "2025–2026",
+        figureLabel: "certificat Creditinfo",
+        quote:
+          "Creditinfo reconnaît qu'UAB Bratas a une cote de crédit élevée et contribue à l'économie lituanienne.",
+        body: "Certificat délivré le 18 novembre 2026, signé par Satrajit Saha, directeur général de Creditinfo Group.",
+        seal: "Strongest in Lithuania 2025–2026",
+        mark: "",
+      },
+      {
+        badge: "top",
+        title: "Entreprise TOP 2026",
+        figure: "6 %",
+        figureLabel: "des entreprises les plus fiables de Lituanie",
+        quote:
+          "UAB Bratas figure sur la liste Entreprise TOP 2026, parmi les 6 % d'entreprises les plus fiables et les plus stables financièrement de Lituanie (Rekvizitai.lt).",
+        body: "Le sceau 2026 marque dix ans de la distinction Entreprise TOP.",
+        seal: "Entreprise TOP 2026",
+        mark: "ENTREPRISE TOP",
+      },
+    ],
     reviewsTitle: "Avis clients",
     reviewsLead: "Notes de clients ayant commandé des pièces.",
     reviewsPrev: "Avis précédent",
